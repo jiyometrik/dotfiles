@@ -20,6 +20,3 @@ This directory contains most of the configurations for applications I use.
 3. My [kitty](https://sw.kovidgoyal.net/kitty/) configuration, also using Pywal.
 
 4. My [Starship Prompt](https://starship.rs/) configuration.
-
-## Install Script
-I am currently working on an install script which will install my configurations for Arch-based systems (pacman, yay).
