@@ -1,0 +1,5 @@
+configuration {
+	font: "Victor Mono Nerd Font 13";
+
+}
+@import "~/.cache/wal/colors-rofi-dark"
