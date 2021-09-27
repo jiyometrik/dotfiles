@@ -1,6 +1,12 @@
 " set leader key to be more accessible
 let g:mapleader = " "
 
+
+" Terminal Mode - make it easier to access terminal mode
+nnoremap <silent> <leader>t :terminal<CR>
+tnoremap <silent> <leader>t <C-\><C-n>
+
+
 " Prettier Command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -29,6 +35,34 @@ let g:which_key_map.c = {
 			\ 's': ['<Plug>NERDCommenterSexy', 'sexy'],
 			\ 'u': ['<Plug>NERDCommenterUncomment', 'uncomment'],
 			\ 'y': ['<Plug>NERDCommenterYank', 'yank']}
+
+" fuzzy finder (fzf)
+let g:which_key_map.f = {
+			\ 'name': '+fuzzy-find',
+			\ 'b': ['Buffers', 'buffers'],
+			\ 'c': ['Commits', 'commits'],
+			\ 'f': ['Files .', 'files'],
+			\ 'g': [':GitFiles', 'git-files'],
+			\ 'm': ['Marks', 'marks'],
+			\ 'r': ['Rg', 'ripgrep'],
+			\ 's': [':GitFiles?', 'git-status'],
+			\ 'w': ['Windows', 'windows']}
+
+let g:which_key_map.f.h = {
+			\ 'name': '+history',
+			\ 'c': [':History:', 'command-history'],
+			\ 'f': ['History', 'file-history'],
+			\ 's': [':History/', 'search-history']}
+
+let g:which_key_map.f.l = {
+			\ 'name': '+lines',
+			\ 'b': ['BLines', 'lines-in-buffer'],
+			\ ' ': ['Lines', 'lines-in-project']}
+
+let g:which_key_map.f.t = {
+			\ 'name': '+tags',
+			\ 'b': ['BTags', 'tags-in-buffer'],
+			\ ' ': ['Tags', 'tags-in-project']}
 
 " git (fugitive, coc-git)
 let g:which_key_map.g = {'name': '+git'}
@@ -120,37 +154,9 @@ let g:which_key_map.l = {
 			\ 't': ['<Plug>(coc-type-definition)', 'typedef']}
 
 " nerdtree
-let g:which_key_map.t = {
+let g:which_key_map.n = {
 			\ 'name': '+nerdtree',
 			\ ' ': ['NERDTree', 'nerdtree'],
 			\ 'f': ['NERDTreeFocus', 'focus'],
 			\ 'i': ['NERDTreeFind', 'find'],
 			\ 't': ['NERDTreeToggle', 'toggle']}
-
-" fuzzy finder (fzf)
-let g:which_key_map.z = {
-			\ 'name': '+fuzzy-find',
-			\ 'b': ['Buffers', 'buffers'],
-			\ 'c': ['Commits', 'commits'],
-			\ 'f': ['Files .', 'files'],
-			\ 'g': [':GitFiles', 'git-files'],
-			\ 'm': ['Marks', 'marks'],
-			\ 'r': ['Rg', 'ripgrep'],
-			\ 's': [':GitFiles?', 'git-status'],
-			\ 'w': ['Windows', 'windows']}
-
-let g:which_key_map.z.h = {
-			\ 'name': '+history',
-			\ 'c': [':History:', 'command-history'],
-			\ 'f': ['History', 'file-history'],
-			\ 's': [':History/', 'search-history']}
-
-let g:which_key_map.z.l = {
-			\ 'name': '+lines',
-			\ 'b': ['BLines', 'lines-in-buffer'],
-			\ ' ': ['Lines', 'lines-in-project']}
-
-let g:which_key_map.z.t = {
-			\ 'name': '+tags',
-			\ 'b': ['BTags', 'tags-in-buffer'],
-			\ ' ': ['Tags', 'tags-in-project']}
