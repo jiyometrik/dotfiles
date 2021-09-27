@@ -85,22 +85,22 @@ let g:which_key_map.g.c = {
 			\ 'name': '+commits',
 			\ 'i': ['<Plug>(coc-git-commit)', 'commit-info']}
 
-nnoremap <silent> <leader>gcc :G commit -m ""
+nnoremap <silent> <leader>gcc :G commit -m " "
 let g:which_key_map.g.c.c = "commit"
 
-nnoremap <silent> <leader>gd :G rm 
+nnoremap <silent> <leader>gd :G rm
 let g:which_key_map.g.d = "delete"
 
-nnoremap <silent> <leader>gf :G fetch 
+nnoremap <silent> <leader>gf :G fetch
 let g:which_key_map.g.f = "fetch"
 
-nnoremap <silent> <leader>gm :G merge 
+nnoremap <silent> <leader>gm :G merge
 let g:which_key_map.g.m = "merge"
 
 nnoremap <silent> <leader>gM :G merge origin/master<CR>
 let g:which_key_map.g.M = "merge-with-origin-master"
 
-nnoremap <silent> <leader>gp :G push 
+nnoremap <silent> <leader>gp :G push
 let g:which_key_map.g.p = "push"
 
 nnoremap <silent> <leader>gP :G pull
@@ -108,13 +108,13 @@ let g:which_key_map.g.P = "pull"
 
 let g:which_key_map.g.u = {'name': '+undo-commits'}
 
-nnoremap <silent> <leader>gr :G reset 
+nnoremap <silent> <leader>gr :G reset
 let g:which_key_map.g.r = "reset-staging-area"
 
-nnoremap <silent> <leader>guh :G reset --hard 
+nnoremap <silent> <leader>guh :G reset --hard
 let g:which_key_map.g.u.h = "undo-commit-hard"
 
-nnoremap <silent> <leader>gus :G reset --soft 
+nnoremap <silent> <leader>gus :G reset --soft
 let g:which_key_map.g.u.s = "undo-commit-soft"
 
 nnoremap <silent> <leader>guH :G reset --hard HEAD~1<CR>

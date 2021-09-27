@@ -18,12 +18,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " Git for File Tree
 " Status Line
 Plug 'vim-airline/vim-airline'  " Status Bar
 
-" Misc.
+" Productivity
 Plug 'jiangmiao/auto-pairs'  " autocomplete matching brackets
 Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter'  " autocomment
-
-Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vim-which-key' " cheatsheet
 
 " Appearance
 Plug 'sainnhe/edge'
