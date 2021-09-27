@@ -2,11 +2,10 @@
 A place to store my dotfiles.
 
 ## What You'll Find
-1. My [SpaceVim](https://spacevim.org/) configuration.
-2. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
-3. My .bashrc.
-4. My .fehbg and .xinitrc.
-5. Wallpapers I use (*Please inform me if these pictures are your work and I will kindly take them down if needed.*)
+1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
+2. My .bashrc.
+3. My .fehbg and .xinitrc.
+4. Wallpapers I use (*Please inform me if these pictures are your work and I will kindly take them down if needed.*)
 
 ### The .config Directory
 This directory contains most of the configurations for applications I use.
@@ -20,3 +19,5 @@ This directory contains most of the configurations for applications I use.
 3. My [kitty](https://sw.kovidgoyal.net/kitty/) configuration, also using Pywal.
 
 4. My [Starship Prompt](https://starship.rs/) configuration.
+
+5. My [Neovim](https://neovim.io) configuration.
