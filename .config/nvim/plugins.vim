@@ -26,8 +26,9 @@ Plug 'preservim/nerdcommenter'  " autocomment
 Plug 'liuchengxu/vim-which-key'
 
 " Appearance
-Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
 Plug 'ryanoasis/vim-devicons'  " Icons!
 Plug 'mhinz/vim-startify' " start page
 call plug#end()

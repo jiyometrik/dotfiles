@@ -13,11 +13,15 @@ if (has("termguicolors"))
 endif
 
 
-" Gruvbox Material
-" let g:gruvbox_material_enable_italic = 1
-" colorscheme gruvbox-material
-
 " Edge
 let g:edge_style = "aura"
 let g:edge_enable_italic = 1
 colorscheme edge
+
+" Everforest
+" let g:everforest_enable_italic = 1
+" colorscheme everforest
+
+" Gruvbox Material
+" let g:gruvbox_material_enable_italic = 1
+" colorscheme gruvbox-material
