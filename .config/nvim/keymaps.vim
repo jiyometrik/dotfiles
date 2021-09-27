@@ -34,7 +34,7 @@ let g:which_key_map.c = {
 let g:which_key_map.g = {'name': '+git'}
 
 " git operations which require input
-nnoremap <silent> <leader>ga :G add
+nnoremap <silent> <leader>ga :G add ./
 let g:which_key_map.g.a = "stage-file"
 
 nnoremap <silent> <leader>gA :G add -A<CR>
@@ -51,13 +51,10 @@ let g:which_key_map.g.c = {
 			\ 'name': '+commits',
 			\ 'i': ['<Plug>(coc-git-commit)', 'commit-info']}
 
-nnoremap <silent> <leader>gcc :G commit -m " "
+nnoremap <silent> <leader>gcc :G commit -m ""
 let g:which_key_map.g.c.c = "commit"
 
-" nnoremap <silent> <leader>gci <Plug>(coc-git-commit)
-" let g:which_key_map.g.c.i = "commit-info"
-
-nnoremap <silent> <leader>gd :G rm
+nnoremap <silent> <leader>gd :G rm ./
 let g:which_key_map.g.d = "delete"
 
 nnoremap <silent> <leader>gf :G fetch
@@ -75,10 +72,11 @@ let g:which_key_map.g.p = "push"
 nnoremap <silent> <leader>gP :G pull
 let g:which_key_map.g.P = "pull"
 
-let g:which_key_map.g.u = {'name': '+undo-commits'}
-
 nnoremap <silent> <leader>gr :G reset
 let g:which_key_map.g.r = "reset-staging-area"
+
+" undo commits
+let g:which_key_map.g.u = {'name': '+undo-commits'}
 
 nnoremap <silent> <leader>guh :G reset --hard
 let g:which_key_map.g.u.h = "undo-commit-hard"
@@ -138,17 +136,20 @@ let g:which_key_map.z = {
 			\ 's': ['GFiles?', 'git-status'],
 			\ 'w': ['Windows', 'windows']}
 
+" fzf history
 let g:which_key_map.z.h = {
 			\ 'name': '+history',
 			\ 'c': [':History:', 'command-history'],
 			\ 'f': ['History', 'file-history'],
 			\ 's': [':History/', 'search-history']}
 
+" fzf lines
 let g:which_key_map.z.l = {
 			\ 'name': '+lines',
 			\ 'b': ['BLines', 'lines-in-buffer'],
 			\ ' ': ['Lines', 'lines-in-project']}
 
+" fzf tags
 let g:which_key_map.z.t = {
 			\ 'name': '+tags',
 			\ 'b': ['BTags', 'tags-in-buffer'],

@@ -1,4 +1,4 @@
-set bg=dark
+set bg = dark
 syntax on
 
 " Enable TrueColors
@@ -11,7 +11,6 @@ endif
 if (has("termguicolors"))
 	set termguicolors
 endif
-
 
 " Edge
 let g:edge_style = "aura"
