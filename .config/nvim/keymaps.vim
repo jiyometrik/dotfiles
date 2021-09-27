@@ -34,7 +34,7 @@ let g:which_key_map.c = {
 let g:which_key_map.g = {'name': '+git'}
 
 " git operations which require input
-nnoremap <silent> <leader>ga :G add ./
+nnoremap <silent> <leader>ga :G add
 let g:which_key_map.g.a = "stage-file"
 
 nnoremap <silent> <leader>gA :G add -A<CR>
@@ -54,34 +54,33 @@ let g:which_key_map.g.c = {
 nnoremap <silent> <leader>gcc :G commit -m ""
 let g:which_key_map.g.c.c = "commit"
 
-nnoremap <silent> <leader>gd :G rm ./
+nnoremap <silent> <leader>gd :G rm 
 let g:which_key_map.g.d = "delete"
 
-nnoremap <silent> <leader>gf :G fetch
+nnoremap <silent> <leader>gf :G fetch 
 let g:which_key_map.g.f = "fetch"
 
-nnoremap <silent> <leader>gm :G merge
+nnoremap <silent> <leader>gm :G merge 
 let g:which_key_map.g.m = "merge"
 
 nnoremap <silent> <leader>gM :G merge origin/master<CR>
 let g:which_key_map.g.M = "merge-with-origin-master"
 
-nnoremap <silent> <leader>gp :G push
+nnoremap <silent> <leader>gp :G push 
 let g:which_key_map.g.p = "push"
 
 nnoremap <silent> <leader>gP :G pull
 let g:which_key_map.g.P = "pull"
 
-nnoremap <silent> <leader>gr :G reset
-let g:which_key_map.g.r = "reset-staging-area"
-
-" undo commits
 let g:which_key_map.g.u = {'name': '+undo-commits'}
 
-nnoremap <silent> <leader>guh :G reset --hard
+nnoremap <silent> <leader>gr :G reset 
+let g:which_key_map.g.r = "reset-staging-area"
+
+nnoremap <silent> <leader>guh :G reset --hard 
 let g:which_key_map.g.u.h = "undo-commit-hard"
 
-nnoremap <silent> <leader>gus :G reset --soft
+nnoremap <silent> <leader>gus :G reset --soft 
 let g:which_key_map.g.u.s = "undo-commit-soft"
 
 nnoremap <silent> <leader>guH :G reset --hard HEAD~1<CR>
@@ -103,6 +102,10 @@ let g:which_key_map.g.g = {
 			\ 's': ['<Plug>(coc-git-chunkinfo)', 'chunk-info'],
 			\ 'i': ['<Plug>(coc-git-chunk-inner)', 'inner-chunk'],
 			\ 'a': ['<Plug>(coc-git-chunk-outer)', 'outer-chunk']}
+
+" reset local changes
+nnoremap <silent> <leader>gR :G restore .<CR>
+let g:which_key_map.g.R = "restore"
 
 " LSP + coc
 let g:which_key_map.l = {
@@ -130,26 +133,23 @@ let g:which_key_map.z = {
 			\ 'b': ['Buffers', 'buffers'],
 			\ 'c': ['Commits', 'commits'],
 			\ 'f': ['Files .', 'files'],
-			\ 'g': ['GFiles', 'git-files'],
+			\ 'g': [':GitFiles', 'git-files'],
 			\ 'm': ['Marks', 'marks'],
 			\ 'r': ['Rg', 'ripgrep'],
-			\ 's': ['GFiles?', 'git-status'],
+			\ 's': [':GitFiles?', 'git-status'],
 			\ 'w': ['Windows', 'windows']}
 
-" fzf history
 let g:which_key_map.z.h = {
 			\ 'name': '+history',
 			\ 'c': [':History:', 'command-history'],
 			\ 'f': ['History', 'file-history'],
 			\ 's': [':History/', 'search-history']}
 
-" fzf lines
 let g:which_key_map.z.l = {
 			\ 'name': '+lines',
 			\ 'b': ['BLines', 'lines-in-buffer'],
 			\ ' ': ['Lines', 'lines-in-project']}
 
-" fzf tags
 let g:which_key_map.z.t = {
 			\ 'name': '+tags',
 			\ 'b': ['BTags', 'tags-in-buffer'],
