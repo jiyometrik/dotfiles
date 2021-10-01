@@ -52,8 +52,8 @@ let g:NERDToggleCheckAllLines = 1
 
 
 " Better-Whitespace
-let g:better_whitespace_ctermcolor='red'
-let g:better_whitespace_enabled = 1
+let g:better_whitespace_ctermcolor='1;30m'
+let g:better_whitespace_enabled = 0
 let g:strip_whitespace_on_save = 1
 
 
