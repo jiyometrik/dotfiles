@@ -51,9 +51,15 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 
+" Better-Whitespace
+let g:better_whitespace_ctermcolor='red'
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+
+
 " LaTeX
 " final file format: pdf
-" let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
 
 " allows .tex files to be compiled into .dvi -> .ps -> .pdf
 " let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
@@ -63,11 +69,11 @@ let g:NERDToggleCheckAllLines = 1
 " let g:Tex_MultipleCompileFormats = 'dvi,ps,pdf'
 
 " compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
-" let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
+let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
 " let g:Tex_CompileRule_pdf = "pdflatex --interaction=nonstopmode $*"
-" let g:Tex_DefaultTargetFormat = 'pdf'
-" let g:Tex_FormatDependency_pdf = 'pdf'
-" let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_FormatDependency_pdf = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf'
 
 " viewing (zathura) - only use if you're on a system which supports this viewing
 " let g:Tex_ViewRule_dvi = 'zathura'

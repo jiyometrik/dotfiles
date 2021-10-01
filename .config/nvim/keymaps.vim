@@ -175,20 +175,19 @@ let g:which_key_map.n = {
 " latex
 let g:which_key_map.x = {'name': '+latex'}
 
-nmap <leader>xc :VimtexCompile<CR>
+
+nmap <leader>xc <Plug>Tex_Compile
 let g:which_key_map.x.c = 'compile'
 
-nmap <leader>xt :VimtexTocToggle<CR>
-let g:which_key_map.x.t = 'toggle-toc'
+nmap <leader>xr <Plug>Tex_RefreshFolds
+let g:which_key_map.x.r = 'refresh-folds'
 
-" nmap <leader>xc <Plug>Tex_Compile
-" let g:which_key_map.x.c = 'compile'
+nmap <leader>xs <Plug>Tex_ForwardSearch
+let g:which_key_map.x.s = 'forward-search'
 
-" nmap <leader>xr <Plug>Tex_RefreshFolds
-" let g:which_key_map.x.r = 'refresh-folds'
+nmap <leader>xv <Plug>Tex_View
+let g:which_key_map.x.v = 'view'
 
-" nmap <leader>xs <Plug>Tex_ForwardSearch
-" let g:which_key_map.x.s = 'forward-search'
-
-" nmap <leader>xv <Plug>Tex_View
-" let g:which_key_map.x.v = 'view'
+" trim whitespace
+nnoremap <silent> <leader>w :StripWhitespace<CR>
+let g:which_key_map.w = 'clean-whitespace'

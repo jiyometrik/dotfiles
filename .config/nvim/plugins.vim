@@ -22,11 +22,11 @@ Plug 'vim-airline/vim-airline'  " Status Bar
 Plug 'jiangmiao/auto-pairs'  " autocomplete matching brackets
 Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter'  " autocomment
+Plug 'ntpeters/vim-better-whitespace'  " cleans whitespace
 Plug 'liuchengxu/vim-which-key' " cheatsheet
 
 " Other
-" Plug 'vim-latex/vim-latex' " LaTeX
-Plug 'lervag/vimtex' " LaTeX
+Plug 'vim-latex/vim-latex' " LaTeX
 
 " Appearance
 Plug 'sainnhe/edge'
