@@ -24,6 +24,10 @@ Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter'  " autocomment
 Plug 'liuchengxu/vim-which-key' " cheatsheet
 
+" Other
+" Plug 'vim-latex/vim-latex' " LaTeX
+Plug 'lervag/vimtex' " LaTeX
+
 " Appearance
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'

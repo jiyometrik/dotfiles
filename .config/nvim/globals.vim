@@ -8,5 +8,8 @@ set smartindent
 set showmatch  " show matching brackets
 set showcmd " crucial in showing git commands, some of them requiring user input
 
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete " builtin autocomplete
+
 set path+=**
 set wildmenu  " builtin file finder

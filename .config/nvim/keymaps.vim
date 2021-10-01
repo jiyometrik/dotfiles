@@ -2,11 +2,6 @@
 let g:mapleader = " "
 
 
-" Terminal Mode - make it easier to access terminal mode
-nnoremap <silent> <leader>t :terminal<CR>
-tnoremap <silent> <leader>t <C-\><C-n>
-
-
 " Prettier Command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -18,6 +13,14 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 
 " set dictionaries for different mappings
 let g:which_key_map = {}
+
+
+" Terminal Mode - make it easier to access terminal mode
+nnoremap <leader>T :terminal<CR>
+let g:which_key_map.T = {'name': 'terminal'} " enters terminal
+tnoremap <Esc> <C-\><C-n>
+" exits terminal
+
 
 " nerdcommenter
 let g:which_key_map.c = {
@@ -36,17 +39,18 @@ let g:which_key_map.c = {
 			\ 'u': ['<Plug>NERDCommenterUncomment', 'uncomment'],
 			\ 'y': ['<Plug>NERDCommenterYank', 'yank']}
 
+
 " fuzzy finder (fzf)
 let g:which_key_map.f = {
 			\ 'name': '+fuzzy-find',
-			\ 'b': ['Buffers', 'buffers'],
-			\ 'c': ['Commits', 'commits'],
-			\ 'f': ['Files .', 'files'],
+			\ 'b': [':Buffers', 'buffers'],
+			\ 'c': [':Commits', 'commits'],
+			\ 'f': [':Files .', 'files'],
 			\ 'g': [':GitFiles', 'git-files'],
-			\ 'm': ['Marks', 'marks'],
-			\ 'r': ['Rg', 'ripgrep'],
+			\ 'm': [':Marks', 'marks'],
+			\ 'r': [':Rg', 'ripgrep'],
 			\ 's': [':GitFiles?', 'git-status'],
-			\ 'w': ['Windows', 'windows']}
+			\ 'w': [':Windows', 'windows']}
 
 let g:which_key_map.f.h = {
 			\ 'name': '+history',
@@ -64,20 +68,21 @@ let g:which_key_map.f.t = {
 			\ 'b': ['BTags', 'tags-in-buffer'],
 			\ ' ': ['Tags', 'tags-in-project']}
 
+
 " git (fugitive, coc-git)
 let g:which_key_map.g = {'name': '+git'}
 
 " git operations which require input
-nnoremap <silent> <leader>ga :G add
+nnoremap <silent> <leader>ga ::G add
 let g:which_key_map.g.a = "stage-file"
 
-nnoremap <silent> <leader>gA :G add -A<CR>
+nnoremap <silent> <leader>gA ::G add -A<CR>
 let g:which_key_map.g.A = "stage-all"
 
-nnoremap <silent> <leader>gb :G branch
+nnoremap <silent> <leader>gb ::G branch
 let g:which_key_map.g.b = "branch"
 
-nnoremap <silent> <leader>gB :G branch master<CR>
+nnoremap <silent> <leader>gB ::G branch master<CR>
 let g:which_key_map.g.B = "branch-to-master"
 
 " handling commits
@@ -141,17 +146,22 @@ let g:which_key_map.g.g = {
 nnoremap <silent> <leader>gR :G restore .<CR>
 let g:which_key_map.g.R = "restore"
 
+
 " LSP + coc
 let g:which_key_map.l = {
 			\ 'name': '+lsp',
 			\ '[': ['<Plug>(coc-diagnostic-prev)', 'prev-error'],
 			\ ']': ['<Plug>(coc-diagnostic-next)', 'next-error'],
+			\ 'a': ['<Plug>(coc-codeaction)', 'code-action'],
+			\ 'A': ['<Plug>(coc-codeaction-selected)', 'code-action-selected'],
 			\ 'd': ['<Plug>(coc-definition)', 'definition'],
-			\ 'f': ['<Plug>(coc-format-selected)', 'format-selected'],
+			\ 'f': ['<Plug>(coc-format)', 'format'],
+			\ 'F': ['<Plug>(coc-format-selected)', 'format-selected'],
 			\ 'i': ['<Plug>(coc-implementation)', 'implementation'],
 			\ 'p': ['Prettier', 'prettier'],
 			\ 'r': ['<Plug>(coc-references)', 'references'],
 			\ 't': ['<Plug>(coc-type-definition)', 'typedef']}
+
 
 " nerdtree
 let g:which_key_map.n = {
@@ -160,3 +170,25 @@ let g:which_key_map.n = {
 			\ 'f': ['NERDTreeFocus', 'focus'],
 			\ 'i': ['NERDTreeFind', 'find'],
 			\ 't': ['NERDTreeToggle', 'toggle']}
+
+
+" latex
+let g:which_key_map.x = {'name': '+latex'}
+
+nmap <leader>xc :VimtexCompile<CR>
+let g:which_key_map.x.c = 'compile'
+
+nmap <leader>xt :VimtexTocToggle<CR>
+let g:which_key_map.x.t = 'toggle-toc'
+
+" nmap <leader>xc <Plug>Tex_Compile
+" let g:which_key_map.x.c = 'compile'
+
+" nmap <leader>xr <Plug>Tex_RefreshFolds
+" let g:which_key_map.x.r = 'refresh-folds'
+
+" nmap <leader>xs <Plug>Tex_ForwardSearch
+" let g:which_key_map.x.s = 'forward-search'
+
+" nmap <leader>xv <Plug>Tex_View
+" let g:which_key_map.x.v = 'view'
