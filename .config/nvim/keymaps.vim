@@ -45,6 +45,7 @@ let g:which_key_map.f = {
 			\ 'name': '+fuzzy-find',
 			\ 'b': [':Buffers', 'buffers'],
 			\ 'c': [':Commits', 'commits'],
+			\ 'C': [':BCommits', 'commits-in-buffer'],
 			\ 'f': [':Files .', 'files'],
 			\ 'g': [':GitFiles', 'git-files'],
 			\ 'm': [':Marks', 'marks'],
@@ -60,8 +61,8 @@ let g:which_key_map.f.h = {
 
 let g:which_key_map.f.l = {
 			\ 'name': '+lines',
-			\ 'b': ['BLines', 'lines-in-buffer'],
-			\ ' ': ['Lines', 'lines-in-project']}
+			\ 'b': ['BLines', 'lines-in-current-buffer'],
+			\ ' ': ['Lines', 'lines-in-loaded-buffers']}
 
 let g:which_key_map.f.t = {
 			\ 'name': '+tags',
@@ -73,16 +74,16 @@ let g:which_key_map.f.t = {
 let g:which_key_map.g = {'name': '+git'}
 
 " git operations which require input
-nnoremap <silent> <leader>ga ::G add
+nnoremap <silent> <leader>ga :G add
 let g:which_key_map.g.a = "stage-file"
 
-nnoremap <silent> <leader>gA ::G add -A<CR>
+nnoremap <silent> <leader>gA :G add -A<CR>
 let g:which_key_map.g.A = "stage-all"
 
-nnoremap <silent> <leader>gb ::G branch
+nnoremap <silent> <leader>gb :G branch
 let g:which_key_map.g.b = "branch"
 
-nnoremap <silent> <leader>gB ::G branch master<CR>
+nnoremap <silent> <leader>gB :G branch master<CR>
 let g:which_key_map.g.B = "branch-to-master"
 
 " handling commits
@@ -148,6 +149,7 @@ let g:which_key_map.g.R = "restore"
 
 
 " LSP + coc
+" P.S.: We're chads that don't use VSCode bindings, like F2 and C-p
 let g:which_key_map.l = {
 			\ 'name': '+lsp',
 			\ '[': ['<Plug>(coc-diagnostic-prev)', 'prev-error'],
@@ -159,9 +161,23 @@ let g:which_key_map.l = {
 			\ 'F': ['<Plug>(coc-format-selected)', 'format-selected'],
 			\ 'i': ['<Plug>(coc-implementation)', 'implementation'],
 			\ 'p': ['Prettier', 'prettier'],
-			\ 'r': ['<Plug>(coc-references)', 'references'],
-			\ 't': ['<Plug>(coc-type-definition)', 'typedef']}
+			\ 'r': ['<Plug>(coc-rename)', 'rename-symbol'],
+			\ 'R': ['<Plug>(coc-references)', 'references'],
+			\ 't': ['<Plug>(coc-type-definition)', 'typedef'],
+			\ 'q': ['<Plug>(coc-fix-current)', 'quickfix']}
 
+" commands which require more than 1 word
+nnoremap <silent> <leader>lc :CocList commands<CR>
+let g:which_key_map.l.c = "command-list"
+
+nnoremap <silent> <leader>le :CocList diagnostics<CR>
+let g:which_key_map.l.e = "errors"
+
+nnoremap <silent> <leader>lo :CocList outline<CR>
+let g:which_key_map.l.o = "outline"
+
+nnoremap <silent> <leader>ls :CocList -I symbols<CR>
+let g:which_key_map.l.s = "symbols"
 
 " nerdtree
 let g:which_key_map.n = {

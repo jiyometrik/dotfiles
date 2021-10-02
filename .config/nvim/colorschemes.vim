@@ -14,13 +14,13 @@ endif
 
 
 " Edge
-" let g:edge_style = "aura"
-" let g:edge_enable_italic = 1
-" colorscheme edge
+let g:edge_style = "aura"
+let g:edge_enable_italic = 1
+colorscheme edge
 
 " Everforest
-let g:everforest_enable_italic = 1
-colorscheme everforest
+" let g:everforest_enable_italic = 1
+" colorscheme everforest
 
 " Gruvbox Material
 " let g:gruvbox_material_enable_italic = 1

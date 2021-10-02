@@ -1,9 +1,8 @@
 " PLUGIN BEHAVIOUR
 
-
 " NERDTree
 " Start NERDTree and put the cursor back in the other window.
-" autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * NERDTree | wincmd p
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
@@ -52,7 +51,7 @@ let g:NERDToggleCheckAllLines = 1
 
 
 " Better-Whitespace
-let g:better_whitespace_ctermcolor='1;30m'
+" let g:better_whitespace_ctermcolor='1;30m'
 let g:better_whitespace_enabled = 0
 let g:strip_whitespace_on_save = 1
 
