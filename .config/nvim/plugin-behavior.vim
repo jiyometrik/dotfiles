@@ -16,7 +16,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 
 " vim-airline
-let g:airline_powerline_fonts = 1  " powerline fonts
+" let g:airline_powerline_fonts = 1  " powerline fonts
 let g:airline#extensions#tabline#enabled = 1  " enable top bar for vim-airline
 
 " Fast Escape for vim-airline
@@ -68,8 +68,9 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 " let g:Tex_MultipleCompileFormats = 'dvi,ps,pdf'
 
 " compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
-let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
+" let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
 " let g:Tex_CompileRule_pdf = "pdflatex --interaction=nonstopmode $*"
+let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 -interaction=nonstopmode -recorder $*"
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_FormatDependency_pdf = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'

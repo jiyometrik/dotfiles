@@ -191,7 +191,6 @@ let g:which_key_map.n = {
 " latex
 let g:which_key_map.x = {'name': '+latex'}
 
-
 nmap <leader>xc <Plug>Tex_Compile
 let g:which_key_map.x.c = 'compile'
 
