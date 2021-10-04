@@ -17,6 +17,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " Git for File Tree
 
 " Status Line
 Plug 'vim-airline/vim-airline'  " Status Bar
+Plug 'vim-airline/vim-airline-themes'
 
 " Productivity
 Plug 'jiangmiao/auto-pairs'  " autocomplete matching brackets
@@ -32,8 +33,7 @@ Plug 'vim-latex/vim-latex' " LaTeX
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
-Plug 'ryanoasis/vim-devicons'  " Icons!
-Plug 'mhinz/vim-startify' " start page
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 source $HOME/.config/nvim/plugin-behavior.vim  " settings for plugin behavior

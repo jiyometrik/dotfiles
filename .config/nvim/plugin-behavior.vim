@@ -6,7 +6,7 @@ autocmd VimEnter * NERDTree | wincmd p
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-		\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+			\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -57,6 +57,9 @@ let g:strip_whitespace_on_save = 1
 
 
 " LaTeX
+" use Alt keys for inserting operations
+let g:Tex_AdvancedMath = 1
+
 " final file format: pdf
 let g:Tex_DefaultTargetFormat = 'pdf'
 
@@ -70,7 +73,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 " compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
 " let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
 " let g:Tex_CompileRule_pdf = "pdflatex --interaction=nonstopmode $*"
-let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 -interaction=nonstopmode -recorder $*"
+" let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 -interaction=nonstopmode -recorder $*"
+let g:Tex_CompileRule_pdf = "latexmk -synctex=1 -interaction=nonstopmode -recorder -pdf -ps- -dvi- $*"
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_FormatDependency_pdf = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'

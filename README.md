@@ -3,7 +3,7 @@ A place to store my dotfiles.
 
 ## What You'll Find
 1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
-2. My .bashrc.
+2. My .bashrc, .zshrc and .p10k.zsh (configuration file for [powerlevel10k](https://github.com/romkatv/powerlevel10khttps://github.com/romkatv/powerlevel10k))
 3. My .fehbg and .xinitrc.
 4. Wallpapers I use (*Please inform me if these pictures are your work and I will kindly take them down if needed.*)
 

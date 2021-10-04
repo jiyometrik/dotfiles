@@ -19,9 +19,15 @@ let g:edge_enable_italic = 1
 colorscheme edge
 
 " Everforest
+" let g:everforest_background = 'hard'
 " let g:everforest_enable_italic = 1
 " colorscheme everforest
 
 " Gruvbox Material
 " let g:gruvbox_material_enable_italic = 1
 " colorscheme gruvbox-material
+
+" Sonokai
+" let g:sonokai_style = "atlantis"
+" let g:sonokai_enable_italic = 1
+" colorscheme sonokai

@@ -194,14 +194,48 @@ let g:which_key_map.x = {'name': '+latex'}
 nmap <leader>xc <Plug>Tex_Compile
 let g:which_key_map.x.c = 'compile'
 
-nmap <leader>xr <Plug>Tex_RefreshFolds
-let g:which_key_map.x.r = 'refresh-folds'
-
 nmap <leader>xs <Plug>Tex_ForwardSearch
 let g:which_key_map.x.s = 'forward-search'
 
 nmap <leader>xv <Plug>Tex_View
 let g:which_key_map.x.v = 'view'
+
+" nnoremap <silent> <leader>xc :VimtexCompile<CR>
+" let g:which_key_map.x.c = 'compile'
+"
+" nnoremap <silent> <leader>xC :VimtexClean<CR>
+" let g:which_key_map.x.C = 'clean-files'
+"
+" nnoremap <silent> <leader>xd :VimtexClearCache<CR>
+" let g:which_key_map.x.d = 'clear-cache'
+"
+" nnoremap <silent> <leader>xe :VimtexErrors<CR>
+" let g:which_key_map.x.e = 'errors'
+"
+" nnoremap <silent> <leader>xi :VimtexImapsList<CR>
+" let g:which_key_map.x.i = 'imaps-list'
+"
+" nnoremap <silent> <leader>xl :VimtexLog<CR>
+" let g:which_key_map.x.l = 'compile-log'
+"
+" nnoremap <silent> <leader>xp :VimtexDocPackage<CR>
+" let g:which_key_map.x.p = 'package-docs'
+"
+" nnoremap <silent> <leader>xr :VimtexReload<CR>
+" let g:which_key_map.x.r = 'reload-vimtex'
+"
+" nnoremap <silent> <leader>xs :VimtexStop<CR>
+" let g:which_key_map.x.s = 'stop-compilation'
+"
+" nnoremap <silent> <leader>xS :VimtexStatus<CR>
+" let g:which_key_map.x.S = 'compilation-status'
+"
+" nnoremap <silent> <leader>xt :VimtexTocToggle<CR>
+" let g:which_key_map.x.t = 'toggle-toc'
+"
+" nnoremap <silent> <leader>xv :VimtexView<CR>
+" let g:which_key_map.x.v = 'view'
+
 
 " trim whitespace
 nnoremap <silent> <leader>w :StripWhitespace<CR>
