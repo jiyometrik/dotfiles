@@ -80,13 +80,14 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "powerlevel10k/powerleve
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions # fish-like autocomplete for ZSH
+plugins=( # zsh-autosuggestions # fish-like autocomplete for ZSH
 	git gitfast # github gh # GIT
 	git-prompt # could not get this to work properly with themes
-	zsh-syntax-highlighting colorize # colored-man-pages # appearance/syntax highlighting
-	# aliases # searches through aliases and autocompletes them
+	zsh-syntax-highlighting colorize colored-man-pages # appearance/syntax highlighting
+	colorize
+	aliases # searches through aliases and autocompletes them
 	history-substring-search # search through history for faster completion
-	# last-working-dir # jumps to last working directory
+	last-working-dir # jumps to last working directory
 	vi-mode # vi-mode
 )
 
@@ -120,6 +121,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias nv="nvim"
 alias lg="lazygit"
+
+# bat theme
+export BAT_THEME="base16"
 
 # vi-mode configurations
 VI_MODE_SET_CURSOR=true # change cursor on mode change
