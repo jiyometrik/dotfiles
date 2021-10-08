@@ -12,11 +12,13 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
+" Dracula
+colorscheme dracula
 
 " Edge
-let g:edge_style = "aura"
-let g:edge_enable_italic = 1
-colorscheme edge
+" let g:edge_style = "aura"
+" let g:edge_enable_italic = 1
+" colorscheme edge
 
 " Everforest
 " let g:everforest_background = 'hard'

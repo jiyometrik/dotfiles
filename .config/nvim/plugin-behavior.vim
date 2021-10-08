@@ -4,9 +4,9 @@
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+" If another buffer tries to replace NERDTree, move it to the other window, retaining NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-			\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+		\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -16,7 +16,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 
 " vim-airline
-" let g:airline_powerline_fonts = 1  " powerline fonts
+let g:airline_powerline_fonts = 1  " powerline fonts
 let g:airline#extensions#tabline#enabled = 1  " enable top bar for vim-airline
 
 " Fast Escape for vim-airline
@@ -63,23 +63,22 @@ let g:Tex_AdvancedMath = 1
 " final file format: pdf
 let g:Tex_DefaultTargetFormat = 'pdf'
 
-" allows .tex files to be compiled into .dvi -> .ps -> .pdf
+" Choose only ONE of the compilation options below!
+
+" 1. Allows .tex files to be compiled into .dvi -> .ps -> .pdf
 " let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
 " let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi' " compile dvi to ps
 " let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps' " compile ps to pdf
 " let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
 " let g:Tex_MultipleCompileFormats = 'dvi,ps,pdf'
 
-" compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
-" let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 --interaction=nonstopmode $*"
-" let g:Tex_CompileRule_pdf = "pdflatex --interaction=nonstopmode $*"
-" let g:Tex_CompileRule_pdf = "pdflatex -synctex=1 -interaction=nonstopmode -recorder $*"
+" 2. Compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
 let g:Tex_CompileRule_pdf = "latexmk -synctex=1 -interaction=nonstopmode -recorder -pdf -ps- -dvi- $*"
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_FormatDependency_pdf = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'
 
-" viewing (zathura) - only use if you're on a system which supports this viewing
+" Viewing (zathura) - only use if you're on a system which supports this viewing
 " let g:Tex_ViewRule_dvi = 'zathura'
 " let g:Tex_ViewRule_ps = 'zathura'
 " let g:Tex_ViewRule_pdf = 'zathura'

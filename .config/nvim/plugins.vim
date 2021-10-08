@@ -17,7 +17,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " Git for File Tree
 
 " Status Line
 Plug 'vim-airline/vim-airline'  " Status Bar
-Plug 'vim-airline/vim-airline-themes'
 
 " Productivity
 Plug 'jiangmiao/auto-pairs'  " autocomplete matching brackets
@@ -30,6 +29,7 @@ Plug 'liuchengxu/vim-which-key' " cheatsheet
 Plug 'vim-latex/vim-latex' " LaTeX
 
 " Appearance
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'

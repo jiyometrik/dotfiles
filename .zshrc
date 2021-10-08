@@ -23,7 +23,35 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "powerlevel10k/powerlevel10k" "eastwood")
+ZSH_THEME_RANDOM_CANDIDATES=("afowler"
+	"agnoster"
+	"alanpeabody"
+	"clean"
+	"crunch"
+	"dieter"
+	"eastwood"
+	"edvardm"
+	"essembeh"
+	"fishy"
+	"flazz"
+	"gallifrey"
+	"gallois"
+	"garyblessington"
+	"geoffgarside"
+	"gianu"
+	"jaischeema"
+	"jnrowe"
+	"kafeitu"
+	"lukerandall"
+	"maran"
+	"mgutz"
+	"mh"
+	"michelebologna"
+	"obraun"
+	"philips"
+	"powerlevel10k/powerlevel10k"
+	"pygmalion"
+	"robbyrussell")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,7 +110,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "powerlevel10k/powerleve
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( # zsh-autosuggestions # fish-like autocomplete for ZSH
 	git gitfast # github gh # GIT
-	git-prompt # could not get this to work properly with themes
+	# git-prompt # could not get this to work properly with themes
 	zsh-syntax-highlighting colorize colored-man-pages # appearance/syntax highlighting
 	colorize
 	aliases # searches through aliases and autocompletes them
