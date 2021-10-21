@@ -1,5 +1,10 @@
 " PLUGIN BEHAVIOUR
 
+" Snippets
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-b>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-z>'
+
 " NERDTree
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
@@ -51,34 +56,13 @@ let g:NERDToggleCheckAllLines = 1
 
 
 " Better-Whitespace
-" let g:better_whitespace_ctermcolor='1;30m'
-let g:better_whitespace_enabled = 0
+let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
+" vimtex
+let &runtimepath  = '~/.config/nvim/vimtex,' . &runtimepath " backward search in zathura
+let &runtimepath .= ',~/.config/nvim/vimtex/after'
 
-" LaTeX
-" use Alt keys for inserting operations
-let g:Tex_AdvancedMath = 1
-
-" final file format: pdf
-let g:Tex_DefaultTargetFormat = 'pdf'
-
-" Choose only ONE of the compilation options below!
-
-" 1. Allows .tex files to be compiled into .dvi -> .ps -> .pdf
-" let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-" let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi' " compile dvi to ps
-" let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps' " compile ps to pdf
-" let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
-" let g:Tex_MultipleCompileFormats = 'dvi,ps,pdf'
-
-" 2. Compile directly to pdf (do not use if you're already using the dvi -> ps -> pdf above)
-let g:Tex_CompileRule_pdf = "latexmk -synctex=1 -interaction=nonstopmode -recorder -pdf -ps- -dvi- $*"
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_FormatDependency_pdf = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf'
-
-" Viewing (zathura) - only use if you're on a system which supports this viewing
-" let g:Tex_ViewRule_dvi = 'zathura'
-" let g:Tex_ViewRule_ps = 'zathura'
-" let g:Tex_ViewRule_pdf = 'zathura'
+let g:vimtex_fold_enabled = 1 " enable folding
+let g:vimtex_view_method = 'zathura' " view pdfs with zathura
