@@ -19,6 +19,5 @@ vim.cmd('colorscheme dracula')
 -- vim.cmd('colorscheme gruvbox-material')
 
 -- Sonokai
--- vim.g.sonokai_style = 'atlantis'
 -- vim.g.sonokai_enable_italic = 1
 -- vim.cmd('colorscheme sonokai')

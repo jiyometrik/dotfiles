@@ -23,14 +23,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " Git for File Tree
 Plug 'vim-airline/vim-airline' " Status Bar
 
 " Productivity
-Plug 'jiangmiao/auto-pairs'  " autocomplete matching brackets
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter' " autocomment
 Plug 'ntpeters/vim-better-whitespace' " cleans whitespace
 Plug 'liuchengxu/vim-which-key' " cheatsheet
 
-" Appearance & Colorschemes
-Plug 'sheerun/vim-polyglot' " enhanced syntax highlighting
+" Colorschemes & Appearance
+Plug 'sheerun/vim-polyglot'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
