@@ -24,4 +24,5 @@ This directory contains most of the configurations for applications I use.
 4. My [Starship Prompt](https://starship.rs/) configuration.
 
 5. My [Neovim](https://neovim.io) configuration.
+
 _I'm slowly moving to a Lua-based configuration, so there are some inconsistencies with the filetypes._
