@@ -1,3 +1,6 @@
+env:
+  TERM: xterm-256color
+
 # window padding
 window:
   padding:
@@ -7,9 +10,31 @@ window:
 
 # font
 font:
-  size: 15
+  # size: 14
+  size: 8.5
   normal:
-    family: Iosevka Term SS15 Extended
+    # family: Hack Nerd Font
+    # family: Fira Code
+    # family: Iosevka Term SS15 Extended
+    family: JetBrains Mono Nerd Font
+
+  bold:
+    # family: Hack Nerd Font
+    # family: Iosevka Term SS15 Extended
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  italic:
+    # family: Hack Nerd Font
+    # family: Iosevka Term SS15 Extended
+    family: JetBrains Mono Nerd Font
+    style: Italic
+
+  bold_italic:
+    # family: Hack Nerd Font
+    # family: Iosevka Term SS15 Extended
+    family: JetBrains Mono Nerd Font
+    style: Bold Italic
 
 # spaces per tab
 tabspaces: 4
@@ -21,57 +46,107 @@ cursor:
 # opacity
 background_opacity: 0.9
 
-# dracula colorscheme
+# Dracula
+# colors:
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+#   cursor:
+#     text: CellBackground
+#     cursor: CellForeground
+#   vi_mode_cursor:
+#     text: CellBackground
+#     cursor: CellForeground
+#   search:
+#     matches:
+#       foreground: '0x44475a'
+#       background: '0x50fa7b'
+#     focused_match:
+#       foreground: '0x44475a'
+#       background: '0xffb86c'
+#     bar:
+#       background: '0x282a36'
+#       foreground: '0xf8f8f2'
+#   line_indicator:
+#     foreground: None
+#     background: None
+#   selection:
+#     text: CellForeground
+#     background: '0x44475a'
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff5555'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xbd93f9'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbfbfbf'
+#   bright:
+#     black:   '0x4d4d4d'
+#     red:     '0xff6e67'
+#     green:   '0x5af78e'
+#     yellow:  '0xf4f99d'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan:    '0x9aedfe'
+#     white:   '0xe6e6e6'
+#   dim:
+#     black:   '0x14151b'
+#     red:     '0xff2222'
+#     green:   '0x1ef956'
+#     yellow:  '0xebf85b'
+#     blue:    '0x4d5b86'
+#     magenta: '0xff46b0'
+#     cyan:    '0x59dffc'
+#     white:   '0xe6e6d1'
+
+# Nord
 colors:
   primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
+    background: '0x2e3440'
+    foreground: '0xd8dee9'
+    dim_foreground: '0xa5abb6'
   cursor:
-    text: CellBackground
-    cursor: CellForeground
+    text: '0x2e3440'
+    cursor: '0xd8dee9'
   vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '0x44475a'
-      background: '0x50fa7b'
-    focused_match:
-      foreground: '0x44475a'
-      background: '0xffb86c'
-    bar:
-      background: '0x282a36'
-      foreground: '0xf8f8f2'
-  line_indicator:
-    foreground: None
-    background: None
+    text: '0x2e3440'
+    cursor: '0xd8dee9'
   selection:
     text: CellForeground
-    background: '0x44475a'
+    background: '0x4c566a'
+  search:
+    matches:
+      foreground: CellBackground
+      background: '0x88c0d0'
+    bar:
+      background: '0x434c5e'
+      foreground: '0xd8dee9'
   normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xbd93f9'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
+    black: '0x3b4252'
+    red: '0xbf616a'
+    green: '0xa3be8c'
+    yellow: '0xebcb8b'
+    blue: '0x81a1c1'
+    magenta: '0xb48ead'
+    cyan: '0x88c0d0'
+    white: '0xe5e9f0'
   bright:
-    black:   '0x4d4d4d'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
+    black: '0x4c566a'
+    red: '0xbf616a'
+    green: '0xa3be8c'
+    yellow: '0xebcb8b'
+    blue: '0x81a1c1'
+    magenta: '0xb48ead'
+    cyan: '0x8fbcbb'
+    white: '0xeceff4'
   dim:
-    black:   '0x14151b'
-    red:     '0xff2222'
-    green:   '0x1ef956'
-    yellow:  '0xebf85b'
-    blue:    '0x4d5b86'
-    magenta: '0xff46b0'
-    cyan:    '0x59dffc'
-    white:   '0xe6e6d1'
+    black: '0x373e4d'
+    red: '0x94545d'
+    green: '0x809575'
+    yellow: '0xb29e75'
+    blue: '0x68809a'
+    magenta: '0x8c738c'
+    cyan: '0x6d96a5'
+    white: '0xaeb3bb'

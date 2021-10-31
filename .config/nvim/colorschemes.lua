@@ -1,9 +1,6 @@
 -- vim.o.syntax = true
 vim.o.termguicolors = true
 
--- Dracula
-vim.cmd('colorscheme dracula')
-
 -- Edge
 -- vim.g.edge_style = 'aura'
 -- vim.g.edge_enable_italic = 1
@@ -17,6 +14,11 @@ vim.cmd('colorscheme dracula')
 -- Gruvbox Material
 -- vim.g.gruvbox_material_enable_italic = 1
 -- vim.cmd('colorscheme gruvbox-material')
+
+-- Nord
+vim.g.nord_italic = 1
+vim.g.nord_italic_comments = 1
+vim.cmd('colorscheme nord')
 
 -- Sonokai
 -- vim.g.sonokai_enable_italic = 1

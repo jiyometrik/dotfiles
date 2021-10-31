@@ -61,8 +61,8 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
 
 " vimtex
-let &runtimepath  = '~/.config/nvim/vimtex,' . &runtimepath " backward search in zathura
-let &runtimepath .= ',~/.config/nvim/vimtex/after'
+let &runtimepath  = '~/.config/nvim/plugged/vimtex,' . &runtimepath " backward search in zathura
+let &runtimepath .= ',~/.config/nvim/plugged/vimtex/after'
 let g:vimtex_fold_enabled = 1 " enable folding
 let g:vimtex_view_method = 'zathura' " view pdfs with zathura
-autocmd FileType tex let b:coc_pairs = [["$", "$"]] " for $ delimiters when writing LaTeX
+autocmd FileType tex let b:coc_pairs = [['$', '$']] " for $ delimiters when writing LaTeX

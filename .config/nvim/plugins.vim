@@ -1,11 +1,13 @@
-" PLUGINS - VimPlug
 call plug#begin('~/.config/nvim/plugged')
 
 " LSP and Snippets
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " language servers and all that fun stuff
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'lervag/vimtex'
+
+Plug 'SirVer/ultisnips' " this is for more snippets using coc-ultisnips
+Plug 'honza/vim-snippets' " snippets for coc-snippets
+
+Plug 'sheerun/vim-polyglot'
+Plug 'lervag/vimtex', { 'for': 'tex' }
 
 " Git
 Plug 'tpope/vim-fugitive' " Yet another Git Integration for Git Commands
@@ -27,15 +29,20 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter' " autocomment
 Plug 'ntpeters/vim-better-whitespace' " cleans whitespace
-Plug 'liuchengxu/vim-which-key' " cheatsheet
+
+Plug 'folke/which-key.nvim'
+lua << EOF
+require('which-key').setup{}
+EOF
 
 " Colorschemes & Appearance
-Plug 'sheerun/vim-polyglot'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/edge'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/sonokai'
+
+Plug 'ryanoasis/vim-webdevicons'
 call plug#end()
 
 source $HOME/.config/nvim/plugin-behavior.vim  " settings for plugin behavior
