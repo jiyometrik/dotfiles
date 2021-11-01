@@ -14,9 +14,7 @@
 ;;
 ;; + `doom-font'
 ;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
+;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for presentations or streaming.
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
@@ -37,8 +35,7 @@
 (setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+;; numbers are disabled. For relative line numbers, set this to `relative'. (setq display-line-numbers-type t)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:

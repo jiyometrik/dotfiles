@@ -13,27 +13,27 @@ font:
   # size: 14
   size: 8.5
   normal:
-    # family: Hack Nerd Font
+    family: Hack Nerd Font
     # family: Fira Code
     # family: Iosevka Term SS15 Extended
-    family: JetBrains Mono Nerd Font
+    # family: JetBrains Mono Nerd Font
 
   bold:
-    # family: Hack Nerd Font
+    family: Hack Nerd Font
     # family: Iosevka Term SS15 Extended
-    family: JetBrains Mono Nerd Font
+    # family: JetBrains Mono Nerd Font
     style: Bold
 
   italic:
-    # family: Hack Nerd Font
+    family: Hack Nerd Font
     # family: Iosevka Term SS15 Extended
-    family: JetBrains Mono Nerd Font
+    # family: JetBrains Mono Nerd Font
     style: Italic
 
   bold_italic:
-    # family: Hack Nerd Font
+    family: Hack Nerd Font
     # family: Iosevka Term SS15 Extended
-    family: JetBrains Mono Nerd Font
+    # family: JetBrains Mono Nerd Font
     style: Bold Italic
 
 # spaces per tab
@@ -44,7 +44,7 @@ cursor:
   style: Beam
 
 # opacity
-background_opacity: 0.9
+# background_opacity: 0.9
 
 # Dracula
 # colors:

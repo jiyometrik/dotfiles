@@ -39,5 +39,11 @@
 		"constructor": "  ",
 		"value": "  ",
 		"enumMember": "  "
-	}
+	},
+
+	// supported filetypes for emoji
+	// quicktip (if you're using kitty): emojis are only supported by using the emojione or joypixels font package.
+	// it can be found as ttf-joypixels on AUR and fonts-emojione on APT.
+	// see also: ttf-twemoji (AUR)
+	"coc.source.emoji.filetypes": ["markdown", "html", "lisp"]
 }

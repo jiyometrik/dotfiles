@@ -1,11 +1,13 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# set path to add go and rust binaries
+PATH="$HOME/.cargo/bin:$HOME/go/bin${PATH:+:${PATH}}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/geo/.oh-my-zsh"
@@ -145,10 +147,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# use exa instead of ls (github: ogham/exa)
+alias l="exa -laah"
+alias la="exa -lah"
+alias ll="exa -hl"
+alias ls="exa"
+alias lsa="exa -lah"
+alias lsg="exa --git --long --header --all --git-ignore"
+alias lt="exa -T"
+
+# other aliases
 alias lg="lazygit"
 alias lv="lvim"
 alias nf="neofetch"
 alias nv="nvim"
+alias rn="ranger"
+alias q="exit"
 
 # bat theme
 export BAT_THEME="base16"

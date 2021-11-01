@@ -25,6 +25,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " Git for File Tree
 Plug 'vim-airline/vim-airline' " Status Bar
 
 " Productivity
+Plug 'justinmk/vim-sneak'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround' " enables faster editing with surrounding delimiters
 Plug 'preservim/nerdcommenter' " autocomment

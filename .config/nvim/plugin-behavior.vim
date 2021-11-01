@@ -19,6 +19,8 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+" show hidden directories
+let g:NERDTreeShowHidden = 1
 
 " vim-airline
 let g:airline_powerline_fonts = 1  " powerline fonts
@@ -34,6 +36,8 @@ if ! has('gui_running')
 	augroup END
 endif
 
+" vim-sneak
+let g:sneak#label = 1
 
 " NERDCommenter
 " Add spaces after comment delimiters by default
@@ -61,8 +65,11 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
 
 " vimtex
-let &runtimepath  = '~/.config/nvim/plugged/vimtex,' . &runtimepath " backward search in zathura
+" backward search
+" NOTE: you have to run `pip install neovim` and `pip install neovim-remote` in order to enable this feature
+let &runtimepath  = '~/.config/nvim/plugged/vimtex,' . &runtimepath
 let &runtimepath .= ',~/.config/nvim/plugged/vimtex/after'
+
 let g:vimtex_fold_enabled = 1 " enable folding
 let g:vimtex_view_method = 'zathura' " view pdfs with zathura
-autocmd FileType tex let b:coc_pairs = [['$', '$']] " for $ delimiters when writing LaTeX
+autocmd FileType tex let b:coc_pairs = [['$', '$']]

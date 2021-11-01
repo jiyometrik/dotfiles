@@ -82,7 +82,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -175,8 +175,10 @@ bindsym $mod+r mode "resize"
 # rofi keybindings
 bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+d exec rofi -show run
-
 bindsym $mod+e exec emacs # emacs
+bindsym $mod+f exec firefox
+bindsym $mod+n exec neovide # neovim
+bindsym $mod+x exec stacer
 
 # screenshot keybindings
 bindsym $mod+Shift+s exec flameshot gui
@@ -210,8 +212,7 @@ client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
 
 # polybar
-# exec ~/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # set background image
 exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png"

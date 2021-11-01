@@ -198,4 +198,3 @@ case "$1" in
         output
         ;;
 esac
-
