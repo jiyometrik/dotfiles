@@ -3,5 +3,5 @@ set nocompatible
 
 source $HOME/.config/nvim/globals.lua " basic settings
 source $HOME/.config/nvim/plugins.vim " plugin file
-source $HOME/.config/nvim/keymaps.vim " keymaps file
+source $HOME/.config/nvim/keymaps.lua " keymaps file
 source $HOME/.config/nvim/colorschemes.lua " colorschemes file

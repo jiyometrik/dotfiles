@@ -6,6 +6,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
+
 (setq user-full-name "Darren Yap"
       user-mail-address "darrenyap08@gmail.com")
 
@@ -23,7 +24,8 @@
 ;; (setq doom-font (font-spec :family "Hack Nerd Font" :size 18))
 ;; (setq doom-font (font-spec :family "Fira Code" :size 18))
 ;; (setq doom-font (font-spec :family "Iosevka Term SS15 Extended" :size 18))
-(setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 18))
+(setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 18))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -36,7 +38,8 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'. (setq display-line-numbers-type t)
-
+;; (setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -54,4 +57,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(add-to-list 'default-frame-alist '(fullscreen . maximized)) ;; fullscreen on startup

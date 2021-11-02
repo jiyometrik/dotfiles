@@ -157,6 +157,8 @@ alias lsg="exa --git --long --header --all --git-ignore"
 alias lt="exa -T"
 
 # other aliases
+alias fm="fm6000"
+alias pf="pfetch"
 alias lg="lazygit"
 alias lv="lvim"
 alias nf="neofetch"
@@ -166,7 +168,7 @@ alias q="exit"
 
 # bat theme
 export BAT_THEME="base16"
-export EDITOR="nvim"
+export EDITOR="emacs"
 
 # vi-mode configurations
 VI_MODE_SET_CURSOR=true # change cursor on mode change
@@ -184,5 +186,6 @@ export NVM_DIR="$HOME/.nvm"
 # startup script (choose one)
 # colorscript -r # https://gitlab.com/dwt1/shell-color-scripts
 fm6000 -c cyan -n # https://github.com/anhsirk0/fetch-master-6000
+# pfetch
 # neofetch # https://github.com/dylanaraps/neofetch
 
