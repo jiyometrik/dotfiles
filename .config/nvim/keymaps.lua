@@ -1,4 +1,5 @@
 local g = vim.g
+local o = vim.o
 local map = vim.api.nvim_set_keymap
 local op1 = { silent = true }
 local op2 = { silent = true, noremap = true }
@@ -7,6 +8,10 @@ local op3 = { noremap = true }
 -- map the leader key
 map('n', '<space>', '', {})
 g.mapleader = ' '
+
+-- set timeoutlen so that we have enough time to type out the whole keymap
+o.timeoutlen = 500
+
 
 -- NERDCommenter
 map('n', '<leader>c<space>', '<plug>NERDCommenterToggle', {})
@@ -47,7 +52,9 @@ map('n', '<leader>fw', ':Windows<cr>', op2)
 map('n', '<leader>gA', ':G add -A<cr>', op2)
 map('n', '<leader>gB', ':G branch master<CR>', op2)
 map('n', '<leader>gC', '<plug>(coc-git-commit)', op2)
-map('n', '<leader>ge', ':GitFiles', op2)
+map('n', '<leader>ge', ':GitFiles<cr>', op2)
+map('n', '<leader>gl', ':CocList commits<cr>', op2)
+map('n', '<leader>gL', ':CocList bcommits<cr>', op2)
 map('n', '<leader>gM', ':G merge origin/master<cr>', op2)
 map('n', '<leader>gp', ':G push<cr>', op2)
 map('n', '<leader>gP', ':G pull<cr>', op2)
@@ -60,6 +67,7 @@ map('n', '<leader>gS', ':G reset --soft HEAD~1<cr>', op2)
 -- git operations requiring input will not be set as silent
 map('n', '<leader>ga', ':G add ', op3)
 map('n', '<leader>gb', ':G branch ', op3)
+map('n', '<leader>gc', ':G commit -m ""', op3)
 map('n', '<leader>gd', ':G rm ', op3)
 map('n', '<leader>gf', ':G fetch ', op3)
 map('n', '<leader>gm', ':G merge ', op3)
@@ -92,7 +100,7 @@ map('v', '<leader>lF', '<plug>(coc-format-selected)', op1)
 map('n', '<leader>li', '<plug>(coc-implementation)', op1)
 map('n', '<leader>lj', '<plug>(coc-diagnostic-next)', op1)
 map('n', '<leader>lk', '<plug>(coc-diagnostic-prev)', op1)
-map('n', '<leader>lm', ':CocList marketeplace<cr>', op1)
+map('n', '<leader>lm', ':CocList marketplace<cr>', op1)
 map('n', '<leader>lo', ':CocList outline<cr>', op1)
 map('n', '<leader>lp', '<plug>(coc-prettier)', op1)
 map('n', '<leader>lr', '<plug>(coc-rename)', op1)
