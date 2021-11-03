@@ -1,6 +1,7 @@
 local o = vim.o
 local cmd = vim.cmd
 
+cmd('set nocompatible')
 cmd('filetype plugin indent on')
 cmd('syntax enable')
 

@@ -1,0 +1,5 @@
+require('globals')
+require('plugins')
+require('plugin-behavior')
+require('keymaps')
+require('colorschemes')
