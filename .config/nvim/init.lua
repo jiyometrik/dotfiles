@@ -1,5 +1,18 @@
+-- Main Files
 require('globals')
 require('plugins')
-require('plugin-behavior')
 require('keymaps')
 require('colorschemes')
+
+-- Config Files
+require('plugin-config.better-whitespace')
+require('plugin-config.bufferline')
+require('plugin-config.lualine')
+require('plugin-config.nerdcommenter')
+require('plugin-config.nerdtree')
+require('plugin-config.sneak')
+require('plugin-config.ultisnips')
+require('plugin-config.vimtex')
+
+-- plugins not needing configuration
+require('which-key').setup{}

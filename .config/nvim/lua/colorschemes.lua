@@ -32,7 +32,17 @@ o.termguicolors = true
 -- g.sonokai_enable_italic = 1
 -- cmd('colorscheme sonokai')
 
--- Tokyo Night
+-- Tokyo Dark
+-- g.tokyodark_enable_italic = true
+-- g.tokyodark_enable_italic_comment = true
+-- cmd('colorscheme tokyodark')
+
+-- Tokyo Night (Neovim)
 g.tokyonight_style = 'storm'
 g.tokyonight_enable_italic = 1
 cmd('colorscheme tokyonight')
+
+-- Tokyo Night (Vim)
+-- g.tokyonight_style = 'storm'
+-- g.tokyonight_enable_italic = 1
+-- cmd('colorscheme tokyonight')

@@ -6,8 +6,42 @@ local wk = require('which-key')
 g.mapleader = ' '
 o.timeoutlen = 500 -- set timeoutlen so that we have enough time to type out the whole keymap
 
-wk.register({
-	['<leader>'] = {
+wk.register({ ['<leader>'] = {
+		-- Buffers --
+		b = {
+			name = '+buffers',
+			['1'] = { '<cmd>BufferLineGoToBuffer 1<cr>', 'buffer-1' },
+			['2'] = { '<cmd>BufferLineGoToBuffer 2<cr>', 'buffer-2' },
+			['3'] = { '<cmd>BufferLineGoToBuffer 3<cr>', 'buffer-3' },
+			['4'] = { '<cmd>BufferLineGoToBuffer 4<cr>', 'buffer-4' },
+			['5'] = { '<cmd>BufferLineGoToBuffer 5<cr>', 'buffer-5' },
+			['6'] = { '<cmd>BufferLineGoToBuffer 6<cr>', 'buffer-6' },
+			['7'] = { '<cmd>BufferLineGoToBuffer 7<cr>', 'buffer-7' },
+			['8'] = { '<cmd>BufferLineGoToBuffer 8<cr>', 'buffer-8' },
+			['9'] = { '<cmd>BufferLineGoToBuffer 9<cr>', 'buffer-9' },
+			['.'] = { '<cmd>BufferLineSortByExtension<cr>', 'sort-by-ext' },
+			['/'] = { '<cmd>BufferLineSortByDirectory<cr>', 'sort-by-dir' },
+			B = { '<cmd>BufferLineMovePrev<cr>', 'move-buffer-back' },
+			c = { '<cmd>BufferLinePick<cr>', 'pick-buffer' },
+			f = { '<cmd>Buffers<cr>', 'find-buffer' },
+			F = { '<cmd>BufferLineMoveNext<cr>', 'move-buffer-forward' },
+			l = { '<cmd>ls<cr>', 'list-buffers' },
+			L = { '<cmd>BLines<cr>', 'lines' },
+			n = { '<cmd>bn!<cr>', 'next-buffer-id' },
+			N = { '<cmd>BufferLineCycleNext<CR>', 'next-visible-buffer' },
+			p = { '<cmd>bp!<cr>', 'prev-buffer-id' },
+			P = { '<cmd>BufferLineCyclePrev<CR>', 'prev-visible-buffer' },
+			s = { ':sp ', 'horizontal-split-file', silent = false},
+			S = { ':sp<cr>',  'horizontal-split' },
+			t = { '<cmd>BufferLineSortByTabs<cr>', 'sort-by-tabs' },
+			v = { ':vs ', 'vert-split-file', silent = false },
+			V = { ':vs<cr>',  'vert-split' },
+			['['] = { '<cmd>vert res -5<cr>', 'width-5' },
+			[']'] = { '<cmd>vert res +5<cr>', 'width+5' },
+			['+'] = { '<cmd>res +5<cr>', 'height+5' },
+			['-'] = { '<cmd>res -5<cr>', 'height-5' },
+		},
+
 		-- NERDCommenter --
 		c = {
 			name = '+comments',
@@ -83,6 +117,16 @@ wk.register({
 			["'"] = { ':GRename ', 'rename', silent = false }
 		},
 
+		-- GitGutter hunk support
+		h = {
+			name = '+hunks',
+			j = { '<plug>(GitGutterNextHunk)', 'next', noremap = false },
+			k = { '<plug>(GitGutterPrevHunk)', 'prev', noremap = false },
+			p = { '<plug>(GitGutterPreviewHunk)', 'preview', noremap = false },
+			s = { '<plug>(GitGutterStageHunk)', 'stage', noremap = false },
+			u = { '<plug>(GitGutterUndoHunk)', 'undo', noremap = false }
+		},
+
 		-- LSP ft. CoC --
 		l = {
 			name = '+lsp',
@@ -94,7 +138,6 @@ wk.register({
 			A = { '<plug>(coc-codeaction-selected)', 'codeaction-selected', noremap = false },
 			c = { '<cmd>CocList commands<cr>', 'commands', noremap = false },
 			d = { '<plug>(coc-definition)', 'definition', noremap = false },
-			-- D = { '<cmd>call <SID>show_documentation()<cr>', 'documentation', noremap = false },
 			e = { '<cmd>CocList diagnostics<cr>', 'diagnostics', noremap = false },
 			E = { '<cmd>CocList extensions<cr>', 'extensions', noremap = false },
 			f = { '<plug>(coc-format)', 'format', noremap = false },
@@ -119,6 +162,26 @@ wk.register({
 			f = { '<cmd>NERDTreeFocus<cr>', 'focus' },
 			i = { '<cmd>NERDTreeFind<cr>', 'find' },
 			t = { '<cmd>NERDTreeToggle<cr>', 'toggle' }
+		},
+
+		-- Windows --
+		w = {
+			name = '+windows',
+			h = { '<C-w>h', 'left-window' },
+			H = { '<C-w>H', 'move-left' },
+			i = { '<cmd>Windows<cr>', 'list-windows' },
+			j = { '<C-w>j', 'bottom-window' },
+			J = { '<C-w>J', 'move-down' },
+			k = { '<C-w>k', 'top-window' },
+			K = { '<C-w>K', 'move-up' },
+			l = { '<C-w>l', 'right-window' },
+			L = { '<C-w>L', 'move-right' },
+			q = { '<C-w>q', 'quit-window' },
+			s = { '<C-w>s', 'horizontal-split' },
+			v = { '<C-w>v', 'vert-split' },
+			w = { '<C-w>w', 'switch-windows' },
+			x = { '<C-w>x', 'exchange-windows' },
+			['='] = { '<C-w>=', 'make-all-windows-equal-sized' },
 		},
 
 		-- Vimtex --
