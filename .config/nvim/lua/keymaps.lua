@@ -1,136 +1,144 @@
 local g = vim.g
 local o = vim.o
-local map = vim.api.nvim_set_keymap
-local op1 = { silent = true }
-local op2 = { silent = true, noremap = true }
-local op3 = { noremap = true }
+local wk = require('which-key')
 
--- map the leader key
-map('n', '<space>', '', {})
+-- Leader Key --
 g.mapleader = ' '
+o.timeoutlen = 500 -- set timeoutlen so that we have enough time to type out the whole keymap
 
--- set timeoutlen so that we have enough time to type out the whole keymap
-o.timeoutlen = 500
+wk.register({
+	['<leader>'] = {
+		-- NERDCommenter --
+		c = {
+			name = '+comments',
+			['<space>'] = { '<plug>NERDCommenterToggle', 'toggle', noremap = false },
+			['$'] = { '<plug>NERDCommenterToEOL', 'to-eol', noremap = false },
+			a = { '<plug>NERDCommenterAltDelims', 'alt-delimiters', noremap = false },
+			A = { '<plug>NERDCommenterAppend', 'append', noremap = false },
+			b = { '<plug>NERDCommenterAlignBoth', 'align-both', noremap = false },
+			c = { '<plug>NERDCommenterComment', 'comment', noremap = false },
+			i = { '<plug>NERDCommenterInvert', 'invert', noremap = false },
+			l = { '<plug>NERDCommenterAlignLeft', 'align-left', noremap = false },
+			m = { '<plug>NERDCommenterMinimal', 'minimal', noremap = false },
+			n = { '<plug>NERDCommenterNested', 'nested', noremap = false },
+			s = { '<plug>NERDCommenterSexy', 'sexy', noremap = false },
+			u = { '<plug>NERDCommenterUncomment', 'uncomment', noremap = false },
+			y = { '<plug>NERDCommenterYank', 'yank', noremap = false }
+		},
 
+		-- FZF --
+		f = {
+			name = '+find',
+			['/'] = { '<cmd>History/<cr>', 'search-history' },
+			[':'] = { '<cmd>History:<cr>', 'command-history' },
+			b = { '<cmd>Buffers<cr>', 'buffers' },
+			c = { '<cmd>Commits<cr>', 'commits' },
+			C = { '<cmd>BCommits<cr>', 'commits-in-buffer' },
+			f = { '<cmd>Files<cr>', 'files' },
+			g = { '<cmd>GFiles<cr>', 'git-files' },
+			h = { '<cmd>History<cr>', 'file-history' },
+			l = { '<cmd>BLines<cr>', 'lines-in-buffer' },
+			L = { '<cmd>Lines<cr>', 'lines-in-dir' },
+			m = { '<cmd>Marks<cr>', 'marks' },
+			r = { '<cmd>Rg<cr>', 'ripgrep' },
+			s = { '<cmd>GFiles?<cr>', 'git-status' },
+			t = { '<cmd>BTags<cr>', 'tags-in-buffer' },
+			T = { '<cmd>Tags<cr>', 'tags-in-dir' },
+			w = { '<cmd>Windows<cr>', 'windows' }
+		},
 
--- NERDCommenter
-map('n', '<leader>c<space>', '<plug>NERDCommenterToggle', {})
-map('n', '<leader>c$', '<plug>NERDCommenterToEOL', {})
-map('n', '<leader>ca', '<plug>NERDCommenterAltDelims', {})
-map('n', '<leader>cA', '<plug>NERDCommenterAppend', {})
-map('n', '<leader>cb', '<plug>NERDCommenterAlignBoth', {})
-map('n', '<leader>cc', '<plug>NERDCommenterComment', {})
-map('n', '<leader>ci', '<plug>NERDCommenterInvert', {})
-map('n', '<leader>cl', '<plug>NERDCommenterAlignLeft', {})
-map('n', '<leader>cm', '<plug>NERDCommenterMinimal', {})
-map('n', '<leader>cn', '<plug>NERDCommenterNested', {})
-map('n', '<leader>cs', '<plug>NERDCommenterSexy', {})
-map('n', '<leader>cu', '<plug>NERDCommenterUncomment', {})
-map('n', '<leader>cy', '<plug>NERDCommenterYank', {})
+		-- Git --
+		g = {
+			name = '+git',
+			a = { ':G add ', 'stage', silent = false },
+			A = { '<cmd>G add -A<cr>', 'stage-all' },
+			b = { ':G branch ', 'branch', silent = false },
+			B = { '<cmd>G branch master<cr>', 'branch-to-master' },
+			c = { ':G commit ""', 'commit', silent = false },
+			C = { '<plug>(coc-git-commit)', 'commit-info', silent = false, noremap = false },
+			d = { ':G rm ', 'delete', silent = false },
+			e = { '<cmd>GitFiles<cr>', 'explorer' },
+			f = { ':G fetch ', 'fetch', silent = false },
+			H = { '<cmd>G reset HEAD~1<cr>', 'reset-last-commit' },
+			i = { '<plug>(coc-git-chunkinfo)', 'chunk-info', silent = false, noremap = false },
+			I = { '<plug>(coc-git-chunk-inner)', 'chunk-inner' },
+			j = { '<plug>(coc-git-nextconflict)', 'next-conflict', silent = false, noremap = false },
+			J = { '<plug>(coc-git-nextchunk)', 'next-chunk', silent = false, noremap = false },
+			k = { '<plug>(coc-git-prevconflict)', 'prev-conflict', silent = false, noremap = false },
+			K = { '<plug>(coc-git-prevchunk)', 'prev-chunk', silent = false, noremap = false },
+			l = { '<cmd>CocList commits<cr>', 'commit-list' },
+			L = { '<cmd>CocList bcommits<cr>', 'buffer-commit-list' },
+			m = { ':G merge ', 'merge', silent = false },
+			M = { '<cmd>G merge origin/master<cr>', 'merge-with-origin/master' },
+			O = { '<plug>(coc-git-chunk-outer)', 'chunk-outer' },
+			p = { '<cmd>G push<cr>', 'push' },
+			P = { '<cmd>G pull<cr>', 'pull' },
+			r = { ':G reset ', 'reset', silent = false },
+			R = { '<cmd>G restore .<cr>', 'restore-unstaged' },
+			s = { '<cmd>GitFiles?<cr>', 'status' },
+			S = { '<cmd>G restore -S .<cr>', 'restore-staged' },
+			v = { '<cmd>G revert HEAD~1<cr>', 'revert-last-commit' },
+			['?'] = { '<cmd>G blame<cr>', 'blame' },
+			['>'] = { ':GMove ', 'move', silent = false },
+			["'"] = { ':GRename ', 'rename', silent = false }
+		},
 
+		-- LSP ft. CoC --
+		l = {
+			name = '+lsp',
+			['('] = { '<plug>(coc-funcobj-i)', 'insert-func', silent = false, noremap = false },
+			[')'] = { '<plug>(coc-funcobj-a)', 'append-func', silent = false, noremap = false },
+			['['] = { '<plug>(coc-classobj-i)', 'insert-class', silent = false, noremap = false },
+			[']'] = { '<plug>(coc-classobj-a)', 'append-class', silent = false, noremap = false },
+			a = { '<plug>(coc-codeaction)', 'codeaction', noremap = false },
+			A = { '<plug>(coc-codeaction-selected)', 'codeaction-selected', noremap = false },
+			c = { '<cmd>CocList commands<cr>', 'commands', noremap = false },
+			d = { '<plug>(coc-definition)', 'definition', noremap = false },
+			-- D = { '<cmd>call <SID>show_documentation()<cr>', 'documentation', noremap = false },
+			e = { '<cmd>CocList diagnostics<cr>', 'diagnostics', noremap = false },
+			E = { '<cmd>CocList extensions<cr>', 'extensions', noremap = false },
+			f = { '<plug>(coc-format)', 'format', noremap = false },
+			F = { '<plug>(coc-format-selected)', 'format-selected', noremap = false },
+			i = { '<plug>(coc-implementation)', 'implementation', noremap = false },
+			j = { '<plug>(coc-diagnostic-next)', 'next-error', noremap = false },
+			k = { '<plug>(coc-diagnostic-prev)', 'prev-error', noremap = false },
+			m = { '<cmd>CocList marketplace<cr>', 'marketplace', noremap = false },
+			o = { '<cmd>CocList outline<cr>', 'outline', noremap = false },
+			p = { '<cmd>CocCommand prettier.formatFile<cr>', 'prettier', noremap = false },
+			r = { '<plug>(coc-rename)', 'rename', noremap = false },
+			R = { '<plug>(coc-references)', 'references', noremap = false },
+			s = { '<cmd>CocList -I symbols<cr>', 'symbols', noremap = false },
+			t = { '<plug>(coc-type-definition)', 'typedef', noremap = false },
+			q = { '<plug>(coc-fix-current)', 'quickfix', noremap = false }
+		},
 
--- fzf
-map('n', '<leader>f/', ':History/<CR>', op2)
-map('n', '<leader>f:', ':History:<cr>', op2)
-map('n', '<leader>fb', ':Buffers<cr>', op2)
-map('n', '<leader>fc', ':Commits<cr>', op2)
-map('n', '<leader>fC', ':BCommits<cr>', op2)
-map('n', '<leader>ff', ':Files<cr>', op2)
-map('n', '<leader>fg', ':GitFiles<cr>', op2)
-map('n', '<leader>fh', ':History<cr>', op2)
-map('n', '<leader>fl', ':BLines<cr>', op2)
-map('n', '<leader>fL', ':Lines<cr>', op2)
-map('n', '<leader>fm', ':Marks<cr>', op2)
-map('n', '<leader>fr', ':Rg<cr>', op2)
-map('n', '<leader>fs', ':GitFiles?<cr>', op2)
-map('n', '<leader>ft', ':BTags<cr>', op2)
-map('n', '<leader>fT', ':Tags<cr>', op2)
-map('n', '<leader>fw', ':Windows<cr>', op2)
+		-- NERDTree --
+		n = {
+			name = '+nerdtree',
+			['<space>'] = { '<cmd>NERDTree<cr>', 'nerdtree' },
+			f = { '<cmd>NERDTreeFocus<cr>', 'focus' },
+			i = { '<cmd>NERDTreeFind<cr>', 'find' },
+			t = { '<cmd>NERDTreeToggle<cr>', 'toggle' }
+		},
 
+		-- Vimtex --
+		x = {
+			name = '+vimtex',
+			c = { '<cmd>VimtexCompile<cr>', 'compile' },
+			C = { '<cmd>VimtexClean<cr>', 'clean-files' },
+			d = { '<cmd>VimtexClearCache<cr>', 'clear-cache' },
+			e = { '<cmd>VimtexErrors<cr>', 'errors' },
+			i = { '<cmd>VimtexImapsList<cr>', 'mappings' },
+			l = { '<cmd>VimtexLog<cr>', 'compile-log' },
+			p = { '<cmd>VimtexDocPackage<cr>', 'package-docs' },
+			r = { '<cmd>VimtexReload<cr>', 'reload' },
+			s = { '<cmd>VimtexStatus<cr>', 'compile-status' },
+			S = { '<cmd>VimtexStop<cr>', 'stop-compiling' },
+			t = { '<cmd>VimtexTocToggle<cr>', 'toggle-toc' },
+			v = { '<cmd>VimtexView<cr>', 'view' }
+		}
+	},
 
--- git
-map('n', '<leader>gA', ':G add -A<cr>', op2)
-map('n', '<leader>gB', ':G branch master<CR>', op2)
-map('n', '<leader>gC', '<plug>(coc-git-commit)', op2)
-map('n', '<leader>ge', ':GitFiles<cr>', op2)
-map('n', '<leader>gl', ':CocList commits<cr>', op2)
-map('n', '<leader>gL', ':CocList bcommits<cr>', op2)
-map('n', '<leader>gM', ':G merge origin/master<cr>', op2)
-map('n', '<leader>gp', ':G push<cr>', op2)
-map('n', '<leader>gP', ':G pull<cr>', op2)
-map('n', '<leader>gR', ':G restore .<cr>', op2)
-map('n', '<leader>gs', ':GitFiles?<cr>', op2)
-map('n', '<leader>gv', ':G revert HEAD~1<cr>', op2)
-map('n', '<leader>gH', ':G reset --hard HEAD~1<cr>', op2)
-map('n', '<leader>gS', ':G reset --soft HEAD~1<cr>', op2)
-
--- git operations requiring input will not be set as silent
-map('n', '<leader>ga', ':G add ', op3)
-map('n', '<leader>gb', ':G branch ', op3)
-map('n', '<leader>gc', ':G commit -m ""', op3)
-map('n', '<leader>gd', ':G rm ', op3)
-map('n', '<leader>gf', ':G fetch ', op3)
-map('n', '<leader>gm', ':G merge ', op3)
-map('n', '<leader>gr', ':G reset ', op3)
-
--- conflicts
-map('n', '<leader>gj', '<plug>(coc-git-nextconflict)', op2)
-map('n', '<leader>gk', '<plug>(coc-git-prevconflict)', op2)
-
--- chunks
-map('n', '<leader>gi', '<plug>(coc-git-chunkinfo)', op2)
-map('n', '<leader>gJ', '<plug>(coc-git-nextchunk)', op2)
-map('n', '<leader>gK', '<plug>(coc-git-prevchunk)', op2)
-
-map('n', '<leader>gI', '<plug>(coc-git-chunk-inner)', op2)
-map('n', '<leader>gO', '<plug>(coc-git-chunk-outer)', op2)
-
-
--- LSP ft. CoC
-map('n', '<leader>la', '<plug>(coc-codeaction)', op1)
-map('n', '<leader>lA', '<plug>(coc-codeaction-selected)', op1)
-map('v', '<leader>lA', '<plug>(coc-codeaction-selected)', op1)
-map('n', '<leader>lc', ':CocList commands<cr>', op1)
-map('n', '<leader>ld', '<plug>(coc-definition)', op1)
-map('n', '<leader>le', ':CocList diagnostics<cr>', op1)
-map('n', '<leader>lE', ':CocList extensions<cr>', op1)
-map('n', '<leader>lf', '<plug>(coc-format)', op1)
-map('n', '<leader>lF', '<plug>(coc-format-selected)', op1)
-map('v', '<leader>lF', '<plug>(coc-format-selected)', op1)
-map('n', '<leader>li', '<plug>(coc-implementation)', op1)
-map('n', '<leader>lj', '<plug>(coc-diagnostic-next)', op1)
-map('n', '<leader>lk', '<plug>(coc-diagnostic-prev)', op1)
-map('n', '<leader>lm', ':CocList marketplace<cr>', op1)
-map('n', '<leader>lo', ':CocList outline<cr>', op1)
-map('n', '<leader>lp', '<plug>(coc-prettier)', op1)
-map('n', '<leader>lr', '<plug>(coc-rename)', op1)
-map('n', '<leader>lR', '<plug>(coc-references)', op1)
-map('n', '<leader>ls', ':CocList -I symbols<cr>', op1)
-map('n', '<leader>lt', '<plug>(coc-type-definition)', op1)
-map('n', '<leader>lq', '<plug>(coc-fix-current)', op1)
-
-
--- nerdtree
-map('n', '<leader>n<space>', ':NERDTree<cr>', op2)
-map('n', '<leader>nf', ':NERDTreeFocus<cr>', op2)
-map('n', '<leader>ni', ':NERDTreeFind<cr>', op2)
-map('n', '<leader>nt', ':NERDTreeToggle<cr>', op2)
-
-
--- clear whitespace
-map('n', '<leader>s', ':StripWhitespace<cr>', op1)
-
-
--- vimtex
-map('n', '<leader>xc', ':VimtexCompile<CR>', op2)
-map('n', '<leader>xC', ':VimtexClean<cr>', op2)
-map('n', '<leader>xd', ':VimtexClearCache<cr>', op2)
-map('n', '<leader>xe', ':VimtexErrors<cr>', op2)
-map('n', '<leader>xi', ':VimtexImapsList<cr>', op2)
-map('n', '<leader>xl', ':VimtexLog<cr>', op2)
-map('n', '<leader>xp', ':VimtexDocPackage<cr>', op2)
-map('n', '<leader>xr', ':VimtexReload<cr>', op2)
-map('n', '<leader>xs', ':VimtexStatus<cr>', op2)
-map('n', '<leader>xS', ':VimtexStop<cr>', op2)
-map('n', '<leader>xt', ':VimtexTocToggle<cr>', op2)
-map('n', '<leader>xv', ':VimtexView<cr>', op2)
+	-- BetterWhitespace --
+	['<leader>s'] = { '<cmd>StripWhitespace<cr>', 'strip-whitespace' }
+})

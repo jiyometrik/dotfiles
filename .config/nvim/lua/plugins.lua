@@ -11,14 +11,11 @@ Plug 'honza/vim-snippets'
 
 Plug 'sheerun/vim-polyglot'
 Plug ('lervag/vimtex', { ['for'] = 'tex' })
-
 -- Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+-- Plug 'airblade/vim-gitgutter' -- Plug 'mhinz/vim-signify'
 
 -- Fuzzy Finder
--- FIXME: Cannot get installer to work (commented portion on the next line).
--- Plug 'junegunn/fzf' -- , { ['do'] = { -> fzf#install() } }) -- Doesn't work.
 vim.g.fzf_install = 'yes | ./install'
 Plug ('junegunn/fzf', { ['do'] = vim.g.fzf_install }) -- Works.
 Plug 'junegunn/fzf.vim'
@@ -41,11 +38,13 @@ Plug 'folke/which-key.nvim'
 require('which-key').setup{}
 
 -- Colorschemes & Appearance
-Plug 'sainnhe/edge'
-Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
+-- Plug ('dracula/vim', { as = 'dracula' })
+-- Plug 'sainnhe/edge'
+-- Plug 'sainnhe/everforest'
+-- Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
-Plug 'sainnhe/sonokai'
+-- Plug 'sainnhe/sonokai'
+Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'ryanoasis/vim-webdevicons'
 call('plug#end')

@@ -4,6 +4,7 @@ local cmd = vim.cmd
 cmd('set nocompatible')
 cmd('filetype plugin indent on')
 cmd('syntax enable')
+o.fileencoding = 'utf-8' -- file encoding
 
 -- Line Numbers
 o.number = true
@@ -27,5 +28,8 @@ o.conceallevel = 2
 cmd('set path+=**')
 o.wildmenu = true
 
+-- mouse
+o.mouse = 'a'
+
 -- neovide
-cmd('set guifont=JetBrains\\ Mono\\ Nerd\\ Font:h18')
+cmd('set guifont=JetBrains\\ Mono\\ Nerd\\ Font\\ Mono:h18')
