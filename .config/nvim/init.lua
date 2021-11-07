@@ -5,9 +5,10 @@ require('keymaps')
 require('colorschemes')
 
 -- Config Files
+require('plugin-config.airline')
 require('plugin-config.better-whitespace')
-require('plugin-config.bufferline')
-require('plugin-config.lualine')
+-- require('plugin-config.bufferline')
+-- require('plugin-config.lualine')
 require('plugin-config.nerdcommenter')
 require('plugin-config.nerdtree')
 require('plugin-config.sneak')

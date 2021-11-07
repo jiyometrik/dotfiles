@@ -88,7 +88,7 @@ wk.register({ ['<leader>'] = {
 			A = { '<cmd>G add -A<cr>', 'stage-all' },
 			b = { ':G branch ', 'branch', silent = false },
 			B = { '<cmd>G branch master<cr>', 'branch-to-master' },
-			c = { ':G commit ""', 'commit', silent = false },
+			c = { ':G commit -m ""', 'commit', silent = false },
 			C = { '<plug>(coc-git-commit)', 'commit-info', silent = false, noremap = false },
 			d = { ':G rm ', 'delete', silent = false },
 			e = { '<cmd>GitFiles<cr>', 'explorer' },

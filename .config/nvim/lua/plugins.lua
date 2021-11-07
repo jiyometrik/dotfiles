@@ -2,7 +2,6 @@ local Plug = vim.fn['plug#']
 local call = vim.call
 
 call('plug#begin', '~/.config/nvim/plugged')
-
 -- LSP and Snippets
 Plug ('neoclide/coc.nvim', { branch = 'release' }) -- Extension wrapper for LSP
 
@@ -26,8 +25,9 @@ Plug 'preservim/nerdtree' -- Filetree
 Plug 'Xuyuanp/nerdtree-git-plugin' -- Shows git status in filetree
 
 -- Status Line
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'akinsho/bufferline.nvim'
+Plug 'vim-airline/vim-airline'
+-- Plug 'nvim-lualine/lualine.nvim'
+-- Plug 'akinsho/bufferline.nvim'
 
 -- Productivity
 Plug 'justinmk/vim-sneak' -- Easier motion for searches
@@ -38,15 +38,12 @@ Plug 'ntpeters/vim-better-whitespace' -- Clears trailing whitespace
 Plug 'folke/which-key.nvim' -- Keymap cheatsheet (only works in Neovim)
 
 -- Colorschemes & Appearance
--- Plug ('dracula/vim', { as = 'dracula' })
 -- Plug 'sainnhe/edge'
 -- Plug 'sainnhe/everforest'
 -- Plug 'sainnhe/gruvbox-material'
--- Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 -- Plug 'sainnhe/sonokai'
---Plug 'tiagovla/tokyodark.nvim'
- Plug 'folke/tokyonight.nvim' -- for neovim
+Plug 'folke/tokyonight.nvim' -- for neovim
 -- Plug 'ghifarit53/tokyonight-vim' -- for non-neovim version
-
 Plug 'ryanoasis/vim-webdevicons'
 call('plug#end')

@@ -22,25 +22,25 @@ o.termguicolors = true
 -- cmd('colorscheme gruvbox-material')
 
 -- Nord
--- g.nord_bold_vertical_split_line = 1
--- g.nord_uniform_diff_background = 1
--- g.nord_italic = 1
--- g.nord_italic_comments = 1
+g.nord_bold_vertical_split_line = 1
+g.nord_uniform_diff_background = 1
+g.nord_italic = 1
+g.nord_italic_comments = 1
+cmd('colorscheme nord')
+
+-- Nord (nvim)
+-- g.nord_borders = true
+-- g.nord_italic = true
 -- cmd('colorscheme nord')
 
 -- Sonokai
 -- g.sonokai_enable_italic = 1
 -- cmd('colorscheme sonokai')
 
--- Tokyo Dark
--- g.tokyodark_enable_italic = true
--- g.tokyodark_enable_italic_comment = true
--- cmd('colorscheme tokyodark')
-
 -- Tokyo Night (Neovim)
-g.tokyonight_style = 'storm'
-g.tokyonight_enable_italic = 1
-cmd('colorscheme tokyonight')
+-- g.tokyonight_style = 'storm'
+-- g.tokyonight_enable_italic = 1
+-- cmd('colorscheme tokyonight')
 
 -- Tokyo Night (Vim)
 -- g.tokyonight_style = 'storm'

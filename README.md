@@ -1,5 +1,4 @@
 # dotfiles
-
 A place to store my dotfiles.
 
 ## What You'll Find
@@ -20,7 +19,7 @@ This directory contains most of the configuration files for the applications I u
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [neovim](https://neovim.io/)
-- [picom](https://github.com/yshui/picom)
+- [picom](https://github.com/jonaburg/picom) (patched by [@jonaburg](https://github.com/jonaburg))
 - [polybar](https://github.com/polybar/polybar)
 - [ranger](https://github.com/ranger/ranger)
 - [rofi](https://github.com/davatorium/rofi)
