@@ -199,7 +199,7 @@ client.background       #242424
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # set background image
-exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png"
+exec feh --no-fehbg --bg-fill "/home/geo/Pictures/ice.jpg"
 
 # emacs server
 exec_always /usr/bin/emacs --daemon &
