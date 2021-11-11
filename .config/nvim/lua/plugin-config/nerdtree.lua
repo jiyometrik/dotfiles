@@ -19,3 +19,19 @@ vim.cmd [[
 ]]
 
 vim.g.NERDTreeShowHidden = 1
+
+-- nerdtree-git-plugin --
+vim.cmd [[
+	let g:NERDTreeGitStatusIndicatorMapCustom = {
+		\ 'Modified'  :'✹',
+		\ 'Staged'    :'✚',
+		\ 'Untracked' :'*',
+		\ 'Renamed'   :'➜',
+		\ 'Unmerged'  :'═',
+		\ 'Deleted'   :'✖',
+		\ 'Dirty'     :'✗',
+		\ 'Ignored'   :'☒',
+		\ 'Clean'     :'✔︎',
+		\ 'Unknown'   :'?',
+		\}
+]]

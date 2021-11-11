@@ -1,6 +1,5 @@
 local Plug = vim.fn['plug#']
 local call = vim.call
-
 call('plug#begin', '~/.config/nvim/plugged')
 -- LSP and Snippets
 Plug ('neoclide/coc.nvim', { branch = 'release' }) -- Extension wrapper for LSP
@@ -40,10 +39,8 @@ Plug 'folke/which-key.nvim' -- Keymap cheatsheet (only works in Neovim)
 -- Colorschemes & Appearance
 -- Plug 'sainnhe/edge'
 -- Plug 'sainnhe/everforest'
--- Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 -- Plug 'sainnhe/sonokai'
-Plug 'folke/tokyonight.nvim' -- for neovim
--- Plug 'ghifarit53/tokyonight-vim' -- for non-neovim version
-Plug 'ryanoasis/vim-webdevicons'
+-- Plug 'ghifarit53/tokyonight-vim'
 call('plug#end')

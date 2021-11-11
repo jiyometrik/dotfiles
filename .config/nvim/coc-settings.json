@@ -1,5 +1,8 @@
 {
-	// coc-pairs
+	// GENERAL
+	"coc.preferences.extensionUpdateCheck": "daily",
+	// "diagnostic.displayByAle": true,
+
 	"pairs.enableCharacters": [
 		"(",
 		"[",
@@ -8,48 +11,20 @@
 		"'",
 		"\"",
 		"`",
-		"'''", // docstrings in python
+		"'''",
 		"\"\"\""
 	],
 
-	// nerdfont icons for completion menu
-	"suggest.completionItemKindLabels": {
-		"method": "  ",
-		"function": "  ",
-		"variable": "[]",
-		"field": "  ",
-		"typeParameter": "<>",
-		"constant": "  ",
-		"class": " פּ ",
-		"interface": " 蘒",
-		"struct": "  ",
-		"event": "  ",
-		"operator": "  ",
-		"module": "  ",
-		"property": "  ",
-		"enum": " 練",
-		"reference": "  ",
-		"keyword": "  ",
-		"file": "  ",
-		"folder": " ﱮ ",
-		"color": "  ",
-		"unit": " 塞 ",
-		"snippet": "   ",
-		"text": "  ",
-		"constructor": "  ",
-		"value": "  ",
-		"enumMember": "  "
-	},
+	"coc.source.emoji.filetypes": ["markdown", "html", "lisp"],
 
-	// supported filetypes for emoji
-	// quicktip (if you're using kitty): emojis are only supported by using the emojione or joypixels font package.
-	// it can be found as ttf-joypixels on AUR and fonts-emojione on APT.
-	// see also: ttf-twemoji (AUR)
-	"coc.source.emoji.filetypes": [ "markdown", "html", "lisp" ],
+	// CLANGD (C FAMILY)
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
 
-	// which formatter to use for python?
-	"python.formatting.provider": "black",
+	// HTML
+	"html.autoClosingTags": true,
+	"html.format.indentInnerHtml": true,
 
-	// gitgutter substitute
-	"git.enableGutters": true
+	// PYRIGHT (PYTHON)
+	"python.formatting.provider": "autopep8",
+	"python.linting.pylintEnabled": true
 }

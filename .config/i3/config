@@ -13,7 +13,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:JetBrains Mono Nerd Font 11
+font pango:Iosevka Term SS14 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -170,7 +170,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+e exec emacsclient -c -a 'emacs' # emacs
 bindsym $mod+f exec firefox
-bindsym $mod+n exec neovide # neovim
+# bindsym $mod+n exec neovide # neovim
 bindsym $mod+x exec stacer
 
 # screenshot keybindings
@@ -188,18 +188,18 @@ gaps inner 20
 
 # Nord
 # class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #2e3440 #888888 #2e3440
-client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
-client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-client.urgent           #900000 #900000 #ffffff #900000
-client.background       #242424
+client.focused          #81a1c1 #81a1c1 #eceff4 #81a1c1
+client.unfocused        #4c566a #4c566a #d8dee9 #4c566a
+client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a
+client.placeholder      #4c566a #4c566a #d8dee9 #4c566a
+client.urgent           #bf616a #bf616a #eceff4 #bf616a
+client.background       #2e3440
 
 # polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
 
 # set background image
-exec feh --no-fehbg --bg-fill "/home/geo/Pictures/ice.jpg"
+exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png"
 
 # emacs server
 exec_always /usr/bin/emacs --daemon &

@@ -4,9 +4,6 @@ local cmd = vim.cmd
 
 o.termguicolors = true
 
--- Dracula
--- cmd('colorscheme dracula')
-
 -- Edge
 -- g.edge_style = 'aura'
 -- g.edge_enable_italic = 1
@@ -28,19 +25,9 @@ g.nord_italic = 1
 g.nord_italic_comments = 1
 cmd('colorscheme nord')
 
--- Nord (nvim)
--- g.nord_borders = true
--- g.nord_italic = true
--- cmd('colorscheme nord')
-
 -- Sonokai
 -- g.sonokai_enable_italic = 1
 -- cmd('colorscheme sonokai')
-
--- Tokyo Night (Neovim)
--- g.tokyonight_style = 'storm'
--- g.tokyonight_enable_italic = 1
--- cmd('colorscheme tokyonight')
 
 -- Tokyo Night (Vim)
 -- g.tokyonight_style = 'storm'
