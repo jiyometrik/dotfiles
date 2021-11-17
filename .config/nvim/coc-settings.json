@@ -1,7 +1,6 @@
 {
 	// GENERAL
 	"coc.preferences.extensionUpdateCheck": "daily",
-	// "diagnostic.displayByAle": true,
 
 	"pairs.enableCharacters": [
 		"(",

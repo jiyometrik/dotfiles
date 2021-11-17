@@ -14,6 +14,7 @@ vim.g.vimtex_fold_enabled = 1
 
 -- Viewing
 vim.g.vimtex_view_method = 'zathura'
+-- vim.g.vimtex_view_general_viewer = 'zathura'
 
 -- Pairs (ensure that you have coc-pairs installed)
 vim.cmd("autocmd FileType tex let b:coc_pairs = [['$', '$']]")

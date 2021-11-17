@@ -7,6 +7,7 @@ o.termguicolors = true
 -- Edge
 -- g.edge_style = 'aura'
 -- g.edge_enable_italic = 1
+-- g.edge_better_performance = 1
 -- cmd('colorscheme edge')
 
 -- Everforest
@@ -14,12 +15,15 @@ o.termguicolors = true
 -- g.everforest_enable_italic = 1
 -- cmd('colorscheme everforest')
 
+-- Gruvbox
+-- g.gruvbox_italic = 1
+-- cmd('colorscheme gruvbox')
+
 -- Gruvbox Material
 -- g.gruvbox_material_enable_italic = 1
 -- cmd('colorscheme gruvbox-material')
 
 -- Nord
-g.nord_bold_vertical_split_line = 1
 g.nord_uniform_diff_background = 1
 g.nord_italic = 1
 g.nord_italic_comments = 1
@@ -29,7 +33,7 @@ cmd('colorscheme nord')
 -- g.sonokai_enable_italic = 1
 -- cmd('colorscheme sonokai')
 
--- Tokyo Night (Vim)
+-- Tokyo Night
 -- g.tokyonight_style = 'storm'
 -- g.tokyonight_enable_italic = 1
 -- cmd('colorscheme tokyonight')

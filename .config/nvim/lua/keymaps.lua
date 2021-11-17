@@ -192,13 +192,15 @@ wk.register({ ['<leader>'] = {
 			d = { '<cmd>VimtexClearCache<cr>', 'clear-cache' },
 			e = { '<cmd>VimtexErrors<cr>', 'errors' },
 			i = { '<cmd>VimtexImapsList<cr>', 'mappings' },
+			j = { '<C-]>', 'jump-to-ref' },
+			k = { '<C-t>', 'jump-to-label' },
 			l = { '<cmd>VimtexLog<cr>', 'compile-log' },
 			p = { '<cmd>VimtexDocPackage<cr>', 'package-docs' },
 			r = { '<cmd>VimtexReload<cr>', 'reload' },
 			s = { '<cmd>VimtexStatus<cr>', 'compile-status' },
 			S = { '<cmd>VimtexStop<cr>', 'stop-compiling' },
 			t = { '<cmd>VimtexTocToggle<cr>', 'toggle-toc' },
-			v = { '<cmd>VimtexView<cr>', 'view' }
+			v = { '<cmd>VimtexView<cr>', 'view' },
 		}
 	},
 

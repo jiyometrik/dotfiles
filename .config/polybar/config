@@ -17,23 +17,33 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 padding=0
-font-0=Iosevka Term SS14:size=12; 3
-font-1=Hack Nerd Font:size=12:antialias=true; 3
+font-0=Iosevka Term SS14:size=12;3
+font-1=JetBrains Mono Nerd Font:size=12:antialias=true;3
 
 dpi = 100
 
-modules-left =  i3
+modules-left =  i3 xwindow
 ; Spotify (scripts at github.com/dietervanhoof/polybar-spotify-controls)
 ; modules-center = previous playpause next spotify
 ; Mpd
 modules-center = time
-modules-right = mpd pulseaudio
+modules-right = cpu memory mpd pulseaudio battery
 
 scroll-up = i3-wsnext
 scroll-down = i3-wsprev
 
 wm-restack = i3
 override-redirect = false
+
+# tray
+tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 4
+tray-scale = 1
 
 ;                      _       _
 ;  _ __ ___   ___   __| |_   _| | ___  ___
@@ -50,8 +60,10 @@ label-padding = 2
 
 [module/i3]
 type = internal/i3
-format = <label-state>
+format = <label-state> <label-mode>
 format-padding = 2
+label-mode = [%mode%]
+label-mode-padding = 2
 index-sort = true
 
 enable-click = true
@@ -60,12 +72,13 @@ reverse-scroll = false
 label-focused = 
 label-focused-padding = 1
 
-label-occupied = 
-label-occupied-padding = 1
+label-unfocused = 
+label-unfocused-padding = 1
 
 
-label-empty = 
-label-empty-padding = 1
+label-urgent = 
+label-urgent-foreground = #ebcb8b
+label-urgent-padding = 1
 
 
 [module/mpd]
@@ -78,7 +91,7 @@ label-song-padding = 1
 label-song = %artist%: %title%
 
 format-offline = <label-offline>
-label-offline =  offline
+label-offline =  mpd offline
 format-offline-foreground = ${colors.foreground}
 format-offline-background = ${colors.background}
 
@@ -88,14 +101,14 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 45
+label-song-maxlen = 40
 label-song-ellipsis = true
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-padding = 2
+format-padding = 1
 format-foreground = ${colors.foreground}
 label = %percentage%%
 
@@ -152,7 +165,7 @@ format-padding = 3
 time = "%H:%M"
 date = "%A %d %b"
 
-label = %date%, %time%
+label = %date% / %time%
 label-padding = 2
 
 
@@ -180,7 +193,7 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format =  <label>
+format = <label>
 format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
@@ -291,22 +304,22 @@ format-full = <label-full>
 
 format-charging-underline = ${colors.foreground}
 format-discharging-underline = ${colors.foreground}
-format-full-prefix = " "
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+format-full-prefix = " / "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 ramp-capacity-0-foreground = ${colors.foreground}
 ramp-capacity-foreground   = ${colors.foreground}
 bar-capacity-width = 10
 
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
+animation-charging-0 = "   "
+animation-charging-1 = "   "
+animation-charging-2 = "   "
+animation-charging-3 = "   "
+animation-charging-4 = "   "
 
 animation-charging-framerate = 750
 

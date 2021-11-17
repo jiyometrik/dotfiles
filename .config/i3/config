@@ -170,7 +170,6 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+e exec emacsclient -c -a 'emacs' # emacs
 bindsym $mod+f exec firefox
-# bindsym $mod+n exec neovide # neovim
 bindsym $mod+x exec stacer
 
 # screenshot keybindings
@@ -180,7 +179,7 @@ bindsym $mod+Shift+s exec flameshot gui
 exec_always --no-startup-id picom --experimental-backends &
 
 # Hide title bars
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 1
 
 # i3gaps

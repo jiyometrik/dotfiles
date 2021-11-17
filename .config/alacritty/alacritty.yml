@@ -10,8 +10,8 @@ window:
 
 # font
 font:
-  # size: 15
-  size: 9.5
+  # size: 8.5
+  size: 9
   normal:
     family: Iosevka Term SS14 # also includes: SS05, SS15
     # family: Hack Nerd Font

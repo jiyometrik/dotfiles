@@ -6,6 +6,7 @@ Plug ('neoclide/coc.nvim', { branch = 'release' }) -- Extension wrapper for LSP
 
 Plug 'SirVer/ultisnips' -- Snippet engine
 Plug 'honza/vim-snippets' -- Collection of snippets
+Plug 'ludovicchabant/vim-gutentags' -- Tags Manager
 
 Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
 Plug ('lervag/vimtex', { ['for'] = 'tex' }) -- LaTeX integration
@@ -25,8 +26,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin' -- Shows git status in filetree
 
 -- Status Line
 Plug 'vim-airline/vim-airline'
--- Plug 'nvim-lualine/lualine.nvim'
--- Plug 'akinsho/bufferline.nvim'
 
 -- Productivity
 Plug 'justinmk/vim-sneak' -- Easier motion for searches
@@ -39,7 +38,8 @@ Plug 'folke/which-key.nvim' -- Keymap cheatsheet (only works in Neovim)
 -- Colorschemes & Appearance
 -- Plug 'sainnhe/edge'
 -- Plug 'sainnhe/everforest'
-Plug 'sainnhe/gruvbox-material'
+-- Plug 'morhetz/gruvbox'
+-- Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 -- Plug 'sainnhe/sonokai'
 -- Plug 'ghifarit53/tokyonight-vim'
