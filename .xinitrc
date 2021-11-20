@@ -64,3 +64,8 @@ get_session(){
 }
 
 exec $(get_session "$1")
+
+# chinese input
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx

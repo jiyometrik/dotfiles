@@ -15,7 +15,7 @@
 ;; 	  directory (for easy access to its source code).
 
 (doom! :input
-   ;; chinese
+   chinese
    ;; japanese
    ;; layout            ; auie,ctsrnm is the superior home row
 
@@ -55,7 +55,7 @@
    (evil +everywhere); come to the dark side, we have cookies
    file-templates    ; auto-snippets for empty files
    fold              ; (nigh) universal code folding
-   ;; (format +onsave)  ; automated prettiness
+   (format +onsave)  ; automated prettiness
    ;; god               ; run Emacs commands without modifier keys
    ;; lispy             ; vim for lisp, for people who don't like vim
    ;; multiple-cursors  ; editing in many places at once
@@ -97,7 +97,7 @@
    magit             ; a git porcelain for Emacs
    make              ; run make tasks from Emacs
    ;; pass              ; password manager for nerds
-   ;; pdf               ; pdf enhancements
+   pdf               ; pdf enhancements
    ;; prodigy           ; FIXME managing external services & code builders
    ;; rgb               ; creating color strings
    ;; taskrunner        ; taskrunner for all your projects
@@ -177,8 +177,8 @@
    ;; (wanderlust +gmail)
 
    :app
-   ;; calendar
-   ;; emms ; media player
+   calendar
+   ;; emms              ; media player
    ;; everywhere        ; *leave* Emacs!? You must be joking
    ;; irc               ; how neckbeards socialize
    ;; (rss +org)        ; emacs as an RSS reader

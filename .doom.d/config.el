@@ -7,8 +7,13 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 
-(setq user-full-name "Your Name"
-      user-mail-address "yourname@email.com")
+(setq user-full-name "Darren Yap"
+      user-mail-address "darrenyap08@gmail.com")
+
+;; UTF-8
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -23,14 +28,15 @@
 
 ;; (setq doom-font (font-spec :family "Hack Nerd Font" :size 18))
 ;; (setq doom-font (font-spec :family "Fira Code" :size 18))
-;; (setq doom-font (font-spec :family "Iosevka Term SS15 Extended" :size 18))
+;; (setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 18)
 (setq doom-font (font-spec :family "Iosevka Term SS14" :size 20)
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 18))
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 18)
+      doom-big-font (font-spec :family "Iosevka Term SS14" :size 25))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-gruvbox)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

@@ -9,10 +9,6 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# font pango:"SauceCodePro Nerd Font Mono" 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Iosevka Term SS14 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -168,7 +164,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+e exec emacsclient -c -a 'emacs' # emacs
+bindsym $mod+e exec emacs
+# bindsym $mod+e exec emacsclient # emacs
 bindsym $mod+f exec firefox
 bindsym $mod+x exec stacer
 
@@ -178,27 +175,39 @@ bindsym $mod+Shift+s exec flameshot gui
 # initialise picom
 exec_always --no-startup-id picom --experimental-backends &
 
+# fcitx (chinese input)
+exec_always --no-startup-id fcitx &
+
 # Hide title bars
 default_border pixel 2
 default_floating_border pixel 1
 
-# i3gaps
-gaps inner 20
+# gaps
+gaps inner 18
 
 # Nord
 # class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #eceff4 #81a1c1
-client.unfocused        #4c566a #4c566a #d8dee9 #4c566a
-client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a
-client.placeholder      #4c566a #4c566a #d8dee9 #4c566a
-client.urgent           #bf616a #bf616a #eceff4 #bf616a
-client.background       #2e3440
+# client.focused          #81a1c1 #81a1c1 #eceff4 #81a1c1
+# client.unfocused        #4c566a #4c566a #d8dee9 #4c566a
+# client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a
+# client.placeholder      #4c566a #4c566a #d8dee9 #4c566a
+# client.urgent           #bf616a #bf616a #eceff4 #bf616a
+# client.background       #2e3440
+
+# class                 border  backgr. text    indicator
+client.focused          #fabd2f #fabd2f #fbf1c7 #fabd2f
+client.unfocused        #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+client.focused_inactive #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+client.placeholder      #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+client.urgent           #fb4934 #fb4934 #fbf1c7 #fb4934
+client.background       #282828
 
 # polybar
 exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
 
 # set background image
-exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png"
+# exec feh --no-fehbg --bg-fill "/home/geo/Pictures/gruvbox/houseonthesideofalake.jpg"
+exec nitrogen --restore &
 
 # emacs server
 exec_always /usr/bin/emacs --daemon &

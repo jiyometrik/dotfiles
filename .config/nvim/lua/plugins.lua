@@ -8,7 +8,7 @@ Plug 'SirVer/ultisnips' -- Snippet engine
 Plug 'honza/vim-snippets' -- Collection of snippets
 Plug 'ludovicchabant/vim-gutentags' -- Tags Manager
 
-Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
+-- Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
 Plug ('lervag/vimtex', { ['for'] = 'tex' }) -- LaTeX integration
 
 -- Git
@@ -38,7 +38,7 @@ Plug 'folke/which-key.nvim' -- Keymap cheatsheet (only works in Neovim)
 -- Colorschemes & Appearance
 -- Plug 'sainnhe/edge'
 -- Plug 'sainnhe/everforest'
--- Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 -- Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 -- Plug 'sainnhe/sonokai'

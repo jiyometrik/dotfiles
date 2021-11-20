@@ -16,18 +16,18 @@ o.termguicolors = true
 -- cmd('colorscheme everforest')
 
 -- Gruvbox
--- g.gruvbox_italic = 1
--- cmd('colorscheme gruvbox')
+g.gruvbox_italic = 1
+cmd('colorscheme gruvbox')
 
 -- Gruvbox Material
 -- g.gruvbox_material_enable_italic = 1
 -- cmd('colorscheme gruvbox-material')
 
 -- Nord
-g.nord_uniform_diff_background = 1
-g.nord_italic = 1
-g.nord_italic_comments = 1
-cmd('colorscheme nord')
+-- g.nord_uniform_diff_background = 1
+-- g.nord_italic = 1
+-- g.nord_italic_comments = 1
+-- cmd('colorscheme nord')
 
 -- Sonokai
 -- g.sonokai_enable_italic = 1
