@@ -8,7 +8,7 @@ Plug 'SirVer/ultisnips' -- Snippet engine
 Plug 'honza/vim-snippets' -- Collection of snippets
 Plug 'ludovicchabant/vim-gutentags' -- Tags Manager
 
--- Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
+Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
 Plug ('lervag/vimtex', { ['for'] = 'tex' }) -- LaTeX integration
 
 -- Git
@@ -30,6 +30,8 @@ Plug 'vim-airline/vim-airline'
 -- Productivity
 Plug 'justinmk/vim-sneak' -- Easier motion for searches
 Plug 'jiangmiao/auto-pairs' -- Autocompletion of brackets
+-- Plug 'nathanaelkane/vim-indent-guides' -- Indent guides
+Plug 'lukas-reineke/indent-blankline.nvim' -- Indent guides
 Plug 'tpope/vim-surround' -- Add surrounding delimiters to text objects
 Plug 'preservim/nerdcommenter' -- Autocommenter
 Plug 'ntpeters/vim-better-whitespace' -- Clears trailing whitespace

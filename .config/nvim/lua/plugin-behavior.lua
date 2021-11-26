@@ -66,6 +66,13 @@ cmd [[
 -- Vim-Sneak --
 cmd('let g:sneak#label = 1')
 
+-- Indent-Blankline.nvim --
+vim.o.list = true
+require('indent_blankline').setup {
+	show_current_context = true,
+	show_current_context_start = true,
+	set_conceal = 0,
+}
 
 -- NERDCommenter --
 -- Add spaces after comment delimiters by default

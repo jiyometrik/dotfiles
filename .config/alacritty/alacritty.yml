@@ -4,43 +4,47 @@ env:
 # window padding
 window:
   padding:
-    x: 10
-    y: 10
+    x: 8
+    y: 8
   dynamic_padding: true
 
 # font
 font:
+  size: 8
   # size: 8.5
-  size: 9
+  # size: 9
   normal:
-    family: Iosevka Term SS14 # also includes: SS05, SS15
+    family: Fira Code Nerd Font
     # family: Hack Nerd Font
-    # family: Fira Code Nerd Font Mono
-    # family: JetBrains Mono Nerd Font Mono
+    # family: Hasklug Nerd Font
+    # family: Iosevka Term SS14 # also includes: SS05, SS15
+    # family: JetBrains Mono Nerd Font
 
-  bold:
-    family: Iosevka Term SS14
+  # bold:
+    # family: Fira Code Nerd Font
     # family: Hack Nerd Font
-    # family: Fira Code Nerd Font Mono
-    # family: JetBrains Mono Nerd Font Mono
-    style: Bold
-
-  italic:
-    family: Iosevka Term SS14
-    # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    # family: Iosevka Term SS14
+    # family: JetBrains Mono Nerd Font
+    # style: Bold
+  # italic:
     # family: Iosevka Term SS05 Extended # to be used with Fira Code
-    # family: JetBrains Mono Nerd Font Mono
-    style: Italic
-
-  bold_italic:
-    family: Iosevka Term SS14
     # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    # family: Iosevka Term SS14
+    # family: JetBrains Mono Nerd Font
+    # style: Italic
+
+  # bold_italic:
     # family: Iosevka Term SS05 Extended
-    # family: JetBrains Mono Nerd Font Mono
-    style: Bold Italic
+    # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    # family: Iosevka Term SS14
+    # family: JetBrains Mono Nerd Font
+    # style: Bold Italic
 
 # spaces per tab
-tabspaces: 4
+tabspaces: 2
 
 # cursor style
 cursor:
