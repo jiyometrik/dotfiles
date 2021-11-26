@@ -1,6 +1,6 @@
 -- NERDTree --
 -- Start NERDTree and put the cursor back in the other window.
-vim.cmd('autocmd VimEnter * NERDTree | wincmd p')
+-- vim.cmd('autocmd VimEnter * NERDTree | wincmd p')
 
 -- If another buffer tries to replace NERDTree, move it to the other window, retaining NERDTree.
 vim.cmd [[

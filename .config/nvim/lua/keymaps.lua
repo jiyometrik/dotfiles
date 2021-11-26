@@ -26,8 +26,7 @@ wk.register({ ['<leader>'] = {
 			f = { '<Cmd>Buffers<CR>', 'find-buffer' },
 			-- F = { '<Cmd>BufferLineMoveNext<CR>', 'move-buffer-forward' },
 			l = { '<Cmd>ls<CR>', 'list-buffers' },
-			L = { '<Cmd>BLines<CR>', 'lines' },
-			n = { '<Cmd>bn!<CR>', 'next-buffer-id' },
+			L = { '<Cmd>BLines<CR>', 'lines' }, n = { '<Cmd>bn!<CR>', 'next-buffer-id' },
 			-- N = { '<Cmd>BufferLineCycleNext<CR>', 'next-visible-buffer' },
 			p = { '<Cmd>bp!<CR>', 'prev-buffer-id' },
 			-- P = { '<Cmd>BufferLineCyclePrev<CR>', 'prev-visible-buffer' },
@@ -151,25 +150,28 @@ wk.register({ ['<leader>'] = {
 			r = { '<Plug>(coc-rename)', 'rename', noremap = false, silent = false },
 			R = { '<Plug>(coc-references)', 'references', noremap = false, silent = false },
 			s = { '<Cmd>CocList -I symbols<CR>', 'symbols', noremap = false, silent = false },
+			S = { '<Plug>(coc-convert-snippet)', 'convert-to-snippet', mode = 'v', noremap = false, silent = false },
 			t = { '<Plug>(coc-type-definition)', 'typedef', noremap = false, silent = false },
 			q = { '<Plug>(coc-fix-current)', 'quickfix', noremap = false, silent = false },
 		},
 
-		-- NERDTree --
-		n = {
-			name = '+nerdtree',
-			['<space>'] = { '<Cmd>NERDTree<CR>', 'nerdtree' },
-			f = { '<Cmd>NERDTreeFocus<CR>', 'focus' },
-			i = { '<Cmd>NERDTreeFind<CR>', 'find' },
-			t = { '<Cmd>NERDTreeToggle<CR>', 'toggle' },
-		},
+		-- NERDTree -- currently not in use
+		-- n = {
+		--   name = '+nerdtree',
+		--   ['<space>'] = { '<Cmd>NERDTree<CR>', 'nerdtree' },
+		--   f = { '<Cmd>NERDTreeFocus<CR>', 'focus' },
+		--   i = { '<Cmd>NERDTreeFind<CR>', 'find' },
+		--   t = { '<Cmd>NERDTreeToggle<CR>', 'toggle' },
+		-- },
 
 		-- Toggles --
 		t = {
 			name = '+toggle',
+			g = { '<Cmd>GitGutterToggle', 'git-indicators' },
 			i = { '<Cmd>IndentBlanklineToggle', 'indent-guides' },
-			t = { '<Cmd>NERDTreeToggle<CR>', 'nerdtree' },
+			-- t = { '<Cmd>NERDTreeToggle<CR>', 'nerdtree' },
 		},
+
 		-- Windows --
 		w = {
 			name = '+windows',
