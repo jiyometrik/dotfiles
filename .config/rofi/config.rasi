@@ -1,6 +1,6 @@
 configuration {
 	modi: "drun";
-	font: "iosevka term ss14 italic 13";
+	font: "victor mono italic 12";
 	display-drun: " ";
 	sidebar-mode: false;
 }
@@ -8,9 +8,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-	bg: #282828;
-	fg: #bdae93;
-	button: #504945;
+	bg: #2b2d37;
+	fg: #c5cdd9;
+	button: #363a49;
 	background-color: @bg;
 	text-color:	@fg;
 }
@@ -32,7 +32,7 @@ prompt {
 	border: 2px;
 	border-color: @fg;
 	border-radius: 10px;
-	font: "iosevka term ss14 italic 15";
+	font: "victor mono italic 14";
 	padding: 0 1% 0;
 }
 
@@ -45,7 +45,6 @@ entry {
 	border: 2px;
 	border-color: @fg;
 	border-radius: 10px;
-	cursor:	text;
 }
 
 inputbar {
@@ -86,8 +85,3 @@ element selected {
 	text-color: @bg;
 	border-radius: 10px;
 }
-
-listview, element, element selected, element-icon, element-text {
-	cursor:	pointer;
-}
-/* vim:ft=css */

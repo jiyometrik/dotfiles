@@ -10,61 +10,86 @@ window:
 
 # font
 font:
-  size: 8
-  # size: 8.5
+  # size: 8 # Fira Code
+  size: 8.5
   # size: 9
   normal:
-    family: Fira Code Nerd Font
+    # family: Fira Code Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     # family: Iosevka Term SS14 # also includes: SS05, SS15
     # family: JetBrains Mono Nerd Font
+    family: Victor Mono Nerd Font
 
-  # bold:
+  bold:
     # family: Fira Code Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     # family: Iosevka Term SS14
     # family: JetBrains Mono Nerd Font
-    # style: Bold
-  # italic:
+    family: Victor Mono Nerd Font
+    style: Bold
+
+  italic:
     # family: Iosevka Term SS05 Extended # to be used with Fira Code
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     # family: Iosevka Term SS14
     # family: JetBrains Mono Nerd Font
-    # style: Italic
+    family: Victor Mono Nerd Font
+    style: Italic
 
-  # bold_italic:
+  bold_italic:
     # family: Iosevka Term SS05 Extended
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     # family: Iosevka Term SS14
     # family: JetBrains Mono Nerd Font
-    # style: Bold Italic
+    family: Victor Mono Nerd Font
+    style: Bold Italic
 
 # spaces per tab
 tabspaces: 2
 
 # cursor style
-cursor:
-  style: Beam
+# cursor:
+#   style: Beam
 
 # opacity
 # background_opacity: 0.85
 
 schemes:
-  # Gruvbox Medium
-# Colors (Gruvbox dark)
-  # Default colors
+  # Edge (Aura)
+  edge-aura:  &edge-aura
+    primary:
+      background: '#2b2d37'
+      foreground: '#c5cdd9'
+
+    normal:
+      black: '#363a49'
+      red: '#ec7279'
+      green: '#a0c980'
+      yellow: '#deb974'
+      blue: '#6cb6eb'
+      magenta: '#d38aea'
+      cyan: '#5dbbc1'
+      white: '#c5cdd9'
+
+    bright:
+      black: '#363a49'
+      red: '#ec7279'
+      green: '#a0c980'
+      yellow: '#deb974'
+      blue: '#6cb6eb'
+      magenta: '#d38aea'
+      cyan: '#5dbbc1'
+      white: '#c5cdd9'
+
+  # Gruvbox Dark (Medium)
   gruv-med: &gruv-med
     primary:
-      # hard contrast: background = '0x1d2021'
       background: '#282828'
-      # soft contrast: background = '0x32302f'
       foreground: '#ebdbb2'
-
-    # Normal colors
     normal:
       black:   '#282828'
       red:     '#cc241d'
@@ -74,8 +99,6 @@ schemes:
       magenta: '#b16286'
       cyan:    '#689d6a'
       white:   '#a89984'
-
-    # Bright cols
     bright:
       black:   '#928374'
       red:     '#fb4934'
@@ -109,7 +132,6 @@ schemes:
       magenta: '#d3869b'
       cyan:    '#89b482'
       white:   '#d4be98'
-
 
   # Nord
   nord: &nord
@@ -161,14 +183,38 @@ schemes:
       cyan: '#6d96a5'
       white: '#aeb3bb'
 
+  onedark: &onedark
+    primary:
+      background: '#282c34'
+      foreground: '#abb2bf'
 
-  # TokyoNight (Storm)
+    # Normal colors
+    normal:
+      black:   '#282c34'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#abb2bf'
+
+    # Bright colors
+    bright:
+      black:   '#5c6370'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#ffffff'
+
+  # Tokyo Night (Storm)
   tokyonight-storm: &toykonight-storm
     primary:
       background: '#24283b'
       foreground: '#c0caf5'
-
-    # Normal colors
     normal:
       black:   '#1d202f'
       red:     '#f7768e'
@@ -178,8 +224,6 @@ schemes:
       magenta: '#bb9af7'
       cyan:    '#7dcfff'
       white:   '#a9b1d6'
-
-    # Bright colors
     bright:
       black:   '#414868'
       red:     '#f7768e'
@@ -194,4 +238,4 @@ schemes:
       - { index: 16, color: '#ff9e64' }
       - { index: 17, color: '#db4b4b' }
 
-colors: *gruv-med
+colors: *edge-aura

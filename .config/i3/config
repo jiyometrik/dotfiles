@@ -164,7 +164,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+e exec emacs
+# bindsym $mod+e exec emacs
 # bindsym $mod+e exec emacsclient # emacs
 bindsym $mod+f exec firefox
 bindsym $mod+x exec stacer
@@ -173,10 +173,10 @@ bindsym $mod+x exec stacer
 bindsym $mod+Shift+s exec flameshot gui
 
 # initialise picom
-exec_always --no-startup-id picom --experimental-backends &
+# exec_always --no-startup-id picom --experimental-backends &
 
 # fcitx (chinese input)
-exec_always --no-startup-id fcitx &
+# exec_always --no-startup-id fcitx &
 
 # Hide title bars
 default_border pixel 2
@@ -195,12 +195,20 @@ gaps inner 18
 # client.background       #2e3440
 
 # class                 border  backgr. text    indicator
-client.focused          #fabd2f #fabd2f #fbf1c7 #fabd2f
-client.unfocused        #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-client.focused_inactive #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-client.placeholder      #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-client.urgent           #fb4934 #fb4934 #fbf1c7 #fb4934
-client.background       #282828
+# client.focused          #fabd2f #fabd2f #fbf1c7 #fabd2f
+# client.unfocused        #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+# client.focused_inactive #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+# client.placeholder      #7c6f64 #7c6f64 #fbf1c7 #7c6f64
+# client.urgent           #fb4934 #fb4934 #fbf1c7 #fb4934
+# client.background       #282828
+
+# class                 border  backgr. text    indicator
+client.focused          #6cb6eb #6cb6eb #c5cdd9 #6cb6eb
+client.unfocused        #363a49 #363a49 #363a49 #363a49
+client.focused_inactive #363a49 #363a49 #c5cdd9 #363a49
+client.placeholder      #363a49 #363a49 #c5cdd9 #363a49
+client.urgent           #ec7279 #ec7279 #c5cdd9 #ec7279
+client.background       #2b2d37
 
 # polybar
 exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
@@ -210,4 +218,4 @@ exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
 exec nitrogen --restore &
 
 # emacs server
-exec_always /usr/bin/emacs --daemon &
+# exec_always /usr/bin/emacs --daemon &

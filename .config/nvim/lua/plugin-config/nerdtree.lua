@@ -17,7 +17,6 @@ vim.cmd [[
 vim.cmd [[
 	autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 ]]
-
 -- Show hidden files
 vim.g.NERDTreeShowHidden = 1
 
@@ -36,3 +35,5 @@ vim.cmd [[
 		\ 'Unknown'   :'?',
 		\}
 ]]
+
+vim.cmd('let NERDTreeRespectWildIgnore=1')

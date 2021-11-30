@@ -1,53 +1,80 @@
-local Plug = vim.fn['plug#']
-local call = vim.call
+vim.cmd('packadd packer.nvim')
 
-call('plug#begin', '~/.config/nvim/plugged')
--- Plug 'dstein64/vim-startuptime' -- startuptime measure
+return require('packer').startup(function()
+	use 'wbthomason/packer.nvim' -- Packer
 
--- LSP and Snippets
-Plug ('neoclide/coc.nvim', { branch = 'release' }) -- Extension wrapper for LSP
+	-- startup time
+	use 'dstein64/vim-startuptime'
 
-Plug 'SirVer/ultisnips' -- Snippet engine
-Plug 'honza/vim-snippets' -- Collection of snippets
--- Plug 'ludovicchabant/vim-gutentags' -- Tags Manager
+	-- LSP
+	use {
+		'neoclide/coc.nvim',
+		branch = 'release'
+	}
 
-Plug 'sheerun/vim-polyglot' -- Enhanced syntax highlighting
-Plug ('lervag/vimtex', { ['for'] = 'tex' }) -- LaTeX integration
+	-- Autocompile
+	-- use 'tpope/vim-dispatch'
 
--- Git
-Plug 'tpope/vim-fugitive' -- Git wrapper for Vim/Neovim
-Plug 'airblade/vim-gitgutter' -- Shows Git diff in gutter
+	-- Snippets
+	use 'SirVer/ultisnips'
+	use {
+		'honza/vim-snippets',
+		requires = { 'SirVer/ultisnips' }
+	}
 
--- Fuzzy Finder
--- vim.g.fzf_install = 'yes | ./install'
--- Plug ('junegunn/fzf', { ['do'] = vim.g.fzf_install }) -- Fuzzy Finder Wrapper for Vim
-vim.cmd("Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }")
-Plug 'junegunn/fzf.vim' -- Fuzzy Finder
+	use 'sheerun/vim-polyglot' -- Better syntax highlighting
+	use { 'lervag/vimtex', ft = { 'tex' } } -- LaTeX integration
 
--- File Tree
--- Plug 'preservim/nerdtree' -- Filetree
--- Plug 'Xuyuanp/nerdtree-git-plugin' -- Shows git status in filetree
+	-- Git
+	use 'tpope/vim-fugitive'
+	use 'airblade/vim-gitgutter'
 
--- Status Line
-Plug 'vim-airline/vim-airline'
+	-- Fuzzy Finder
+	use {
+		'junegunn/fzf.vim',
+		requires = {
+			'junegunn/fzf',
+			run = '!yes | ./install'
+		}
+	}
 
--- Productivity
--- Plug 'jiangmiao/auto-pairs' -- Autocompletion of brackets
--- Plug 'justinmk/vim-sneak' -- movement
-Plug 'tpope/vim-surround' -- Add surrounding delimiters to text objects
-Plug 'preservim/nerdcommenter' -- Autocommenter
-Plug 'ntpeters/vim-better-whitespace' -- Clears trailing whitespace
-Plug 'folke/which-key.nvim' -- Keymap cheatsheet (only works in Neovim)
-Plug 'lukas-reineke/indent-blankline.nvim' -- Indent guides
+	-- File Tree
+	use 'preservim/nerdtree'
+	use {
+		'Xuyuanp/nerdtree-git-plugin',
+		requires = { 'preservim/nerdtree' }
+	}
 
--- Colorschemes & Appearance
-Plug 'joshdick/onedark.vim'
--- Plug 'morhetz/gruvbox'
--- Plug 'sainnhe/edge'
--- Plug 'sainnhe/everforest'
--- Plug 'sainnhe/gruvbox-material'
--- Plug 'arcticicestudio/nord-vim'
--- Plug 'sainnhe/sonokai'
--- Plug 'ghifarit53/tokyonight-vim'
-Plug 'mhinz/vim-startify' -- start screen
-call('plug#end')
+	-- Status Line
+	use 'vim-airline/vim-airline'
+
+	-- Productivity
+	use 'tpope/vim-surround'
+	use 'preservim/nerdcommenter'
+	use {
+		'ntpeters/vim-better-whitespace',
+		cmd = 'StripWhitespace'
+	}
+	use {
+		'folke/which-key.nvim',
+		config = function()
+			require('which-key').setup{}
+		end
+	}
+
+	use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = function()
+			require('plugin-config/indent-blankline')
+		end
+	}
+
+	use 'sainnhe/edge'
+	use 'sainnhe/everforest'
+	use 'sainnhe/gruvbox-material'
+	-- use 'arcticicestudio/nord-vim'
+	use 'sainnhe/sonokai'
+	-- use 'ghifarit53/tokyonight-vim'
+	use 'mhinz/vim-startify'
+	-- use 'ryanoasis/vim-webdevicons'
+end)

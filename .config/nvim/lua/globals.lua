@@ -31,3 +31,6 @@ o.wildmenu = true
 
 -- mouse
 o.mouse = 'a'
+
+-- ignore
+cmd('set wildignore+=*.git,*.github,*.github-workflows,*.hg*,*.DS_Store,*.swp*')
