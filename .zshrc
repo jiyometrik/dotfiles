@@ -1,15 +1,15 @@
 # plugins
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage' # self-manage zplug
-zplug "zsh-users/zsh-syntax-highlighting" # syntax highlighting
-zplug "zsh-users/zsh-autosuggestions" # fish-like autosuggestions
 zplug "zsh-users/zsh-completions" # better-completions
+zplug "zsh-users/zsh-autosuggestions" # fish-like autosuggestions
+zplug "zdharma-continuum/fast-syntax-highlighting" # syntax highlighting (improvfed)
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/history-substring-search", from:oh-my-zsh # could not get the zsh-users version working
+zplug "plugins/last-working-dir", from:oh-my-zsh # last working directory
+zplug "jeffreytse/zsh-vi-mode" # better vi-mode
 zplug "plugins/git", from:oh-my-zsh # git aliases (they're super helpful!)
 zplug "plugins/gh", from:oh-my-zsh # github aliases (also very helpful)
-zplug "jeffreytse/zsh-vi-mode" # better vi-mode
-zplug "plugins/last-working-directory", from:oh-my-zsh # last working directory
 zplug load # load plugins
 
 # update path for rust/go binaries
@@ -42,12 +42,12 @@ ext ()
 setopt auto_cd
 
 # use exa instead of ls (github: ogham/exa)
-alias l="exa -laah"
-alias la="exa -lah"
-alias ll="exa -hl"
-alias ls="exa"
-alias lsa="exa -lah"
-alias lsg="exa --git --long --header --all --git-ignore"
+alias l="exa -laah --icons --group-directories-first"
+alias la="exa -lah --icons --group-directories-first"
+alias ll="exa -hl --icons --group-directories-first"
+alias ls="exa --icons --group-directories-first"
+alias lsa="exa -lah --icons --group-directories-first"
+alias lsg="exa --git --long --header --all --git-ignore --icons --group-directories-first"
 alias lt="exa -T"
 
 # other aliases
@@ -64,9 +64,11 @@ alias q="exit"
 # bat theme
 export BAT_THEME="base16"
 export EDITOR="emacs"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-	--color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
-	--color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+--color=fg:#c5cdd9,bg:#2b2d37,hl:#6cb6eb 
+--color=fg+:#c5cdd9,bg+:#2b2d37,hl+:#5dbbc1 
+--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
+--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -74,7 +76,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # startup script (choose one)
 # colorscript -r # shell-color-scripts
-fm6000 -n # fetch-master-6000
+fm6000 -n -c cyan # fetch-master-6000
 # pfetch
 # neofetch # the one and only
 

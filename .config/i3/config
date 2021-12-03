@@ -9,7 +9,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka Term SS14 12
+font pango:Victor Mono 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -177,6 +177,7 @@ bindsym $mod+Shift+s exec flameshot gui
 
 # fcitx (chinese input)
 # exec_always --no-startup-id fcitx &
+# exec_always --no-startup-id fcitx5 &
 
 # Hide title bars
 default_border pixel 2
@@ -203,10 +204,10 @@ gaps inner 18
 # client.background       #282828
 
 # class                 border  backgr. text    indicator
-client.focused          #6cb6eb #6cb6eb #c5cdd9 #6cb6eb
-client.unfocused        #363a49 #363a49 #363a49 #363a49
-client.focused_inactive #363a49 #363a49 #c5cdd9 #363a49
-client.placeholder      #363a49 #363a49 #c5cdd9 #363a49
+client.focused          #6cb6eb #6cb6eb #363a49 #6cb6eb
+client.unfocused        #363a49 #363a49 #c5cdd9 #363a49
+client.focused_inactive #363a49 #363a49 #363a49 #363a49
+client.placeholder      #363a49 #363a49 #363a49 #363a49
 client.urgent           #ec7279 #ec7279 #c5cdd9 #ec7279
 client.background       #2b2d37
 
