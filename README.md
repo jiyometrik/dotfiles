@@ -5,9 +5,8 @@ A place to store my dotfiles.
 ## What You'll Find
 
 1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
-2. My `.bashrc`, `.zshrc` and `.p10k.zsh` (configuration file for [powerlevel10k](https://github.com/romkatv/powerlevel10khttps://github.com/romkatv/powerlevel10k))
-3. My `.xinitrc` and `.Xresources`.
-4. Wallpapers I use.
+2. My `.bashrc` and `.zshrc`.
+3. Wallpapers I use.
 ( _Please inform me if these pictures are your work
 and I will kindly take them down if needed._ )
 
@@ -17,6 +16,7 @@ This directory contains most of the configuration files for the applications I u
 
 - [alacritty](https://github.com/alacritty/alacritty)
 - [i3](https://i3wm.org/docs/) + [i3-gaps](https://github.com/Airblader/i3)
+- [fish](https://fishshell.com/)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [neovim](https://neovim.io/) (requires >= v0.5.0 to work)
