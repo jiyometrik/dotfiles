@@ -9,7 +9,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Victor Mono 12
+font pango:JetBrains Mono Nerd Font 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -18,9 +18,7 @@ font pango:Victor Mono 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it.  exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -41,7 +39,8 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+Shift+d exec rofi -show window
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
+# bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
@@ -166,14 +165,14 @@ bindsym $mod+r mode "resize"
 
 # bindsym $mod+e exec emacs
 # bindsym $mod+e exec emacsclient # emacs
-bindsym $mod+f exec firefox
-bindsym $mod+x exec stacer
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+x exec stacer
 
 # screenshot keybindings
 bindsym $mod+Shift+s exec flameshot gui
 
 # initialise picom
-# exec_always --no-startup-id picom --experimental-backends &
+exec_always --no-startup-id picom --experimental-backends &
 
 # fcitx (chinese input)
 # exec_always --no-startup-id fcitx &
@@ -186,36 +185,19 @@ default_floating_border pixel 1
 # gaps
 gaps inner 18
 
-# Nord
 # class                 border  backgr. text    indicator
-# client.focused          #81a1c1 #81a1c1 #eceff4 #81a1c1
-# client.unfocused        #4c566a #4c566a #d8dee9 #4c566a
-# client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a
-# client.placeholder      #4c566a #4c566a #d8dee9 #4c566a
-# client.urgent           #bf616a #bf616a #eceff4 #bf616a
-# client.background       #2e3440
-
-# class                 border  backgr. text    indicator
-# client.focused          #fabd2f #fabd2f #fbf1c7 #fabd2f
-# client.unfocused        #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-# client.focused_inactive #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-# client.placeholder      #7c6f64 #7c6f64 #fbf1c7 #7c6f64
-# client.urgent           #fb4934 #fb4934 #fbf1c7 #fb4934
-# client.background       #282828
-
-# class                 border  backgr. text    indicator
-client.focused          #6cb6eb #6cb6eb #363a49 #6cb6eb
-client.unfocused        #363a49 #363a49 #c5cdd9 #363a49
-client.focused_inactive #363a49 #363a49 #363a49 #363a49
-client.placeholder      #363a49 #363a49 #363a49 #363a49
-client.urgent           #ec7279 #ec7279 #c5cdd9 #ec7279
-client.background       #2b2d37
+client.focused          #a7c080 #a7c080 #4b565c #a7c080
+client.unfocused        #4b565c #4b565c #d3c6aa #4b565c
+client.focused_inactive #4b565c #4b565c #4b565c #4b565c
+client.placeholder      #4b565c #4b565c #4b565c #4b565c
+client.urgent           #e67e80 #e67e80 #d3c6aa #e67e80
+client.background       #2b3339
 
 # polybar
-exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
+exec_always --no-startup-id /home/geo/.config/polybar/launch-bar.sh
+# exec_always --no-starup-id polybar -c /home/geo/.config/polybar/config
 
 # set background image
-# exec feh --no-fehbg --bg-fill "/home/geo/Pictures/gruvbox/houseonthesideofalake.jpg"
 exec nitrogen --restore &
 
 # emacs server

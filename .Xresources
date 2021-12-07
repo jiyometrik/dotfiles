@@ -1,34 +1,37 @@
-! *color0:   #3b4252
-! *color8:   #4c566a
-! *color1:   #bf616a
-! *color9:   #bf616a
-! *color2:   #a3be8c
-! *color10:  #a3be8c
-! *color3:   #ebcb8b
-! *color11:  #ebcb8b
-! *color4:   #81a1c1
-! *color12:  #81a1c1
-! *color5:   #b48ead
-! *color13:  #b48ead
-! *color6:   #88c0d0
-! *color14:  #8fbcbb
-! *color7:   #e5e9f0
-! *color15:  #eceff4
+! special
+*.foreground:   #d3c6aa
+*.background:   #2b3339
+*.cursorColor:  #d3c6aa
 
-*color0: #282828
-*color8: #7c6f64
-*color1: #cc241d
-*color9: #fb4934
-*color2: #98971a
-*color10: #b8bb26
-*color3: #d79921
-*color11: #fabd2f
-*color4: #458588
-*color12: #83a598
-*color5: #b16286
-*color13: #d3869b
-*color6: #689d6a
-*color14: #8ec07c
-*color7: #a89984
-*color15: #fbf1c7
+! black
+*.color0:       #4b565c
+*.color8:       #4b565c
+
+! red
+*.color1:       #e67e80
+*.color9:       #e67e80
+
+! green
+*.color2:       #a7c080
+*.color10:      #a7c080
+
+! yellow
+*.color3:       #dbbc7f
+*.color11:      #dbbc7f
+
+! blue
+*.color4:       #7fbbb3
+*.color12:      #7fbbb3
+
+! magenta
+*.color5:       #d699b6
+*.color13:      #d699b6
+
+! cyan
+*.color6:       #83c092
+*.color14:      #83c092
+
+! white
+*.color7:       #d3c6aa
+*.color15:      #d3c6aa
 

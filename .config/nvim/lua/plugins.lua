@@ -12,9 +12,6 @@ return require('packer').startup(function()
 		branch = 'release'
 	}
 
-	-- Autocompile
-	-- use 'tpope/vim-dispatch'
-
 	-- Snippets
 	use 'SirVer/ultisnips'
 	use {
@@ -76,5 +73,4 @@ return require('packer').startup(function()
 	use 'sainnhe/sonokai'
 	-- use 'ghifarit53/tokyonight-vim'
 	use 'mhinz/vim-startify'
-	-- use 'ryanoasis/vim-webdevicons'
 end)

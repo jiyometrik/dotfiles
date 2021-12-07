@@ -1,17 +1,14 @@
 -- Main Files
 require('globals')
 require('plugins')
-require('keymaps')
 require('colorschemes')
+require('keymaps')
 
 -- Config Files
 require('plugin-config/airline')
 require('plugin-config/better-whitespace')
--- require('plugin-config/indent-blankline')
--- require('plugin-config/keymaps')
 require('plugin-config/nerdcommenter')
-require('plugin-config/nerdtree') -- not in use currently
--- require('plugin-config/sneak') -- don't use very often so kinda obsolete
+require('plugin-config/nerdtree')
 require('plugin-config/startify')
 require('plugin-config/ultisnips')
 require('plugin-config/vimtex')

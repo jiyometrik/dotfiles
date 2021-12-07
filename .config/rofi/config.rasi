@@ -1,16 +1,16 @@
 configuration {
-	modi: "drun";
-	font: "victor mono italic 12";
-	display-drun: " ";
+	modi: "drun,run,window,combi,windowcd,ssh,filebrowser,keys";
+	font: "jetbrains mono nerd font 12";
+	display-drun: "省";
 	sidebar-mode: false;
 }
 
 @theme "/dev/null"
 
 * {
-	bg: #2b2d37;
-	fg: #c5cdd9;
-	button: #363a49;
+	bg: #2b3339;
+	fg: #d3c6aa;
+	button: #4b565c;
 	background-color: @bg;
 	text-color:	@fg;
 }
@@ -32,7 +32,7 @@ prompt {
 	border: 2px;
 	border-color: @fg;
 	border-radius: 10px;
-	font: "victor mono italic 14";
+	font: "jetbrains mono nerd font 14";
 	padding: 0 1% 0;
 }
 

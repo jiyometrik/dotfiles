@@ -1,241 +1,59 @@
 env:
   TERM: xterm-256color
 
-# window padding
+  # window padding
 window:
   padding:
     x: 8
     y: 8
   dynamic_padding: true
 
-# font
+  # font
 font:
-  # size: 8 # Fira Code
   size: 8.5
-  # size: 9
   normal:
-    # family: Fira Code Nerd Font
-    # family: Hack Nerd Font
-    # family: Hasklug Nerd Font
-    # family: Iosevka Term SS14 # also includes: SS05, SS15
-    # family: JetBrains Mono Nerd Font
-    family: Victor Mono Nerd Font
+    family: JetBrains Mono Nerd Font
 
   bold:
-    # family: Fira Code Nerd Font
-    # family: Hack Nerd Font
-    # family: Hasklug Nerd Font
-    # family: Iosevka Term SS14
-    # family: JetBrains Mono Nerd Font
-    family: Victor Mono Nerd Font
+    family: JetBrains Mono Nerd Font
     style: Bold
 
   italic:
-    # family: Iosevka Term SS05 Extended # to be used with Fira Code
-    # family: Hack Nerd Font
-    # family: Hasklug Nerd Font
-    # family: Iosevka Term SS14
-    # family: JetBrains Mono Nerd Font
-    family: Victor Mono Nerd Font
+    family: JetBrains Mono Nerd Font
     style: Italic
 
   bold_italic:
-    # family: Iosevka Term SS05 Extended
-    # family: Hack Nerd Font
-    # family: Hasklug Nerd Font
-    # family: Iosevka Term SS14
-    # family: JetBrains Mono Nerd Font
-    family: Victor Mono Nerd Font
+    family: JetBrains Mono Nerd Font
     style: Bold Italic
 
-# spaces per tab
-tabspaces: 2
+    # spaces per tab
+  tabspaces: 2
 
-# cursor style
-# cursor:
-#   style: Beam
+  # cursor style
+  # cursor:
+  #   style: Beam
 
-# opacity
-# background_opacity: 0.85
-
-schemes:
-  # Edge (Aura)
-  edge-aura:  &edge-aura
-    primary:
-      background: '#2b2d37'
-      foreground: '#c5cdd9'
-
-    normal:
-      black: '#363a49'
-      red: '#ec7279'
-      green: '#a0c980'
-      yellow: '#deb974'
-      blue: '#6cb6eb'
-      magenta: '#d38aea'
-      cyan: '#5dbbc1'
-      white: '#c5cdd9'
-
-    bright:
-      black: '#363a49'
-      red: '#ec7279'
-      green: '#a0c980'
-      yellow: '#deb974'
-      blue: '#6cb6eb'
-      magenta: '#d38aea'
-      cyan: '#5dbbc1'
-      white: '#c5cdd9'
-
-  # Gruvbox Dark (Medium)
-  gruv-med: &gruv-med
-    primary:
-      background: '#282828'
-      foreground: '#ebdbb2'
-    normal:
-      black:   '#282828'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
-    bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
-      magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
-
-  # Gruvbox Material (Medium)
-  gruv-material-med: &gruv-material-med
-    primary:
-      background: '#282828'
-      foreground: '#d4be98'
-    normal:
-      black:   '#3c3836'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
-      magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
-    bright:
-      black:   '#3c3836'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
-      magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
-
-  # Nord
-  nord: &nord
-    primary:
-      background: '#2e3440'
-      foreground: '#d8dee9'
-      dim_foreground: '#a5abb6'
-    cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    vi_mode_cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    selection:
-      text: CellForeground
-      background: '#4c566a'
-    search:
-      matches:
-        foreground: CellBackground
-        background: '#88c0d0'
-      bar:
-        background: '#434c5e'
-        foreground: '#d8dee9'
-    normal:
-      black: '#3b4252'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#88c0d0'
-      white: '#e5e9f0'
-    bright:
-      black: '#4c566a'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#8fbcbb'
-      white: '#eceff4'
-    dim:
-      black: '#373e4d'
-      red: '#94545d'
-      green: '#809575'
-      yellow: '#b29e75'
-      blue: '#68809a'
-      magenta: '#8c738c'
-      cyan: '#6d96a5'
-      white: '#aeb3bb'
-
-  onedark: &onedark
-    primary:
-      background: '#282c34'
-      foreground: '#abb2bf'
-
-    # Normal colors
-    normal:
-      black:   '#282c34'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#abb2bf'
-
-    # Bright colors
-    bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#ffffff'
-
-  # Tokyo Night (Storm)
-  tokyonight-storm: &toykonight-storm
-    primary:
-      background: '#24283b'
-      foreground: '#c0caf5'
-    normal:
-      black:   '#1d202f'
-      red:     '#f7768e'
-      green:   '#9ece6a'
-      yellow:  '#e0af68'
-      blue:    '#7aa2f7'
-      magenta: '#bb9af7'
-      cyan:    '#7dcfff'
-      white:   '#a9b1d6'
-    bright:
-      black:   '#414868'
-      red:     '#f7768e'
-      green:   '#9ece6a'
-      yellow:  '#e0af68'
-      blue:    '#7aa2f7'
-      magenta: '#bb9af7'
-      cyan:    '#7dcfff'
-      white:   '#c0caf5'
-
-    indexed_colors:
-      - { index: 16, color: '#ff9e64' }
-      - { index: 17, color: '#db4b4b' }
-
-colors: *edge-aura
+  # opacity
+  # background_opacity: 0.85
+colors:
+  primary:
+    background: '#2b3339'
+    foreground: '#d3c6aa'
+  normal:
+    black:   '#4b565c'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'
+  bright:
+    black:   '#4b565c'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'

@@ -6,15 +6,15 @@ and `pip install neovim-remote` for the remote servers
 to run correctly.
 --]]
 
-vim.cmd("let &runtimepath  = '~/.config/nvim/plugged/vimtex,' . &runtimepath")
-vim.cmd("let &runtimepath .= ',~/.config/nvim/plugged/vimtex/after'")
+vim.cmd("let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &runtimepath")
+vim.cmd("let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after'")
 
 -- Folding
 vim.g.vimtex_fold_enabled = 1
 
 -- Viewing
 vim.g.vimtex_view_method = 'zathura'
--- vim.g.vimtex_view_general_viewer = 'zathura'
+vim.g.vimtex_view_general_viewer = 'zathura'
 
 -- Pairs (ensure that you have coc-pairs installed)
 vim.cmd("autocmd FileType tex let b:coc_pairs = [['$', '$']]")

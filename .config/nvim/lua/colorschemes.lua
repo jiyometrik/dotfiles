@@ -5,17 +5,17 @@ local cmd = vim.cmd
 o.termguicolors = true
 
 -- Edge
-g.edge_style = 'aura'
-g.edge_enable_italic = 1
-g.edge_better_performance = 1
-cmd('colorscheme edge')
+-- g.edge_style = 'aura'
+-- g.edge_enable_italic = 1
+-- g.edge_better_performance = 1
+-- cmd('colorscheme edge')
 
 -- Everforest
--- g.everforest_background = 'hard' -- dark
+g.everforest_background = 'hard' -- dark
 -- g.everforest_background = 'soft' -- light
--- g.everforest_enable_italic = 1
--- g.everforest_better_performance = 1
--- cmd('colorscheme everforest')
+g.everforest_enable_italic = 1
+g.everforest_better_performance = 1
+cmd('colorscheme everforest')
 
 -- Gruvbox Material
 -- g.gruvbox_material_palette = 'original' -- for original gruvbox
