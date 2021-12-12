@@ -12,13 +12,11 @@ o.termguicolors = true
 
 -- Everforest
 g.everforest_background = 'hard' -- dark
--- g.everforest_background = 'soft' -- light
 g.everforest_enable_italic = 1
 g.everforest_better_performance = 1
 cmd('colorscheme everforest')
 
 -- Gruvbox Material
--- g.gruvbox_material_palette = 'original' -- for original gruvbox
 -- g.gruvbox_material_enable_italic = 1
 -- g.gruvbox_material_better_performance = 1
 -- cmd('colorscheme gruvbox-material')

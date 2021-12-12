@@ -24,6 +24,9 @@ o.showcmd = true
 -- conceal (for vimtex)
 o.conceallevel = 2
 
+-- line highlight
+o.cursorline = true
+
 -- wildmenu (for filepath & buffer completion)
 cmd('set path+=**')
 o.wildmenu = true

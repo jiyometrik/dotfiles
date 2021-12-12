@@ -35,13 +35,15 @@ return require('packer').startup(function()
 		}
 	}
 
-	-- File Tree
-	use 'preservim/nerdtree'
 	use {
-		'Xuyuanp/nerdtree-git-plugin',
-		requires = { 'preservim/nerdtree' }
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons',
+		},
+		config = function()
+			require('plugin-config/nvim-tree')
+		end,
 	}
-
 	-- Status Line
 	use 'vim-airline/vim-airline'
 
@@ -73,5 +75,5 @@ return require('packer').startup(function()
 	use 'sainnhe/sonokai'
 	-- use 'ghifarit53/tokyonight-vim'
 	use 'mhinz/vim-startify'
-	use 'ryanoasis/vim-devicons'
+	-- use 'ryanoasis/vim-devicons'
 end)

@@ -121,16 +121,6 @@ wk.register({ ['<leader>'] = {
 		["-"] = { '<Plug>(GitGutterUndoHunk)', 'undo-stage-hunk', noremap = false },
 	},
 
-	-- GitGutter hunk support
-	-- h = {
-	--   name = '+hunks',
-	--   j = { '<Plug>(GitGutterNextHunk)', 'next', noremap = false },
-	--   k = { '<Plug>(GitGutterPrevHunk)', 'prev', noremap = false },
-	--   p = { '<Plug>(GitGutterPreviewHunk)', 'preview', noremap = false },
-	--   s = { '<Plug>(GitGutterStageHunk)', 'stage', noremap = false },
-	--   u = { '<Plug>(GitGutterUndoHunk)', 'undo', noremap = false }
-	-- },
-
 	-- LSP ft. CoC --
 	l = {
 		name = '+lsp',
@@ -160,32 +150,25 @@ wk.register({ ['<leader>'] = {
 		q = { '<Plug>(coc-fix-current)', 'quickfix', noremap = false, silent = false },
 	},
 
-	-- Make Tasks
-	-- m = {
-	--   name = '+make',
-	--   ['<space>'] = { '<Cmd>Make!<CR>', 'start-in-bg', noremap = false },
-	--   c = { ':compiler ', 'specify-primary-compiler', silent = false, noremap = false },
-	--   g = { '<Cmd>Dispatch g++ %<CR>', 'g++', noremap = false, silent = false },
-	--   G = { '<Cmd>Dispatch gcc %<CR>', 'gcc', noremap = false, silent = false },
-	--   k = { '<Cmd>Make<CR>', 'start-in-fg', silent = false, noremap = false },
-	--   o = { '<Cmd>Copen<CR>', 'open-log', silent = false, noremap = false },
-	-- },
-
-	-- NERDTree --
-	n = {
-		name = '+nerdtree',
-		['<space>'] = { '<Cmd>NERDTree<CR>', 'nerdtree' },
-		f = { '<Cmd>NERDTreeFocus<CR>', 'focus' },
-		i = { '<Cmd>NERDTreeFind<CR>', 'find' },
-		t = { '<Cmd>NERDTreeToggle<CR>', 'toggle' },
+	-- NvimTree --
+	e = {
+		name = '+explorer',
+		['<space>'] = { '<Cmd>NvimTreeOpen<CR>', 'open' },
+		c = { '<Cmd>NvimTreeClose', 'close' },
+		f = { '<Cmd>NvimTreeFocus<CR>', 'focus' },
+		i = { '<Cmd>NvimTreeFindFile<CR>', 'find' },
+		p = { '<Cmd>NvimTreeClipboard<CR>', 'clipboard' },
+		r = { '<Cmd>NvimTreeRefresh<CR>', 'refresh' },
+		s = { '<Cmd>NvimTreeResize<CR>', 'resize' },
+		t = { '<Cmd>NvimTreeToggle<CR>', 'toggle' },
 	},
 
 	-- Toggles --
 	t = {
 		name = '+toggle',
+		e = { '<Cmd>NvimTreeToggle<CR>', 'explorer' },
 		g = { '<Cmd>GitGutterToggle<CR>', 'git-indicators' },
 		i = { '<Cmd>IndentBlanklineToggle<CR>', 'indent-guides' },
-		n = { '<Cmd>NERDTreeToggle<CR>', 'nerdtree' },
 	},
 
 	-- Windows --
