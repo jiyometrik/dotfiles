@@ -11,20 +11,24 @@ window:
   # font
 font:
   size: 8.5
+  # size: 9
+  # size: 9.5 # Cozette
   normal:
+    # family: Cozette Vector
+    # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
 
-  bold:
-    family: JetBrains Mono Nerd Font
-    style: Bold
-
-  italic:
-    family: JetBrains Mono Nerd Font
-    style: Italic
-
-  bold_italic:
-    family: JetBrains Mono Nerd Font
-    style: Bold Italic
+  # bold:
+  #   family: JetBrains Mono Nerd Font
+  #   style: Bold
+  #
+  # italic:
+  #   family: JetBrains Mono Nerd Font
+  #   style: Italic
+  #
+  # bold_italic:
+  #   family: JetBrains Mono Nerd Font
+  #   style: Bold Italic
 
     # spaces per tab
   tabspaces: 2

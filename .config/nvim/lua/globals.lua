@@ -14,7 +14,6 @@ o.relativenumber = true
 -- Indentation
 o.tabstop = 2
 o.shiftwidth = 2
-o.softtabstop = 2
 o.autoindent = true
 o.smartindent = true
 

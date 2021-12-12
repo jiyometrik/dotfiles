@@ -53,12 +53,12 @@ command_timeout = 1000
 	symbol = " "
 [elm]
 	symbol = " "
-[git_branch]
-	symbol = " "
+# [git_branch]
+#   symbol = " "
 [golang]
 	symbol = " "
-[hg_branch]
-	symbol = " "
+# [hg_branch]
+#   symbol = " "
 [java]
 	symbol = " "
 style = "red"

@@ -73,4 +73,5 @@ return require('packer').startup(function()
 	use 'sainnhe/sonokai'
 	-- use 'ghifarit53/tokyonight-vim'
 	use 'mhinz/vim-startify'
+	use 'ryanoasis/vim-devicons'
 end)

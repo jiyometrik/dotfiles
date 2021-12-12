@@ -1,16 +1,20 @@
-# plugins
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage' # self-manage zplug
-zplug "plugins/history-substring-search", from:oh-my-zsh # could not get the zsh-users version working
-zplug "zsh-users/zsh-completions" # better-completions
-zplug "zsh-users/zsh-autosuggestions" # fish-like autosuggestions
-zplug "zdharma-continuum/fast-syntax-highlighting" # syntax highlighting (improved)
-zplug "plugins/z", from:oh-my-zsh
-zplug "plugins/last-working-dir", from:oh-my-zsh # last working directory
-zplug "jeffreytse/zsh-vi-mode" # better vi-mode
-zplug "plugins/git", from:oh-my-zsh # git aliases (they're super helpful!)
-zplug "plugins/gh", from:oh-my-zsh # github aliases (also very helpful)
-zplug load # load plugins
+# zgenom for plugins
+source "$HOME/.zgenom/zgen.zsh"
+
+if ! zgenom saved; then
+	zgenom ohmyzsh # loads oh-my-zsh plugin base
+	zgenom load zdharma-continuum/fast-syntax-highlighting # syntax highlighting
+	zgenom load zsh-users/zsh-completions # extra completions
+	zgenom load zsh-users/zsh-autosuggestions # fish-like autosuggestions
+	zgenom load zsh-users/zsh-history-substring-search # smart up-arrow for last cmd
+	zgenom ohmyzsh plugins/z # dir jumping
+	zgenom ohmyzsh plugins/last-working-dir # move to last directory
+	zgenom ohmyzsh plugins/vi-mode # vi-mode
+	zgenom ohmyzsh plugins/git # git aliases
+	zgenom ohmyzsh plugins/gh # github cli aliases
+
+	zgenom save
+fi
 
 # update path for rust/go binaries
 PATH="$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin${PATH:+:${PATH}}"
@@ -56,8 +60,9 @@ alias fm="fm6000"
 alias pf="pfetch"
 alias lg="lazygit"
 alias lv="lvim"
+alias nv="lvim"
+alias nvim="lvim"
 alias nf="neofetch"
-alias nv="nvim"
 alias rn="ranger"
 alias q="exit"
 
@@ -65,20 +70,20 @@ alias galias="alias | grep git"
 
 # bat theme
 export BAT_THEME="base16"
-export EDITOR="nvim"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#c5cdd9,bg:#2b2d37,hl:#6cb6eb
---color=fg+:#c5cdd9,bg+:#2b2d37,hl+:#5dbbc1
---color=info:#88909f,prompt:#ec7279,pointer:#d38aea
---color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
+export EDITOR="lvim"
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+# --color=fg:#c5cdd9,bg:#2b2d37,hl:#6cb6eb
+# --color=fg+:#c5cdd9,bg+:#2b2d37,hl+:#5dbbc1
+# --color=info:#88909f,prompt:#ec7279,pointer:#d38aea
+# --color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # startup script (choose one)
-# colorscript -r # shell-color-scripts
-fm6000 -n -c blue # fetch-master-6000
+colorscript -r # shell-color-scripts
+# fm6000 -n -c blue # fetch-master-6000
 # pfetch
 # neofetch # the one and only
 
