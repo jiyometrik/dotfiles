@@ -12,6 +12,18 @@ return require('packer').startup(function()
 		branch = 'release'
 	}
 
+	-- Treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function()
+			require('plugin-config.treesitter')
+		end
+	}
+	
+	-- Copilot
+	use 'github/copilot.vim'
+
 	-- Snippets
 	use 'SirVer/ultisnips'
 	use {
@@ -19,12 +31,17 @@ return require('packer').startup(function()
 		requires = { 'SirVer/ultisnips' }
 	}
 
-	use 'sheerun/vim-polyglot' -- Better syntax highlighting
 	use { 'lervag/vimtex', ft = { 'tex' } } -- LaTeX integration
 
 	-- Git
 	use 'tpope/vim-fugitive'
-	use 'airblade/vim-gitgutter'
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			require('gitsigns').setup()
+		end,
+	}
 
 	-- Fuzzy Finder
 	use {
@@ -35,30 +52,59 @@ return require('packer').startup(function()
 		}
 	}
 
+	-- File Explorer
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = {
 			'kyazdani42/nvim-web-devicons',
+			opt = true,
 		},
 		config = function()
-			require('plugin-config/nvim-tree')
+			require('plugin-config/explorer')
 		end,
 	}
+
 	-- Status Line
-	use 'vim-airline/vim-airline'
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require('plugin-config/statusline')
+		end,
+	}
+
+	use {
+		'akinsho/bufferline.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require('plugin-config/tabline')
+		end,
+	}
 
 	-- Productivity
-	use 'tpope/vim-surround'
-	use 'preservim/nerdcommenter'
+	use {
+		'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup()
+		end,
+	}
+	use 'tpope/vim-surround' -- more functional than neovim version
+	use {
+		'terrortylor/nvim-comment',
+		config = function()
+			require('nvim_comment').setup()
+		end
+	}
 	use {
 		'ntpeters/vim-better-whitespace',
-		cmd = 'StripWhitespace'
+		cmd = 'StripWhitespace',
+		opt = true,
 	}
 	use {
 		'folke/which-key.nvim',
 		config = function()
-			require('which-key').setup{}
-		end
+			require('which-key').setup()
+		end,
 	}
 
 	use {
@@ -68,12 +114,10 @@ return require('packer').startup(function()
 		end
 	}
 
-	use 'sainnhe/edge'
+	-- use 'sainnhe/edge'
 	use 'sainnhe/everforest'
-	use 'sainnhe/gruvbox-material'
-	-- use 'arcticicestudio/nord-vim'
+	-- use 'sainnhe/gruvbox-material'
 	use 'sainnhe/sonokai'
-	-- use 'ghifarit53/tokyonight-vim'
+	-- use 'folke/tokyonight.nvim'
 	use 'mhinz/vim-startify'
-	-- use 'ryanoasis/vim-devicons'
 end)

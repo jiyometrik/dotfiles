@@ -2,6 +2,7 @@ configuration {
 	modi: "drun,run,window,combi,windowcd,ssh,filebrowser,keys";
 	font: "jetbrains mono nerd font 12";
 	/* font: "cozette vector 15"; */
+  /* font: "hasklug nerd font 12"; */
 	display-drun: "";
 	sidebar-mode: false;
 }
@@ -33,7 +34,8 @@ prompt {
 	border: 2px;
 	border-color: @fg;
 	border-radius: 10px;
-	font: "jetbrains mono nerd font 14";
+  font: "hasklug nerd font 14";
+	/* font: "jetbrains mono nerd font 14"; */
 	/* font: "cozette vector 17"; */
 	padding: 0 1% 0;
 }

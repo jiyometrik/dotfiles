@@ -31,8 +31,3 @@ cmd('colorscheme everforest')
 -- g.sonokai_enable_italic = 1
 -- g.sonokai_better_performance = 1
 -- cmd('colorscheme sonokai')
-
--- Tokyo Night
--- g.tokyonight_style = 'storm'
--- g.tokyonight_enable_italic = 1
--- cmd('colorscheme tokyonight')
