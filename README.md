@@ -6,9 +6,6 @@ A place to store my dotfiles.
 
 1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
 2. My `.bashrc` and `.zshrc`.
-3. Wallpapers I use.
-( _Please inform me if these pictures are your work
-and I will kindly take them down if needed._ )
 
 ### The .config Directory
 
