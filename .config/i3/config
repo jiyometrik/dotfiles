@@ -206,7 +206,7 @@ client.background       #282828
 exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
 
 # set background image
-# exec feh --no-fehbg --bg-fill "/home/geo/Pictures/gruvbox/houseonthesideofalake.jpg"
+# exec feh --no-fehbg --bg-fill "/home/geo/Pictures/gruvbox/houseonthesideofalake.jpg" # exorcist365/wallpapers (gitlab)
 exec nitrogen --restore &
 
 # emacs server
