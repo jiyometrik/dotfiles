@@ -4,30 +4,34 @@ local cmd = vim.cmd
 
 o.termguicolors = true
 
--- Edge
+-- edge
 -- g.edge_style = 'aura'
 -- g.edge_enable_italic = 1
 -- g.edge_better_performance = 1
 -- cmd('colorscheme edge')
 
--- Everforest
-g.everforest_background = 'hard' -- dark
+-- everforest
+g.everforest_background = 'hard'
 g.everforest_enable_italic = 1
 g.everforest_better_performance = 1
 cmd('colorscheme everforest')
 
--- Gruvbox Material
+-- gruvbox material
 -- g.gruvbox_material_enable_italic = 1
 -- g.gruvbox_material_better_performance = 1
 -- cmd('colorscheme gruvbox-material')
 
--- Nord
+-- nord
 -- g.nord_uniform_diff_background = 1
 -- g.nord_italic = 1
 -- g.nord_italic_comments = 1
 -- cmd('colorscheme nord')
 
--- Sonokai
+-- tokyonight
+-- g.tokyonight_style = 'night'
+-- cmd('colorscheme tokyonight')
+
+-- sonokai
 -- g.sonokai_enable_italic = 1
 -- g.sonokai_better_performance = 1
 -- cmd('colorscheme sonokai')

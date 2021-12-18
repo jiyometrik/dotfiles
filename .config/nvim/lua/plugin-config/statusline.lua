@@ -1,7 +1,7 @@
 require('lualine').setup {
 	options = {
-		-- theme = 'everforest',
 		section_separators = '',
-		component_separators = ''
+		component_separators = '',
+		disabled_filetypes = {'dashboard'},
 	}
 }

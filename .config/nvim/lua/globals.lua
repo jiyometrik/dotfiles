@@ -7,11 +7,11 @@ cmd('syntax enable')
 o.fileencoding = 'utf-8' -- file encoding
 o.hidden = true
 
--- Line Numbers
+-- line numbers
 o.number = true
 o.relativenumber = true
 
--- Indentation
+-- indentation
 o.tabstop = 2
 o.shiftwidth = 2
 o.autoindent = true
@@ -26,6 +26,9 @@ o.conceallevel = 2
 
 -- line highlight
 o.cursorline = true
+
+-- format options
+cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
 -- wildmenu (for filepath & buffer completion)
 cmd('set path+=**')
