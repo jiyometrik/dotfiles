@@ -198,7 +198,8 @@ client.background       #2e3440
 exec_always --no-startup-id /home/geo/.config/polybar/launch.sh
 
 # set background image
-exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png"
+exec feh --no-fehbg --bg-fill "/home/geo/Pictures/nord/ign-0011.png" #  dxnst/nord-wallpapers (github)
+
 
 # emacs server
 exec_always /usr/bin/emacs --daemon &
