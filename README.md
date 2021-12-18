@@ -6,6 +6,7 @@ A place to store my dotfiles.
 
 1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
 2. My `.bashrc` and `.zshrc`.
+3. My music.
 
 ### The .config Directory
 
@@ -15,12 +16,14 @@ This directory contains most of the configuration files for the applications I u
 - [fish](https://fishshell.com/)
 - [i3-gaps](https://github.com/Airblader/i3)
 - [kitty](https://sw.kovidgoyal.net/kitty/)
+- [lunarvim](https://lunarvim.org)
+- [mpd](https://www.musicpd.org/)
 - [neovim](https://neovim.io/) (requires >= v0.5.0 to work)
 - [picom](https://github.com/jonaburg/picom) (patched by [@jonaburg](https://github.com/jonaburg))
 - [polybar](https://github.com/polybar/polybar)
 - [ranger](https://github.com/ranger/ranger)
 - [rofi](https://github.com/davatorium/rofi)
-- [starship](https://starship.rs/)
+- [starship prompt](https://starship.rs/)
 - [zathura](https://pwmt.org/projects/zathura/)
 
 ## Usage
