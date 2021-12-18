@@ -198,7 +198,7 @@ exec_always --no-startup-id /home/geo/.config/polybar/i3/launch-bar.sh
 
 # set background image
 # exec nitrogen --restore &
-exec feh --bg-fill ~/Pictures/gruvbox/rails.jpg
+exec feh --bg-fill ~/Pictures/gruvbox/rails.jpg # https://gitlab.com/exorcist365/wallpapers/-/blob/master/gruvbox/rails.jpg
 
 # dunst
 exec dunst &
