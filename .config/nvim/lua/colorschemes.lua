@@ -11,10 +11,10 @@ o.termguicolors = true
 -- cmd('colorscheme edge')
 
 -- everforest
-g.everforest_background = 'hard'
-g.everforest_enable_italic = 1
-g.everforest_better_performance = 1
-cmd('colorscheme everforest')
+-- g.everforest_background = 'hard'
+-- g.everforest_enable_italic = 1
+-- g.everforest_better_performance = 1
+-- cmd('colorscheme everforest')
 
 -- gruvbox material
 -- g.gruvbox_material_enable_italic = 1
@@ -29,7 +29,7 @@ cmd('colorscheme everforest')
 
 -- tokyonight
 -- g.tokyonight_style = 'night'
--- cmd('colorscheme tokyonight')
+cmd('colorscheme tokyonight')
 
 -- sonokai
 -- g.sonokai_enable_italic = 1

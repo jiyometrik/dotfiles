@@ -17,7 +17,7 @@ if ! zgenom saved; then
 fi
 
 # update path for rust/go binaries
-PATH="$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin${PATH:+:${PATH}}"
+PATH="$HOME/.local/share/nvim/lsp_servers:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin${PATH:+:${PATH}}"
 
 # extract files
 ext () {
@@ -70,7 +70,7 @@ alias galias="alias | grep git"
 
 # bat theme
 export BAT_THEME="base16"
-export EDITOR="lvim"
+export EDITOR="emacs" # use emacs as default editor
 # export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 # --color=fg:#c5cdd9,bg:#2b2d37,hl:#6cb6eb
 # --color=fg+:#c5cdd9,bg+:#2b2d37,hl+:#5dbbc1

@@ -11,10 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-vim.g.everforest_background = 'hard'
-vim.g.everforest_enable_italic = 1
-vim.g.everforest_better_performance = 1
-lvim.colorscheme = "everforest"
+lvim.colorscheme = "tokyonight"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -146,6 +143,7 @@ lvim.plugins = {
 		cmd = "TroubleToggle",
 	},
 	"sainnhe/everforest",
+  "folke/tokyonight.nvim",
 	"lunarvim/colorschemes",
 	{
 		"ray-x/lsp_signature.nvim",

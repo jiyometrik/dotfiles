@@ -8,9 +8,26 @@ return require('packer').startup(function()
 	use 'dstein64/vim-startuptime'
 
 	-- lsp
-	use {'neoclide/coc.nvim', branch = 'release'}
+	use {
+		'neovim/nvim-lspconfig',
+		config = function()
+			require('plugin-config.lsp')
+		end
+	}
 
-	-- better syntax highlighting
+	-- graphical installer
+	use 'williamboman/nvim-lsp-installer'
+
+	-- better ui for lsp (not currently working)
+	-- use 'glepnir/lspsaga.nvim'
+
+	-- hints as you type
+	use 'ray-x/lsp_signature.nvim'
+
+	-- nice icons
+	use 'onsails/lspkind-nvim'
+
+	-- syntax highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
@@ -19,14 +36,30 @@ return require('packer').startup(function()
 		end
 	}
 
-	-- ai completion
-	use 'github/copilot.vim'
-
 	-- snippet engine
 	use 'SirVer/ultisnips'
 
 	-- collection of snippets
-	use {'honza/vim-snippets', requires =  'SirVer/ultisnips'}
+	use {'honza/vim-snippets', requires = 'SirVer/ultisnips'}
+
+	-- completion
+	use {
+		'hrsh7th/nvim-cmp',
+		-- completion sources
+		requires = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+			'quangnguyen30192/cmp-nvim-ultisnips'
+		},
+		config = function()
+			require('plugin-config/completion')
+		end,
+	}
+
+	-- ai completion
+	use 'github/copilot.vim'
 
 	-- latex
 	use {'lervag/vimtex', ft = {'tex'}}
@@ -45,8 +78,11 @@ return require('packer').startup(function()
 
 	-- fuzzy finder
 	use {
-		'junegunn/fzf.vim',
-		requires = {'junegunn/fzf', run = '!yes | ./install'}
+		'nvim-telescope/telescope.nvim',
+		requires = 'nvim-lua/plenary.nvim',
+		config = function()
+			require('telescope').setup()
+		end,
 	}
 
 	-- dashboard
@@ -128,4 +164,12 @@ return require('packer').startup(function()
 	use 'sainnhe/gruvbox-material'
 	use 'sainnhe/sonokai'
 	use 'folke/tokyonight.nvim'
+
+	-- misc
+	use {
+		'norcalli/nvim-colorizer.lua',
+		config = function()
+			require('colorizer').setup()
+		end
+	}
 end)

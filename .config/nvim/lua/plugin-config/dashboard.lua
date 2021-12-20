@@ -1,7 +1,7 @@
 local g = vim.g
 local cmd = vim.cmd
 
-g.dashboard_default_executive = 'fzf'
+g.dashboard_default_executive = 'telescope'
 
 cmd [[
 	let g:dashboard_custom_shortcut = {
@@ -9,7 +9,7 @@ cmd [[
 		\ 'find_history': 'SPC f h',
 		\ 'find_file': 'SPC f f',
 		\ 'new_file': 'SPC b ;',
-		\ 'change_colorscheme': 'SPC f o',
+		\ 'change_colorscheme': 'SPC f .',
 		\ 'find_word': 'SPC f r',
 		\ 'book_marks': 'SPC f m',
 	\ }

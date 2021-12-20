@@ -9,7 +9,7 @@ require('bufferline').setup {
 		max_name_length = 18,
 		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
 		tab_size = 18,
-		-- separator_style = 'thin',
+		separator_style = 'thick',
 
 		-- Closing Buffers
 		close_command = "bd! %d",
@@ -23,22 +23,10 @@ require('bufferline').setup {
 		left_trunc_marker = '',
 		right_trunc_marker = '',
 
-		-- Extra Stuff
-		diagnostics = 'coc',
+		diagnostics = 'nvim_lsp',
 		diagnostics_update_in_insert = true,
 
-		-- icons for diagnostics
-		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			local s = " "
-			for e, n in pairs(diagnostics_dict) do
-				local sym = e == "error" and " "
-				or (e == "warning" and " " or "" )
-				s = s .. n .. sym
-			end
-			return s
-		end,
-
-		-- show LSP diagnostics in custom area
+		-- show lsp diagnostics in custom area
 		custom_areas = {
 			right = function()
 				local result = {}

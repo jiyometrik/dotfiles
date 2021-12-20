@@ -1,20 +1,22 @@
--- Vimtex --
--- Backward Search
+-- vimtex
+
+local g = vim.g
+local cmd = vim.cmd
+
+-- backward search
 --[[
 To enable backward search, run `pip install neovim`
 and `pip install neovim-remote` for the remote servers
 to run correctly.
+You should also ensure that you have a pdf reader that supports backward search.
 --]]
 
-vim.cmd("let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &runtimepath")
-vim.cmd("let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after'")
+cmd("let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &runtimepath")
+cmd("let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after'")
 
 -- Folding
-vim.g.vimtex_fold_enabled = 1
+g.vimtex_fold_enabled = 1
 
 -- Viewing
-vim.g.vimtex_view_method = 'zathura'
-vim.g.vimtex_view_general_viewer = 'zathura'
-
--- Pairs (ensure that you have coc-pairs installed)
-vim.cmd("autocmd FileType tex let b:coc_pairs = [['$', '$']]")
+g.vimtex_view_method = 'zathura'
+g.vimtex_view_general_viewer = 'zathura'

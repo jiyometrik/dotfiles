@@ -274,6 +274,11 @@ _G.packer_plugins = {
     path = "/home/geo/.local/share/lunarvim/site/pack/packer/opt/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/geo/.local/share/lunarvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["trouble.nvim"] = {
     commands = { "TroubleToggle" },
     loaded = false,

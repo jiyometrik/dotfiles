@@ -144,10 +144,10 @@ mode "resize" {
 	# Pressing right will grow the window’s width.
 	# Pressing up will shrink the window’s height.
 	# Pressing down will grow the window’s height.
-	bindsym j resize shrink width 10 px or 10 ppt
-	bindsym k resize grow height 10 px or 10 ppt
-	bindsym l resize shrink height 10 px or 10 ppt
-	bindsym semicolon resize grow width 10 px or 10 ppt
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
 	# same bindings, but for the arrow keys
 	bindsym Left resize shrink width 10 px or 10 ppt
@@ -163,8 +163,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+e exec emacs
-# bindsym $mod+e exec emacsclient # emacs
+# emacs server
+exec /usr/bin/emacs --daemon &
+
+# bindsym $mod+e exec emacs
+bindsym $mod+e exec emacsclient -c -a 'emacs' # emacs
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+x exec stacer
 
@@ -172,7 +175,7 @@ bindsym $mod+Shift+x exec stacer
 bindsym $mod+Shift+s exec flameshot gui
 
 # initialise picom
-# exec_always --no-startup-id picom --experimental-backends &
+exec_always --no-startup-id picom --experimental-backends &
 
 # fcitx (chinese input)
 exec_always --no-startup-id fcitx &
@@ -186,19 +189,19 @@ default_floating_border pixel 1
 gaps inner 18
 
 # class                 border  backgr. text    indicator
-client.focused          #a7c080 #a7c080 #4b565c #a7c080
-client.unfocused        #4b565c #4b565c #d3c6aa #4b565c
-client.focused_inactive #4b565c #4b565c #4b565c #4b565c
-client.placeholder      #4b565c #4b565c #4b565c #4b565c
-client.urgent           #e67e80 #e67e80 #d3c6aa #e67e80
-client.background       #2b3339
+client.focused          #7aa2f7 #7aa2f7 #414868 #7aa2f7
+client.unfocused        #414868 #414868 #c0caf5 #414868
+client.focused_inactive #414868 #414868 #414868 #414868
+client.placeholder      #414868 #414868 #414868 #414868
+client.urgent           #f7768e #f7768e #c0caf5 #f7768e
+client.background       #24283b
 
 # polybar
-exec_always --no-startup-id /home/geo/.config/polybar/i3/launch-bar.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch-bar.sh
 
 # set background image
 # exec nitrogen --restore &
-exec feh --bg-fill ~/Pictures/gruvbox/rails.jpg # https://gitlab.com/exorcist365/wallpapers/-/blob/master/gruvbox/rails.jpg
+exec feh --bg-fill $HOME/Downloads/tokyonight.png
 
 # dunst
 exec dunst &

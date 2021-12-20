@@ -1,7 +1,40 @@
+# colorscheme (tokyo night)
+colors:
+  # Default colors
+  primary:
+    background: '0x24283b'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x1D202F'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+
 env:
   TERM: xterm-256color
 
-  # window padding
+# window padding
 window:
   padding:
     x: 8
@@ -14,10 +47,10 @@ font:
   # size: 9
   # size: 9.5 # Cozette
   normal:
+    # family: Iosevka Term SS05
     # family: Cozette Vector
     # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
-    # family: ø # cartograph cf (pirated)
 
   # bold:
   #   family: JetBrains Mono Nerd Font
@@ -31,34 +64,13 @@ font:
   #   family: JetBrains Mono Nerd Font
   #   style: Bold Italic
 
-    # spaces per tab
-  tabspaces: 2
 
-  # cursor style
-  # cursor:
-  #   style: Beam
+# spaces per tab
+tabspaces: 2
 
-  # opacity
-  # background_opacity: 0.85
-colors:
-  primary:
-    background: '#2b3339'
-    foreground: '#d3c6aa'
-  normal:
-    black:   '#4b565c'
-    red:     '#e67e80'
-    green:   '#a7c080'
-    yellow:  '#dbbc7f'
-    blue:    '#7fbbb3'
-    magenta: '#d699b6'
-    cyan:    '#83c092'
-    white:   '#d3c6aa'
-  bright:
-    black:   '#4b565c'
-    red:     '#e67e80'
-    green:   '#a7c080'
-    yellow:  '#dbbc7f'
-    blue:    '#7fbbb3'
-    magenta: '#d699b6'
-    cyan:    '#83c092'
-    white:   '#d3c6aa'
+# cursor style
+# cursor:
+#   style: Beam
+
+# opacity
+# background_opacity: 0.85
