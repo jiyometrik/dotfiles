@@ -8,5 +8,5 @@ g.UltiSnipsJumpBackwardTrigger = '<C-z>'
 cmd("let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips/'")
 
 -- jump placeholders
-g.coc_snippet_next = '<c-j>'
-g.coc_snippet_prev = '<c-k>'
+g.coc_snippet_next = '<C-j>'
+g.coc_snippet_prev = '<C-k>'

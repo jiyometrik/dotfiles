@@ -1,8 +1,15 @@
+-- I AM THE THEME MAN
 local g = vim.g
 local o = vim.o
 local cmd = vim.cmd
 
 o.termguicolors = true
+
+-- ayu
+-- cmd('colorscheme ayu-mirage')
+
+-- dracula
+-- cmd('colorscheme dracula')
 
 -- edge
 -- g.edge_style = 'aura'
@@ -16,15 +23,17 @@ o.termguicolors = true
 -- g.everforest_better_performance = 1
 -- cmd('colorscheme everforest')
 
+-- gruvbox
+-- cmd('colorscheme gruvbox')
+
 -- gruvbox material
 -- g.gruvbox_material_enable_italic = 1
 -- g.gruvbox_material_better_performance = 1
 -- cmd('colorscheme gruvbox-material')
 
 -- nord
--- g.nord_uniform_diff_background = 1
--- g.nord_italic = 1
--- g.nord_italic_comments = 1
+-- g.nord_contrast = true
+-- g.nord_borders = true
 -- cmd('colorscheme nord')
 
 -- tokyonight
@@ -32,6 +41,7 @@ o.termguicolors = true
 cmd('colorscheme tokyonight')
 
 -- sonokai
+-- g.sonokai_style = 'andromeda'
 -- g.sonokai_enable_italic = 1
 -- g.sonokai_better_performance = 1
 -- cmd('colorscheme sonokai')

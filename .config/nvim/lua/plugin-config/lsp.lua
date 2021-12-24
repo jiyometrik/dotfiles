@@ -68,11 +68,12 @@ local on_attach = function(client, bufno)
 end
 
 lsp_installer.on_server_ready(function(server)
+
 	-- initialise nvim-cmp to work with all installed LSPs
 	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	local opts = {
 		on_attach = on_attach,
-		capabilities = capabilities,
+		capabilities = capabilities, -- for completion
 		-- on_new_config = on_new_config,
 		-- on_config_changed = on_config_changed,
 		-- on_init = on_init,
@@ -89,3 +90,12 @@ lsp_installer.on_server_ready(function(server)
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)
 end)
+
+-- icons in the gutter
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.cmd[[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]] -- format on save

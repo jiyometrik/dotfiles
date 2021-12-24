@@ -1,5 +1,6 @@
+-- bufferline.nvim
+
 vim.opt.termguicolors = true
--- bufferline.nvim --
 require('bufferline').setup {
 	options = {
 		-- Buffer Numbers

@@ -19,7 +19,12 @@ return require('packer').startup(function()
 	use 'williamboman/nvim-lsp-installer'
 
 	-- better ui for lsp (not currently working)
-	-- use 'glepnir/lspsaga.nvim'
+	use {
+		'glepnir/lspsaga.nvim',
+		config = function()
+			require('lspsaga').init_lsp_saga()
+		end
+	}
 
 	-- hints as you type
 	use 'ray-x/lsp_signature.nvim'
@@ -37,25 +42,25 @@ return require('packer').startup(function()
 	}
 
 	-- snippet engine
-	use 'SirVer/ultisnips'
+	use 'L3MON4D3/LuaSnip'
 
 	-- collection of snippets
-	use {'honza/vim-snippets', requires = 'SirVer/ultisnips'}
+	use {'rafamadriz/friendly-snippets', requires = 'L3MON4D3/LuaSnip'}
 
 	-- completion
 	use {
 		'hrsh7th/nvim-cmp',
 		-- completion sources
 		requires = {
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',
-			'quangnguyen30192/cmp-nvim-ultisnips'
+			'hrsh7th/cmp-nvim-lsp', -- lsp completion
+			'hrsh7th/cmp-buffer', -- buffer completion
+			'hrsh7th/cmp-path', -- path completion (in ex-mode)
+			'hrsh7th/cmp-cmdline', -- cmd completion (in ex-mode)
+			'saadparwaiz1/cmp_luasnip' -- luasnip
 		},
 		config = function()
-			require('plugin-config/completion')
-		end,
+			require('plugin-config.completion')
+		end
 	}
 
 	-- ai completion
@@ -82,19 +87,19 @@ return require('packer').startup(function()
 		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('telescope').setup()
-		end,
+		end
 	}
 
 	-- dashboard
 	use 'glepnir/dashboard-nvim'
-	require('plugin-config/dashboard')
+	require('plugin-config.dashboard')
 
 	-- explorer
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true},
 		config = function()
-			require('plugin-config/explorer')
+			require('plugin-config.explorer')
 		end
 	}
 
@@ -103,7 +108,7 @@ return require('packer').startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true},
 		config = function()
-			require('plugin-config/statusline')
+			require('plugin-config.statusline')
 		end
 	}
 
@@ -112,7 +117,7 @@ return require('packer').startup(function()
 		'akinsho/bufferline.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true},
 		config = function()
-			require('plugin-config/tabline')
+			require('plugin-config.tabline')
 		end
 	}
 
@@ -154,19 +159,41 @@ return require('packer').startup(function()
 	use {
 		'lukas-reineke/indent-blankline.nvim',
 		config = function()
-			require('plugin-config/indent-blankline')
+			require('plugin-config.indent-blankline')
 		end
 	}
 
+	use {
+		'folke/zen-mode.nvim',
+		requires = {
+			'folke/twilight.nvim',
+			config = function()
+				require('twilight').setup()
+			end
+		},
+		config = function()
+			require('zen-mode').setup {
+				plugins = {
+					gitsigns = {enabled = true},
+				}
+			}
+		end,
+		cmd = 'ZenMode'
+	}
+
 	-- themes
-	use 'sainnhe/edge'
-	use 'sainnhe/everforest'
-	use 'sainnhe/gruvbox-material'
-	use 'sainnhe/sonokai'
+	-- use 'Shatur/neovim-ayu'
+	-- use 'Mofiqul/dracula.nvim'
+	-- use 'sainnhe/edge'
+	-- use 'sainnhe/everforest'
+	-- use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
+	-- use 'sainnhe/gruvbox-material'
+	-- use 'shaunsingh/nord.nvim'
+	-- use 'sainnhe/sonokai'
 	use 'folke/tokyonight.nvim'
 
 	-- misc
-	use {
+	use { -- color hex codes
 		'norcalli/nvim-colorizer.lua',
 		config = function()
 			require('colorizer').setup()

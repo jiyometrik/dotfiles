@@ -4,12 +4,8 @@ local g = vim.g
 local cmd = vim.cmd
 
 -- backward search
---[[
-To enable backward search, run `pip install neovim`
-and `pip install neovim-remote` for the remote servers
-to run correctly.
-You should also ensure that you have a pdf reader that supports backward search.
---]]
+-- install neovim and neovim-remote using pip
+-- pdf reader must support backward search
 
 cmd("let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &runtimepath")
 cmd("let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after'")
