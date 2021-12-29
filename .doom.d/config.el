@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Your Name"
-      user-mail-address "username@service.com")
+(setq user-full-name "Darren Yap"
+      user-mail-address "darrenyap08@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -17,11 +17,11 @@
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
 
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
+;; (setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 18)
+      ;; doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 20)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 18)
       doom-big-font (font-spec :family "JetBrains Mono" :size 20)
-      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 18))
+      doom-variable-pitch-font (font-spec :family "Inter" :size 18))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -29,9 +29,7 @@
 (setq doom-theme 'doom-one)
 
 ;; Indentation
-(setq custom-tab-width 2)
-(setq-default electric-indent-inhibit t) ;; make electric indent behave more sanely
-(setq backward-delete-char-untabify-method 'hungry) ;; softindent in vim - removes the whole tab instead of one space when backspacing
+(setq standard-indent 2)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

@@ -201,7 +201,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch-bar.sh
 
 # set background image
 # exec nitrogen --restore &
-exec feh --bg-fill $HOME/Downloads/tokyonight.png
+exec feh --bg-fill $HOME/Pictures/tokyo/0.png &
 
 # dunst
 exec dunst &

@@ -15,11 +15,12 @@ o.rnu = true
 o.tabstop = 2
 o.shiftwidth = 2
 o.autoindent = true
--- o.smartindent = true
+o.smartindent = true
 
 -- show matching brackets
 o.showmatch = true
-o.showcmd = true
+o.showcmd = false
+o.ruler = false
 
 -- conceal (for vimtex)
 o.conceallevel = 2
@@ -38,6 +39,3 @@ o.undofile = true
 
 -- mouse
 o.mouse = 'a'
-
--- gui things
-o.guifont = "Hack Nerd Font:h14"

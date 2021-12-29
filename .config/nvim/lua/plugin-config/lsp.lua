@@ -10,29 +10,29 @@ local on_attach = function(client, bufno)
 	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- Mappings.
-	local op = {noremap = true}
+	local op = {noremap = true, silent = false}
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', op)
-	buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', op)
-	buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', op)
-	buf_set_keymap('n', 'gli', '<cmd>lua vim.lsp.buf.implementation()<CR>', op)
-	buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', op)
+	buf_set_keymap('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', op)
+	buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', op)
+	buf_set_keymap('n', 'gli', '<cmd>Lspsaga implement<CR>', op)
+	buf_set_keymap('n', '<C-k>', '<cmd>Lspsaga signature_help<CR>', op)
 	buf_set_keymap('n', 'gwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', op)
 	buf_set_keymap('n', 'gwr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', op)
 	buf_set_keymap('n', 'gwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', op)
 	buf_set_keymap('n', 'glD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', op)
-	buf_set_keymap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', op)
-	buf_set_keymap('n', 'gA', '<cmd>lua vim.lsp.buf.code_action()<CR>', op)
+	buf_set_keymap('n', 'gn', '<cmd>Lspsaga rename<CR>', op)
+	buf_set_keymap('n', 'gA', '<cmd>Lspsaga code_action<CR>', op)
 	buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', op)
-	buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', op)
-	buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op)
-	buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', op)
+	-- buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', op)
+	buf_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_next<CR>', op)
+	buf_set_keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', op)
 	buf_set_keymap('n', 'gq', '<cmd>lua vim.diagnostic.setloclist()<CR>', op)
 	buf_set_keymap('n', 'glf', '<cmd>lua vim.lsp.buf.formatting()<CR>', op)
 	buf_set_keymap('n', 'glF', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', op)
+	buf_set_keymap('n', 'g?', '<cmd>Lspsaga lsp_finder<CR>', op)
 
-	-- local function saga() require('lspsaga').init_lsp_saga() end -- not working at the moment
 	require('lsp_signature').on_attach() -- hints as you type
 	require('lspkind').init({ -- fancy icons
 		with_text = false,
@@ -98,4 +98,9 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- lspsaga scrolling
+vim.cmd[[nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>]]
+vim.cmd[[nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>]]
+
 vim.cmd[[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]] -- format on save
+

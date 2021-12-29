@@ -18,34 +18,13 @@ return require('packer').startup(function()
 	-- graphical installer
 	use 'williamboman/nvim-lsp-installer'
 
-	-- better ui for lsp (not currently working)
+	-- better ui
 	use {
-		'glepnir/lspsaga.nvim',
+		'tami5/lspsaga.nvim',
 		config = function()
-			require('lspsaga').init_lsp_saga()
+			require('lspsaga').setup()
 		end
 	}
-
-	-- hints as you type
-	use 'ray-x/lsp_signature.nvim'
-
-	-- nice icons
-	use 'onsails/lspkind-nvim'
-
-	-- syntax highlighting
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate',
-		config = function()
-			require('plugin-config.treesitter')
-		end
-	}
-
-	-- snippet engine
-	use 'L3MON4D3/LuaSnip'
-
-	-- collection of snippets
-	use {'rafamadriz/friendly-snippets', requires = 'L3MON4D3/LuaSnip'}
 
 	-- completion
 	use {
@@ -62,6 +41,35 @@ return require('packer').startup(function()
 			require('plugin-config.completion')
 		end
 	}
+
+	-- hints as you type
+	use 'ray-x/lsp_signature.nvim'
+
+	-- formatting & debugging
+	use {
+		'jose-elias-alvarez/null-ls.nvim',
+		requires = 'nvim-lua/plenary.nvim',
+		config = function()
+			require('plugin-config.null-ls')
+		end
+	}
+	-- nice icons
+	use 'onsails/lspkind-nvim'
+
+	-- syntax highlighting
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function()
+			require('plugin-config.treesitter')
+		end
+	}
+
+	-- snippet engine
+	use 'L3MON4D3/LuaSnip'
+
+	-- collection of snippets
+	use 'rafamadriz/friendly-snippets'
 
 	-- ai completion
 	use 'github/copilot.vim'
@@ -167,16 +175,17 @@ return require('packer').startup(function()
 		'folke/zen-mode.nvim',
 		requires = {
 			'folke/twilight.nvim',
+			opt = true,
 			config = function()
 				require('twilight').setup()
 			end
 		},
 		config = function()
-			require('zen-mode').setup {
+			require('zen-mode').setup({
 				plugins = {
 					gitsigns = {enabled = true},
 				}
-			}
+			})
 		end,
 		cmd = 'ZenMode'
 	}
@@ -189,8 +198,9 @@ return require('packer').startup(function()
 	-- use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
 	-- use 'sainnhe/gruvbox-material'
 	-- use 'shaunsingh/nord.nvim'
-	-- use 'sainnhe/sonokai'
+	use 'sainnhe/sonokai'
 	use 'folke/tokyonight.nvim'
+	-- use 'Mofiqul/vscode.nvim'
 
 	-- misc
 	use { -- color hex codes

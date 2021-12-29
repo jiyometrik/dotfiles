@@ -1,10 +1,17 @@
 local g = vim.g
 local o = vim.o
+local a = vim.api
 local wk = require('which-key')
 
 -- leader key
 g.mapleader = ' '
 o.timeoutlen = 1000 -- set timeoutlen so that we have enough time to type out the whole keymap
+
+-- map j to gj and k to gk so that long lines are easier to navigate
+-- a.nvim_set_keymap('n', 'j', 'gj', {silent = true})
+-- a.nvim_set_keymap('n', 'k', 'gk', {silent = true})
+-- a.nvim_set_keymap('v', 'j', 'gj', {silent = true})
+-- a.nvim_set_keymap('v', 'k', 'gk', {silent = true})
 
 wk.register({ ['<leader>'] = {
 	-- buffers
@@ -109,7 +116,7 @@ wk.register({ ['<leader>'] = {
 		t = {'<Cmd>Telescope tags<CR>', 'tags'},
 		T = {'<Cmd>Telescope help_tags<CR>', 'helptags'},
 		w = {'<Cmd>Windows<CR>', 'windows'},
-		z = {'<Cmd>Telescope current_buffer_fuzzy_find', 'fuzzy-find'},
+		z = {'<Cmd>Telescope current_buffer_fuzzy_find<CR>', 'fuzzy-find'},
 	},
 
 	-- Git
@@ -154,38 +161,31 @@ wk.register({ ['<leader>'] = {
 	-- lsp (lspsaga not working right now)
 	l = {
 		name = '+lsp',
-		-- a = {'<Cmd>Lspsaga code_action<CR>', 'codeaction', silent = false},
-		-- A = {'<Cmd>Lspsaga range_code_action<CR>', 'codeaction-range', silent = false},
-		a = {'<Cmd>lua vim.lsp.buf.code_action()<CR>', 'codeaction', silent = false},
-		A = {'<Cmd>lua vim.lsp.buf.range_code_action()<CR>', 'codeaction-range', silent = false},
-		d = {'<Cmd>lua vim.lsp.buf.definition()<CR>', 'definition', silent = false},
+		a = {'<Cmd>Lspsaga code_action<CR>', 'codeaction', silent = false},
+		A = {'<Cmd>Lspsaga range_code_action<CR>', 'codeaction-range', silent = false},
+		c = {'<Cmd>Lspsaga show_line_diagnostics<CR>', 'line-diagnostics', silent = false},
+		C = {'<Cmd>Lspsaga show_cursor_diagnostics<CR>', 'current-diagnostics', silent = false},
+		d = {'<Cmd>Lspsaga preview_definition<CR>', 'definition', silent = false},
     D = {'<Cmd>lua vim.lsp.buf.declaration()<CR>', 'declaration', silent = false},
 		e = {'<Cmd>lua vim.diagnostic.open_float()<CR>', 'diagnostics', silent = false},
+		-- e = {'<Cmd>lua vim.diagnostic.set_loclist()<CR>', 'diagnostics', silent = false},
 		E = {'<Cmd>Telescope diagnostics<CR>', 'diagnostics-float', silent = false},
 		f = {'<Cmd>lua vim.lsp.buf.formatting()<CR>', 'format', silent = false},
 		F = {'<Cmd>lua vim.lsp.buf.range_formatting()<CR>', 'format-range', silent = false},
-    -- h = {'<Cmd>Lspsaga hover_doc<CR>', 'hover-doc', silent = false},
-		h = {'<Cmd>lua vim.lsp.buf.hover()<CR>', 'hover', silent = false},
-		H = {'<Cmd>lua vim.lsp.buf.signature_help()<CR>', 'signature-help', silent = false},
-		i = {'<Cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation', silent = false},
-    -- I = {'<Cmd>Lspsaga signature_help<CR>', 'signature-help', silent = false},
-		j = {'<Cmd>lua vim.diagnostic.goto_next()<CR>', 'next-diagnostic', silent = false},
-		k = {'<Cmd>lua vim.diagnostic.goto_prev()<CR>', 'prev-diagnostic', silent = false},
-		-- J = {'<Cmd>Lspsaga diagnostic_jump_next<CR>', 'next-diagnostic', silent = false},
-		-- K = {'<Cmd>Lspsaga diagnostic_jump_prev<CR>', 'prev-diagnostic', silent = false},
-    -- l = {'<Cmd>Lspsaga lsp_finder<CR>', 'find-def', silent = false},
-    -- p = {'<Cmd>Lspsaga preview_definition<CR>', 'definition-preview', silent = false},
-		-- r = {'<Cmd>Lspsaga rename<CR>', 'rename', silent = false},
-		r = {'<Cmd>lua vim.lsp.buf.rename()<CR>', 'rename', silent = false},
+    h = {'<Cmd>Lspsaga hover_doc<CR>', 'hover-doc', silent = false},
+		H = {'<Cmd>Lspsaga signature_help<CR>', 'signature-help', silent = false},
+		i = {'<Cmd>Lspsaga implement<CR>', 'implementation', silent = false},
+		j = {'<Cmd>Lspsaga diagnostic_jump_next<CR>', 'next-diagnostic', silent = false},
+		k = {'<Cmd>Lspsaga diagnostic_jump_prev<CR>', 'prev-diagnostic', silent = false},
+    l = {'<Cmd>Lspsaga lsp_finder<CR>', 'finder', silent = false},
+		r = {'<Cmd>Lspsaga rename<CR>', 'rename', silent = false},
 		R = {'<Cmd>lua vim.lsp.buf.references()<CR>', 'references', silent = false},
     s = {'<Cmd>Telescope treesitter<CR>', 'symbols', silent = false},
 		S = {'<Cmd>lua vim.lsp.buf.document_symbol()<CR>', 'document-symbols', silent = false},
 		t = {'<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'type-definition', silent = false},
 		w = {'<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'add-workspace-folder', silent = false},
 		W = {'<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'rm-workspace-folder', silent = false},
-		x = {'<Cmd>lua vim.diagnostic.set_loclist()<CR>', 'loclist', silent = false},
 		['?'] = {'<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'workspace-folders', silent = false},
-		-- ['/'] = {'<Cmd>lua vim.lsp.buf.find_workspace_folder()<CR>', 'find-workspace-folder', silent = false},
 	},
 
 	-- toggle
@@ -250,7 +250,7 @@ wk.register({ ['<leader>'] = {
 	['<leader>;'] = {'<Cmd>Dashboard<CR>', 'dashboard'},
 
   -- hover
-  ['<leader>?'] = {'<Cmd>lua vim.lsp.buf.hover()<CR>', 'hover', silent = false},
+  ['<leader>?'] = {'<Cmd>Lspsaga hover_doc<CR>', 'hover', silent = false},
 
   -- term
   ['<leader>m'] = {'<Cmd>Lspsaga open_floaterm<CR>', 'terminal', silent = false},

@@ -1,4 +1,4 @@
-set adjust-open "best-fit"
+set adjust-open "width"
 set font "jetbrains mono 10"
 # set notification-error-bg "#2b3339"
 # set notification-error-fg "#e67e80"

@@ -1,38 +1,8 @@
-# colorscheme (tokyo night)
-colors:
-  # Default colors
-  primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
-
-  # Normal colors
-  normal:
-    black:   '0x1D202F'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
-
-  # Bright colors
-  bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
-
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
-
 env:
   TERM: xterm-256color
+
+import:
+  - ~/.config/alacritty/colors/tokyonight-storm.yml
 
 # window padding
 window:
@@ -43,26 +13,36 @@ window:
 
   # font
 font:
+  # size: 8
   size: 8.5
   # size: 9
-  # size: 9.5 # Cozette
   normal:
-    # family: Iosevka Term SS05
-    # family: Cozette Vector
+    # family: FiraCode Nerd Font
+    # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    # family: Operator Mono Lig
+    family: JetBrains Mono Nerd Font
+    # style: Book
+  bold:
+    # family: Operator Mono Lig
+    # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
-
-  # bold:
-  #   family: JetBrains Mono Nerd Font
-  #   style: Bold
-  #
-  # italic:
-  #   family: JetBrains Mono Nerd Font
-  #   style: Italic
-  #
-  # bold_italic:
-  #   family: JetBrains Mono Nerd Font
-  #   style: Bold Italic
+    style: Bold
+  italic:
+    # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    family: JetBrains Mono Nerd Font
+    # family: Victor Mono Nerd Font
+    # family: Operator Mono
+    style: Italic
+  bold_italic:
+    # family: Hack Nerd Font
+    # family: Hasklug Nerd Font
+    family: JetBrains Mono Nerd Font
+    # family: Victor Mono Nerd Font
+    # family: Operator Mono
+    style: Bold Italic
 
 
 # spaces per tab

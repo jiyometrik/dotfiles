@@ -7,9 +7,16 @@
 add_newline = false
 command_timeout = 1000
 
-# Don't print a newline before the prompt 	symbol
+# Don't print a newline before the prompt	symbol
 [line_break]
 	disabled = true
+
+
+# [character] # Character to use for the prompt
+	# success_symbol = "[➜](bold green) "
+	# error_symbol = "[➜](bold red)"
+	# vicmd_symbol = "[➜](bold blue) "
+	# disabled = true
 
 # exit code
 # [status]
@@ -18,7 +25,7 @@ command_timeout = 1000
 
 # Git Configurations
 [git_commit]
-	commit_hash_length = 5
+	commit_hash_length = 6
 
 # Shows the number of lines added, changed, or deleted.
 [git_metrics]

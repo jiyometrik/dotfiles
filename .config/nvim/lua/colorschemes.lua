@@ -24,6 +24,7 @@ o.termguicolors = true
 -- cmd('colorscheme everforest')
 
 -- gruvbox
+-- g.gruvbox_italic = 1
 -- cmd('colorscheme gruvbox')
 
 -- gruvbox material
@@ -37,11 +38,14 @@ o.termguicolors = true
 -- cmd('colorscheme nord')
 
 -- tokyonight
--- g.tokyonight_style = 'night'
-cmd('colorscheme tokyonight')
+-- cmd('colorscheme tokyonight')
 
 -- sonokai
--- g.sonokai_style = 'andromeda'
--- g.sonokai_enable_italic = 1
--- g.sonokai_better_performance = 1
--- cmd('colorscheme sonokai')
+g.sonokai_style = 'andromeda'
+g.sonokai_enable_italic = 1
+g.sonokai_better_performance = 1
+cmd('colorscheme sonokai')
+
+-- vscode (idk why it's light by default)
+-- vim.g.vscode_style = 'dark'
+-- vim.cmd('colorscheme vscode')

@@ -1,6 +1,8 @@
 # zgenom for plugins
 source "$HOME/.zgenom/zgen.zsh"
 
+zgenom autoupdate # autoupdate plugins
+
 if ! zgenom saved; then
 	zgenom ohmyzsh # loads oh-my-zsh plugin base
 	zgenom load zdharma-continuum/fast-syntax-highlighting # syntax highlighting
@@ -64,6 +66,7 @@ alias lv="lvim"
 alias nv="nvim"
 alias nf="neofetch"
 alias rn="ranger"
+alias v="nvim"
 alias q="exit"
 
 alias galias="alias | grep git"
