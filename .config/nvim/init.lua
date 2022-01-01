@@ -1,5 +1,5 @@
 -- Main Files
-require('globals')
+require('options')
 require('plugins')
 require('colorschemes')
 require('keymaps')

@@ -16,26 +16,28 @@ o.tabstop = 2
 o.shiftwidth = 2
 o.autoindent = true
 o.smartindent = true
+o.smarttab = true
 
--- show matching brackets
+-- ui elements
 o.showmatch = true
 o.showcmd = false
 o.ruler = false
-
--- conceal (for vimtex)
-o.conceallevel = 2
 
 -- line highlight
 o.cursorline = true
 
 -- disable autocommenting when pressing enter or 'o' in normal mode
-cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]])
 
 -- no swap file
 o.swapfile = false
 
 -- persistent undo
 o.undofile = true
+
+-- buffer opening
+o.splitbelow = true
+o.splitright = true
 
 -- mouse
 o.mouse = 'a'

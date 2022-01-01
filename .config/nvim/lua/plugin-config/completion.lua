@@ -23,37 +23,25 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' }, -- luasnip
 	}, {
-			{ name = 'buffer' },
-		}),
+		{ name = 'buffer' },
+	}),
 
 	formatting = {
 		format = lspkind.cmp_format({ -- lspkind fancy icons
 			with_text = false,
-			before = function (entry, vim_item)
+			before = function(entry, vim_item)
 				return vim_item
-			end
-		})
-	}
+			end,
+		}),
+	},
 })
 
 cmp.setup.cmdline('/', {
-	sources = {
-		{ name = 'buffer' }
-	}
+	sources = { { name = 'buffer' } },
 })
 
 cmp.setup.cmdline(':', {
 	sources = cmp.config.sources({
-		{ name = 'path' }
-	}, {
-			{ name = 'cmdline' }
-		})
+		{ name = 'path' },
+	}, { { name = 'cmdline' } }),
 })
-
--- Setup lspconfig.
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
--- 	capabilities = capabilities
--- }

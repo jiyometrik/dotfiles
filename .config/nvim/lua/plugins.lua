@@ -2,32 +2,32 @@ vim.cmd('packadd packer.nvim')
 
 return require('packer').startup(function()
 	-- package management
-	use 'wbthomason/packer.nvim'
+	use('wbthomason/packer.nvim')
 
 	-- startup time
-	use 'dstein64/vim-startuptime'
+	use('dstein64/vim-startuptime')
 
 	-- lsp
-	use {
+	use({
 		'neovim/nvim-lspconfig',
 		config = function()
 			require('plugin-config.lsp')
-		end
-	}
+		end,
+	})
 
 	-- graphical installer
-	use 'williamboman/nvim-lsp-installer'
+	use('williamboman/nvim-lsp-installer')
 
 	-- better ui
-	use {
+	use({
 		'tami5/lspsaga.nvim',
 		config = function()
 			require('lspsaga').setup()
-		end
-	}
+		end,
+	})
 
 	-- completion
-	use {
+	use({
 		'hrsh7th/nvim-cmp',
 		-- completion sources
 		requires = {
@@ -35,178 +35,188 @@ return require('packer').startup(function()
 			'hrsh7th/cmp-buffer', -- buffer completion
 			'hrsh7th/cmp-path', -- path completion (in ex-mode)
 			'hrsh7th/cmp-cmdline', -- cmd completion (in ex-mode)
-			'saadparwaiz1/cmp_luasnip' -- luasnip
+			'saadparwaiz1/cmp_luasnip', -- luasnip
 		},
 		config = function()
 			require('plugin-config.completion')
-		end
-	}
+		end,
+	})
 
 	-- hints as you type
-	use 'ray-x/lsp_signature.nvim'
+	use('ray-x/lsp_signature.nvim')
 
 	-- formatting & debugging
-	use {
+	use({
 		'jose-elias-alvarez/null-ls.nvim',
-		requires = 'nvim-lua/plenary.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			require('plugin-config.null-ls')
-		end
-	}
+		end,
+	})
 	-- nice icons
-	use 'onsails/lspkind-nvim'
+	use('onsails/lspkind-nvim')
 
 	-- syntax highlighting
-	use {
+	use({
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
 		config = function()
 			require('plugin-config.treesitter')
-		end
-	}
+		end,
+	})
+
+	-- bracket colorizer
+	-- use 'p00f/nvim-ts-rainbow'
 
 	-- snippet engine
-	use 'L3MON4D3/LuaSnip'
+	use('L3MON4D3/LuaSnip')
 
 	-- collection of snippets
-	use 'rafamadriz/friendly-snippets'
+	use('rafamadriz/friendly-snippets')
 
 	-- ai completion
-	use 'github/copilot.vim'
+	use('github/copilot.vim')
 
 	-- latex
-	use {'lervag/vimtex', ft = {'tex'}}
+	use({ 'lervag/vimtex', ft = { 'tex' } })
 
 	-- git
-	use 'tpope/vim-fugitive'
+	use('tpope/vim-fugitive')
+	-- use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'}
 
 	-- git diffs
-	use {
+	use({
 		'lewis6991/gitsigns.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('gitsigns').setup()
-		end
-	}
+		end,
+	})
 
 	-- fuzzy finder
-	use {
+	use({
 		'nvim-telescope/telescope.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('telescope').setup()
-		end
-	}
+		end,
+	})
 
 	-- dashboard
-	use 'glepnir/dashboard-nvim'
+	use('glepnir/dashboard-nvim')
 	require('plugin-config.dashboard')
 
 	-- explorer
-	use {
+	use({
 		'kyazdani42/nvim-tree.lua',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('plugin-config.explorer')
-		end
-	}
+		end,
+	})
 
 	-- status line
-	use {
+	use({
 		'nvim-lualine/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('plugin-config.statusline')
-		end
-	}
+		end,
+	})
 
 	-- tab line
-	use {
-		'akinsho/bufferline.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+	use({
+		'romgrk/barbar.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('plugin-config.tabline')
-		end
-	}
+		end,
+	})
 
 	-- auto-complete bracket pairs
-	use {
+	use({
 		'windwp/nvim-autopairs',
 		config = function()
 			require('nvim-autopairs').setup()
-		end
-	}
+		end,
+	})
 
 	-- surrounding delimiters
-	use 'tpope/vim-surround'
+	use('tpope/vim-surround')
 
-	-- commenter
-	use {
-		'terrortylor/nvim-comment',
+	-- comment
+	use({
+		'numToStr/Comment.nvim',
 		config = function()
-			require('nvim_comment').setup()
-		end
-	}
+			require('Comment').setup({
+				mappings = { extended = true },
+			})
+		end,
+	})
 
 	-- removes trailing whitespace
-	use {
+	use({
 		'ntpeters/vim-better-whitespace',
 		cmd = 'StripWhitespace',
-		opt = true
-	}
+		opt = true,
+	})
 
 	-- keymap cheatsheet
-	use {
+	use({
 		'folke/which-key.nvim',
 		config = function()
 			require('which-key').setup()
-		end
-	}
+		end,
+	})
 
 	-- indent guide
-	use {
+	use({
 		'lukas-reineke/indent-blankline.nvim',
 		config = function()
 			require('plugin-config.indent-blankline')
-		end
-	}
+		end,
+	})
 
-	use {
+	use({
 		'folke/zen-mode.nvim',
 		requires = {
 			'folke/twilight.nvim',
 			opt = true,
 			config = function()
 				require('twilight').setup()
-			end
+			end,
 		},
 		config = function()
 			require('zen-mode').setup({
 				plugins = {
-					gitsigns = {enabled = true},
-				}
+					gitsigns = { enabled = true },
+				},
 			})
 		end,
-		cmd = 'ZenMode'
-	}
+		cmd = 'ZenMode',
+	})
 
 	-- themes
-	-- use 'Shatur/neovim-ayu'
-	-- use 'Mofiqul/dracula.nvim'
-	-- use 'sainnhe/edge'
-	-- use 'sainnhe/everforest'
-	-- use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
-	-- use 'sainnhe/gruvbox-material'
-	-- use 'shaunsingh/nord.nvim'
-	use 'sainnhe/sonokai'
-	use 'folke/tokyonight.nvim'
-	-- use 'Mofiqul/vscode.nvim'
+	-- use('Shatur/neovim-ayu')
+	-- use({ 'catppuccin/nvim', as = 'catppuccin' })
+	-- use('Mofiqul/dracula.nvim')
+	-- use('sainnhe/edge')
+	-- use('sainnhe/everforest')
+	-- use({ 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim', opt = true } })
+	-- use('sainnhe/gruvbox-material')
+	-- use('savq/melange')
+	use('EdenEast/nightfox.nvim')
+	-- use('shaunsingh/nord.nvim')
+	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
+	-- use('sainnhe/sonokai')
+	use('folke/tokyonight.nvim')
+	-- use('Mofiqul/vscode.nvim')
 
 	-- misc
-	use { -- color hex codes
+	use({ -- color hex codes
 		'norcalli/nvim-colorizer.lua',
 		config = function()
 			require('colorizer').setup()
-		end
-	}
+		end,
+	})
 end)

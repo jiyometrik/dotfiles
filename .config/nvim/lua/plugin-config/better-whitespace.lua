@@ -1,1 +1,1 @@
-vim.cmd('autocmd BufWrite * StripWhitespace')
+vim.cmd([[ autocmd BufWrite * StripWhitespace ]])
