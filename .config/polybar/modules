@@ -338,3 +338,5 @@ ramp-signal-4 = " "
 ramp-signal-foreground = ${color.background}
 ramp-signal-background = ${color.magenta}
 ramp-signal-font = 2
+
+; vim:ft=dosini

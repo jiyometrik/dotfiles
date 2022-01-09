@@ -1,5 +1,5 @@
-require('nvim-treesitter.configs').setup({
-	ensure_installed = 'all',
+require("nvim-treesitter.configs").setup({
+	ensure_installed = "all",
 	sync_install = false,
 	highlight = {
 		enable = true,
@@ -7,15 +7,15 @@ require('nvim-treesitter.configs').setup({
 	},
 	indent = {
 		enable = true,
-		style = 'default',
+		style = "default",
 	},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = 'gnn',
-			node_incremental = 'grn',
-			scope_incremental = 'grc',
-			node_decremental = 'grm',
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
 		},
 	},
 	-- rainbow = {

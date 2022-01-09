@@ -1,4 +1,4 @@
-local nl = require('null-ls')
+local nl = require("null-ls")
 
 -- linting and formatting sources
 local sources = {
@@ -9,15 +9,15 @@ local sources = {
 
 	-- web
 	nl.builtins.formatting.prettier.with({
-		disabled_filetypes = { 'javascript', 'typescript' },
-	}), -- no need for js and ts, they have their own formatters in LSP
+		disabled_filetypes = { "javascript", "typescript", "json" },
+	}), -- no need for js/ts, they have their own formatters in LSP
 
 	-- nl.builtins.diagnostics.eslint, -- builtin tsserver is ok
 	-- nl.builtins.diagnostics.stylelint,
 
 	-- python (builtin lsp is fine, however i like these better)
-	nl.builtins.formatting.autopep8,
-	nl.builtins.formatting.isort,
+	nl.builtins.formatting.yapf,
+	-- nl.builtins.formatting.isort,
 	-- nl.builtins.diagnostics.flake8,
 
 	-- c/c++ (works already with builtin LSP, does not need to be added)

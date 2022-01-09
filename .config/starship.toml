@@ -1,6 +1,3 @@
-# g-e-o-m-e-t-r-i-c's ~/.config/starship.toml - config file for Starship
-# Directory: ~/.config/
-
 # NOTE: Fonts without proper icon support might fail to work. Please use a Nerd Font or a patched font of your own.
 
 # Don't print a newline before the prompt.
@@ -10,7 +7,6 @@ command_timeout = 1000
 # Don't print a newline before the prompt	symbol
 [line_break]
 	disabled = true
-
 
 # [character] # Character to use for the prompt
 	# success_symbol = "[➜](bold green) "
@@ -28,21 +24,21 @@ command_timeout = 1000
 	commit_hash_length = 6
 
 # Shows the number of lines added, changed, or deleted.
-[git_metrics]
-	disabled = false
+# [git_metrics]
+# 	disabled = false
 
 # Shows the number of files changed, number of files deleted etc.
 [git_status]
-	conflicted = "=${count}"
-	ahead = "⇡${count}"
-	behind = "⇣${count}"
-	diverged = "⇕ ⇡${ahead_count}⇣${behind_count}"
-	untracked = "?"
-	stashed = "$${count}"
-	modified = "!${count}"
-	staged = "+${count}"
-	renamed = "»${count}"
-	deleted = "✘${count}"
+# 	conflicted = "=${count}"
+# 	ahead = "⇡${count}"
+# 	behind = "⇣${count}"
+# 	diverged = "⇕ ⇡${ahead_count}⇣${behind_count}"
+# 	untracked = "?"
+# 	stashed = "$${count}"
+# 	modified = "!${count}"
+# 	staged = "+${count}"
+# 	renamed = "»${count}"
+# 	deleted = "✘${count}"
 	style = "bold blue"
 
 # Nerd Font Icons: Only enable if you have a Nerd Font or your own patched font.
@@ -60,15 +56,15 @@ command_timeout = 1000
 	symbol = " "
 [elm]
 	symbol = " "
-# [git_branch]
-#   symbol = " "
+[git_branch]
+  symbol = " "
 [golang]
 	symbol = " "
-# [hg_branch]
-#   symbol = " "
+[hg_branch]
+  symbol = " "
 [java]
 	symbol = " "
-style = "red"
+	style = "red"
 [julia]
 	symbol = " "
 [lua]

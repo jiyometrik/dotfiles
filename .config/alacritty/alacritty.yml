@@ -2,7 +2,7 @@ env:
   TERM: xterm-256color
 
 import:
-  - ~/.config/alacritty/colors/tokyonight-storm.yml
+  - ~/.config/alacritty/colors/tokyonight-night.yml
 
 # window padding
 window:
@@ -17,37 +17,44 @@ font:
   size: 8.5
   # size: 9
   normal:
-    # family: FiraCode Nerd Font
+    # family: Fira Mono Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
-    # family: Operator Mono Lig
     family: JetBrains Mono Nerd Font
-    # style: Book
+    # family: Meslo LG S Nerd Font
+    # family: Liga SF Mono Nerd Font
+    # family: Roboto Mono Nerd Font
   bold:
-    # family: Operator Mono Lig
+    # family: Fira Mono Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
+    # family: Meslo LG S Nerd Font
+    # family: Liga SF Mono Nerd Font
+    # family: Roboto Mono Nerd Font
     style: Bold
   italic:
+    # family: Victor Mono Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
-    # family: Victor Mono Nerd Font
-    # family: Operator Mono
+    # family: Meslo LG S Nerd Font
+    # family: Liga SF Mono Nerd Font
+    # family: Roboto Mono Nerd Font
     style: Italic
+    # style: Medium Italic # Victor Mono
   bold_italic:
+    # family: Victor Mono Nerd Font
     # family: Hack Nerd Font
     # family: Hasklug Nerd Font
     family: JetBrains Mono Nerd Font
-    # family: Victor Mono Nerd Font
-    # family: Operator Mono
+    # family: Meslo LG S Nerd Font
+    # family: Liga SF Mono Nerd Font
+    # family: Roboto Mono Nerd Font
     style: Bold Italic
-
 
 # spaces per tab
 tabspaces: 2
-
 # cursor style
 # cursor:
 #   style: Beam

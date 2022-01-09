@@ -1,29 +1,29 @@
-local cmp = require('cmp')
-local lspkind = require('lspkind')
+local cmp = require("cmp")
+local lspkind = require("lspkind")
 cmp.setup({
 	snippet = {
 		-- snippet engine to use
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 
 	mapping = {
-		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-		['<C-e>'] = cmp.mapping({
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- accept currently selected item
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- accept currently selected item
 	},
 
 	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }, -- luasnip
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" }, -- luasnip
 	}, {
-		{ name = 'buffer' },
+		{ name = "buffer" },
 	}),
 
 	formatting = {
@@ -36,12 +36,12 @@ cmp.setup({
 	},
 })
 
-cmp.setup.cmdline('/', {
-	sources = { { name = 'buffer' } },
+cmp.setup.cmdline("/", {
+	sources = { { name = "buffer" } },
 })
 
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
-		{ name = 'path' },
-	}, { { name = 'cmdline' } }),
+		{ name = "path" },
+	}, { { name = "cmdline" } }),
 })

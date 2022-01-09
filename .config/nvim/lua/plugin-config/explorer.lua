@@ -1,7 +1,7 @@
 vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_git_hl = 1
 
-require('nvim-tree').setup({
+require("nvim-tree").setup({
 	update_cwd = true,
 	auto_close = true,
 	open_on_tab = false,
@@ -16,19 +16,19 @@ require('nvim-tree').setup({
 	diagnostics = {
 		enable = true,
 		icons = {
-			hint = '',
-			info = '',
-			warning = '',
-			error = '',
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
 		},
 	},
 	filters = {
 		dotfiles = false,
 		custom = {
-			'.git',
-			'.DS_Store',
-			'Desktop.ini',
-			'node_modules',
+			".git",
+			".DS_Store",
+			"Desktop.ini",
+			"node_modules",
 		},
 	},
 	git = {
@@ -37,8 +37,8 @@ require('nvim-tree').setup({
 		timeout = 500,
 	},
 	trash = {
-		cmd = 'trash',
+		cmd = "trash",
 		require_confirm = true,
 	},
-	root_folder_modifier = ':t',
+	root_folder_modifier = ":t",
 })

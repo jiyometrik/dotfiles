@@ -1,7 +1,6 @@
+#
 # ~/.bashrc
-
-# set path to add go and rust binaries
-PATH="$HOME/.cargo/bin:$HOME/go/bin${PATH:+:${PATH}}"
+#
 
 [[ $- != *i* ]] && return
 
@@ -113,10 +112,9 @@ shopt -s expand_aliases
 shopt -s histappend
 
 #
-# # ext - archive extractor
-# # usage: ext <file>
-ext ()
-{
+# # ex - archive extractor
+# # usage: ex <file>
+ex () {
 	if [ -f $1 ] ; then
 		case $1 in
 			*.tar.bz2)   tar xjf $1   ;;
@@ -130,18 +128,9 @@ ext ()
 			*.zip)       unzip $1     ;;
 			*.Z)         uncompress $1;;
 			*.7z)        7z x $1      ;;
-			*)           echo "'$1' cannot be extracted via ext()" ;;
+			*)           echo "'$1' cannot be extracted via ex()" ;;
 		esac
 	else
 		echo "'$1' is not a valid file"
 	fi
 }
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-neofetch
-eval "$(starship init bash)"
