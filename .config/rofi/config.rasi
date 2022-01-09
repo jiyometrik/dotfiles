@@ -1,19 +1,14 @@
 configuration {
 	modi: "drun,run,window,combi,windowcd,ssh,filebrowser,keys";
 	font: "jetbrains mono nerd font 12";
-	/* font: "cozette vector 15"; */
-  /* font: "hasklug nerd font 12"; */
-	display-drun: "";
+	display-drun: ">";
 	sidebar-mode: false;
 }
 
 @theme "/dev/null"
 
 * {
-	/* bg: #2b3339; */
-	/* fg: #d3c6aa; */
-	/* button: #4b565c; */
-	bg: #24283b;
+	bg: #1a1b26;
 	fg: #7aa2f7;
 	button: #414868;
 	background-color: @bg;
@@ -38,8 +33,6 @@ prompt {
 	border-color: @fg;
 	border-radius: 10px;
   font: "hasklug nerd font 14";
-	/* font: "jetbrains mono nerd font 14"; */
-	/* font: "cozette vector 17"; */
 	padding: 0 1% 0;
 }
 
