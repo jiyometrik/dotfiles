@@ -15,16 +15,16 @@ local sources = {
 	-- nl.builtins.diagnostics.eslint, -- builtin tsserver is ok
 	-- nl.builtins.diagnostics.stylelint,
 
-	-- python (builtin lsp is fine, however i like these better)
-	nl.builtins.formatting.yapf,
+	-- python (works with native LSP)
+	-- nl.builtins.formatting.black,
 	-- nl.builtins.formatting.isort,
 	-- nl.builtins.diagnostics.flake8,
 
-	-- c/c++ (works already with builtin LSP, does not need to be added)
+	-- c/c++ (works with native LSP)
 	-- nl.builtins.formatting.clang_format,
 	-- nl.builtins.diagnostics.cppcheck,
 
-	-- go (keeps giving errors)
+	-- go (works with native LSP)
 	-- nl.builtins.formatting.gofmt,
 	-- nl.builtins.formatting.goimports,
 	-- nl.builtins.diagnostics.staticcheck,

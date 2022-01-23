@@ -270,7 +270,7 @@ wk.register({
 	["<leader>;"] = { ":Dashboard<cr>", "dashboard" },
 
 	-- hover
-	["<leader>?"] = { ":Lspsaga hover_doc<cr>", "hover", silent = false },
+	["<leader>?"] = { ":Lspsaga hover_doc<cr>", "lsp-hover", silent = false },
 
 	-- autosave
 	["<leader>a"] = { ":ASToggle<cr>", "toggle-autosave" },

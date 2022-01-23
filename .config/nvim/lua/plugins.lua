@@ -1,5 +1,4 @@
 vim.cmd("packadd packer.nvim")
-
 return require("packer").startup(function()
 	-- package management
 	use("wbthomason/packer.nvim")
@@ -67,7 +66,7 @@ return require("packer").startup(function()
 	})
 
 	-- bracket colorizer
-	-- use('p00f/nvim-ts-rainbow')
+	-- use("p00f/nvim-ts-rainbow")
 
 	-- snippet engine
 	use("L3MON4D3/LuaSnip")
@@ -76,7 +75,7 @@ return require("packer").startup(function()
 	use("rafamadriz/friendly-snippets")
 
 	-- ai completion
-	use("github/copilot.vim")
+	-- use("github/copilot.vim")
 
 	-- latex
 	use({ "lervag/vimtex", ft = { "tex" } })
@@ -105,9 +104,14 @@ return require("packer").startup(function()
 	-- fuzzy finder
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-lua/popup.nvim",
+			-- "nvim-telescope/telescope-media-files.nvim",
+		},
 		config = function()
 			require("telescope").setup()
+			-- require("telescope").load_extension("media_files")
 		end,
 	})
 
@@ -208,6 +212,7 @@ return require("packer").startup(function()
 	-- themes
 	use("Shatur/neovim-ayu")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("yashguptaz/calvera-dark.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("sainnhe/edge")
 	use("sainnhe/everforest")
@@ -218,6 +223,7 @@ return require("packer").startup(function()
 	use("shaunsingh/nord.nvim")
 	use({ "rose-pine/neovim", as = "rose-pine" })
 	use("sainnhe/sonokai")
+	use("tiagovla/tokyodark.nvim")
 	use("folke/tokyonight.nvim")
 	use("Mofiqul/vscode.nvim")
 

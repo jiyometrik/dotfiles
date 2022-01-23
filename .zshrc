@@ -86,12 +86,7 @@ alias galias="alias | grep git"
 
 # bat theme
 export BAT_THEME="base16"
-export EDITOR="emacsclient -c -a emacs" # use emacs as default editor
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-# --color=fg:#c5cdd9,bg:#2b2d37,hl:#6cb6eb
-# --color=fg+:#c5cdd9,bg+:#2b2d37,hl+:#5dbbc1
-# --color=info:#88909f,prompt:#ec7279,pointer:#d38aea
-# --color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
+export EDITOR="nvim"
 
 # startup script (choose one)
 # colorscript -r # shell-color-scripts

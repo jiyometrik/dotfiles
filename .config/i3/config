@@ -87,7 +87,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 bindsym $mod+c focus child
@@ -163,13 +163,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# emacs server
-exec /usr/bin/emacs --daemon &
-
 # bindsym $mod+e exec emacs
-bindsym $mod+e exec emacsclient -c -a 'emacs' # emacs
+bindsym $mod+n exec neovide # neovide
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+x exec stacer
+bindsym $mod+a exec rofi -show calc # calculator
 
 # screenshot keybindings
 bindsym $mod+Shift+s exec flameshot gui
@@ -183,7 +181,7 @@ exec_always --no-startup-id fcitx &
 
 # Hide title bars
 default_border pixel 3
-default_floating_border pixel 1
+default_floating_border pixel 3
 
 # gaps
 gaps inner 18

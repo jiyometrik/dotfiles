@@ -1,5 +1,5 @@
 configuration {
-	modi: "drun,run,window,combi,windowcd,ssh,filebrowser,keys";
+	modi: "drun,run,window,combi,windowcd,ssh,filebrowser,keys,calc";
 	font: "jetbrains mono nerd font 12";
 	display-drun: ">";
 	sidebar-mode: false;
@@ -32,7 +32,7 @@ prompt {
 	border: 2px;
 	border-color: @fg;
 	border-radius: 10px;
-  font: "hasklug nerd font 14";
+  font: "jetbrains mono nerd font 14";
 	padding: 0 1% 0;
 }
 

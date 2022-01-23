@@ -18,9 +18,9 @@ require("nvim-treesitter.configs").setup({
 			node_decremental = "grm",
 		},
 	},
-	-- rainbow = {
-	-- 	enable = true,
-	-- 	-- extended_mode = true,
-	-- 	max_file_lines = 50000
-	-- }
+	rainbow = {
+		enable = true,
+		-- extended_mode = true,
+		max_file_lines = 50000
+	}
 })

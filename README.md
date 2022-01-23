@@ -4,9 +4,8 @@ A place to store my dotfiles.
 
 ## What You'll Find
 
-1. My [Doom Emacs](https://github.com/hlissner/doom-emacs) configuration.
-2. `.bashrc` and `.zshrc`.
-3. My playlist of Lofi music.
+1. Some music.
+2. My `~/.zshrc`.
 
 ### The .config Directory
 
@@ -18,7 +17,7 @@ This directory contains most of the configuration files for the applications I u
 - [lunarvim](https://lunarvim.org)
 - [mpd](https://www.musicpd.org/)
 - [neovim](https://neovim.io/) (requires >= v0.5.0 to work)
-- [picom](https://github.com/jonaburg/picom) (patched by [@jonaburg](https://github.com/jonaburg))
+- [picom](https://github.com/jonaburg/picom) (patched by [@ibhagwan](https://github.com/ibhagwan))
 - [polybar](https://github.com/polybar/polybar)
 - [ranger](https://github.com/ranger/ranger)
 - [rofi](https://github.com/davatorium/rofi)

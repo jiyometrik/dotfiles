@@ -36,14 +36,17 @@ o.swapfile = false
 o.undofile = true
 
 -- clipboard
-o.clipboard = "unnamedplus"
+-- o.clipboard = "unnamedplus" -- quite annoying when you have to delete something then paste something else
 
 -- buffer opening
 o.splitbelow = true
 o.splitright = true
 
+-- case-insensitive search
+o.ignorecase = true
+
 -- mouse
 o.mouse = "a"
 
 -- gui
-o.guifont = "Hasklug Nerd Font:h9"
+o.guifont = "BlexMono Nerd Font:h9"
