@@ -1,4 +1,4 @@
-local nl = require("null-ls")
+local nl = require('null-ls')
 
 -- linting and formatting sources
 local sources = {
@@ -8,9 +8,11 @@ local sources = {
 	-- nl.builtins.diagnostics.proselint,
 
 	-- web
-	nl.builtins.formatting.prettier.with({
-		disabled_filetypes = { "javascript", "typescript", "json" },
-	}), -- no need for js/ts, they have their own formatters in LSP
+	-- nl.builtins.formatting.prettier.with({
+	-- 	disabled_filetypes = { 'javascript', 'typescript', 'json' },
+	-- }), -- no need for js/ts, they have their own formatters in LSP
+
+	nl.builtins.formatting.prettier,
 
 	-- nl.builtins.diagnostics.eslint, -- builtin tsserver is ok
 	-- nl.builtins.diagnostics.stylelint,

@@ -1,10 +1,10 @@
 local o = vim.o
 local cmd = vim.cmd
 
-cmd("set nocompatible")
-cmd("filetype plugin indent on")
-cmd("syntax enable")
-o.fileencoding = "utf-8" -- file encoding
+cmd('set nocompatible')
+cmd('filetype plugin indent on')
+cmd('syntax enable')
+o.fileencoding = 'utf-8' -- file encoding
 o.hidden = true
 
 -- line numbers
@@ -46,7 +46,7 @@ o.splitright = true
 o.ignorecase = true
 
 -- mouse
-o.mouse = "a"
+o.mouse = 'a'
 
 -- gui
-o.guifont = "BlexMono Nerd Font:h9"
+o.guifont = 'BlexMono Nerd Font:h9'

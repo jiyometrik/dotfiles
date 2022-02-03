@@ -5,6 +5,6 @@ vim.g.bufferline = {
 	clickable = true,
 	icons = true,
 	maximum_length = 20,
-	exclude_ft = { "dashboard" },
-	exclude_name = { "dashboard" },
+	exclude_ft = { 'dashboard' },
+	exclude_name = { 'dashboard' },
 }

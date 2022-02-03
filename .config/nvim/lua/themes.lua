@@ -4,13 +4,13 @@ local o = vim.o
 local cmd = vim.cmd
 
 o.termguicolors = true
--- o.background = "light"
+-- o.background = 'light'
 
 -- ayu
 -- cmd("colorscheme ayu-dark")
 
 -- catppuccin
--- require("catppuccin").setup({
+-- require('catppuccin').setup({
 -- 	integrations = {
 -- 		cmp = true,
 -- 		lsp_saga = true,
@@ -24,22 +24,16 @@ o.termguicolors = true
 -- 		ts_rainbow = true,
 -- 	},
 -- })
--- cmd("colorscheme catppuccin")
-
--- calvera
--- g.calvera_italic_comments = true
--- g.calvera_italic_keywords = true
--- g.calvera_borders = true
--- require("calvera").set()
+-- cmd('colorscheme catppuccin')
 
 -- dracula
 -- cmd("colorscheme dracula")
 
 -- edge
--- g.edge_style = "neon"
+-- g.edge_style = 'neon'
 -- g.edge_enable_italic = 1
 -- g.edge_better_performance = 1
--- cmd("colorscheme edge")
+-- cmd('colorscheme edge')
 
 -- everforest
 -- g.everforest_background = "soft" -- "hard" for dark mode
@@ -52,45 +46,39 @@ o.termguicolors = true
 -- cmd("colorscheme gruvbox")
 
 -- gruvbox material
--- -- g.gruvbox_material_background = "hard"
+-- -- g.gruvbox_material_background = 'hard'
 -- g.gruvbox_material_enable_italic = 1
 -- g.gruvbox_material_better_performance = 1
--- cmd("colorscheme gruvbox-material")
+-- cmd('colorscheme gruvbox-material')
 
 -- melange
--- cmd("colorscheme melange")
+-- cmd('colorscheme melange')
 
 -- nightfox
 -- require("nightfox").setup({
 -- 	-- styles = { comments = "italic", keywords = "italic", functions = "italic" },
 -- 	styles = { comments = "italic", keywords = "italic" },
 -- })
--- require("nightfox").load("nordfox")
+-- require("nightfox").load("duskfox")
 
 -- nord
 -- g.nord_contrast = true
 -- g.nord_borders = true
--- cmd("colorscheme nord")
+-- cmd('colorscheme nord')
 
 -- rose pine
--- -- g.rose_pine_variant = 'moon'
--- cmd("colorscheme rose-pine")
-
--- tokyodark
--- g.tokyodark_enable_italic_comment = true
--- g.tokyodark_enable_italic = true
--- g.tokyodark_color_gamma = "1.2"
--- cmd("colorscheme tokyodark")
+-- g.rose_pine_variant = 'moon'
+cmd('colorscheme rose-pine')
 
 -- tokyonight
-g.tokyonight_style = "night"
-cmd("colorscheme tokyonight")
+-- g.tokyonight_style = "night"
+-- cmd("colorscheme tokyonight")
 
 -- sonokai
--- g.sonokai_style = "andromeda"
+-- g.sonokai_style = 'maia'
 -- g.sonokai_enable_italic = 1
 -- g.sonokai_better_performance = 1
--- cmd("colorscheme sonokai")
+-- cmd('colorscheme sonokai')
 
 -- vscode (idk why it's light by default)
 -- g.vscode_style = 'dark'
