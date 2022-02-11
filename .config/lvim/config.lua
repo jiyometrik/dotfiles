@@ -9,25 +9,26 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
-local V = lvim
-V.log.level = "warn"
-V.format_on_save = true
+local lv = lvim
+
+lv.log.level = "warn"
+lv.format_on_save = true
 vim.g.tokyonight_style = "night"
-V.colorscheme = "tokyonight"
+lv.colorscheme = "tokyonight"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
-V.leader = "space"
+lv.leader = "space"
 -- add your own keymapping
--- V.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- lv.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
--- V.keys.normal_mode["<C-Up>"] = ""
+-- lv.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
--- V.keys.normal_mode["<C-q>"] = ":q<cr>"
+-- lv.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
--- V.builtin.telescope.defaults.mappings = {
+-- lv.builtin.telescope.defaults.mappings = {
 --   -- for input mode
 --   i = {
 --     ["<C-j>"] = actions.move_selection_next,
@@ -43,8 +44,8 @@ V.leader = "space"
 -- }
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- V.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-V.builtin.which_key.mappings["t"] = {
+-- lv.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lv.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
 	r = { "<cmd>Trouble lsp_references<cr>", "References" },
 	f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -54,36 +55,36 @@ V.builtin.which_key.mappings["t"] = {
 	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 }
 
-V.builtin.which_key.mappings["x"] = { "<cmd>StripWhitespace<cr>", "clear-whitespace" }
+lv.builtin.which_key.mappings["x"] = { "<cmd>StripWhitespace<cr>", "clear-whitespace" }
 
 -- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-V.builtin.dashboard.active = true
-V.builtin.terminal.active = true
-V.builtin.nvimtree.setup.view.side = "left"
-V.builtin.nvimtree.show_icons.git = 1
+-- After changing plugin config exit and reopen Lunarlvim, Run :PackerInstall :PackerCompile
+lv.builtin.dashboard.active = true
+lv.builtin.terminal.active = true
+lv.builtin.nvimtree.setup.view.side = "left"
+lv.builtin.nvimtree.show_icons.git = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
-V.builtin.treesitter.ensure_installed = "all"
+lv.builtin.treesitter.ensure_installed = "all"
 
-V.builtin.treesitter.highlight.enabled = true
+lv.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
--- V.lsp.automatic_servers_installation = false
+-- lv.lsp.automatic_servers_installation = false
 
 -- ---@usage Select which servers should be configured manually. Requires `:LvimCacheRest` to take effect.
--- See the full default list `:lua print(vim.inspect(V.lsp.override))`
--- vim.list_extend(V.lsp.override, { "pyright" })
+-- See the full default list `:lua print(vim.inspect(lv.lsp.override))`
+-- vim.list_extend(lv.lsp.override, { "pyright" })
 
 -- ---@usage setup a server -- see: https://www.lunarvim.org/languages/#overriding-the-default-configuration
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("V.lsp.manager").setup("pylsp", opts)
+-- require("lv.lsp.manager").setup("pylsp", opts)
 
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- V.lsp.on_attach_callback = function(client, bufnr)
+-- lv.lsp.on_attach_callback = function(client, bufnr)
 --   local function buf_set_option(...)
 --     vim.api.nvim_buf_set_option(bufnr, ...)
 --   end
@@ -91,11 +92,11 @@ V.builtin.treesitter.highlight.enabled = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 -- you can overwrite the null_ls setup table (useful for setting the root_dir function)
--- V.lsp.null_ls.setup = {
+-- lv.lsp.null_ls.setup = {
 --   root_dir = require("lspconfig").util.root_pattern("Makefile", ".git", "node_modules"),
 -- }
 -- or if you need something more advanced
--- V.lsp.null_ls.setup.root_dir = function(fname)
+-- lv.lsp.null_ls.setup.root_dir = function(fname)
 --   if vim.bo.filetype == "javascript" then
 --     return require("lspconfig/util").root_pattern("Makefile", ".git", "node_modules")(fname)
 --       or require("lspconfig/util").path.dirname(fname)
@@ -107,7 +108,7 @@ V.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "V.lsp.null-ls.formatters"
+-- local formatters = require "lv.lsp.null-ls.formatters"
 -- formatters.setup {
 --   { exe = "black", filetypes = { "python" } },
 --   { exe = "isort", filetypes = { "python" } },
@@ -122,7 +123,7 @@ V.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- -- set additional linters
--- local linters = require "V.lsp.null-ls.linters"
+-- local linters = require "lv.lsp.null-ls.linters"
 -- linters.setup {
 --   { exe = "flake8", filetypes = { "python" } },
 --   {
@@ -139,7 +140,7 @@ V.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Plugins
-V.plugins = {
+lv.plugins = {
 	{
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
@@ -176,6 +177,6 @@ V.plugins = {
 }
 
 --   Autocommands (https://neovim.io/doc/user/autocmd.html)
---   V.autocommands.custom_groups = {
+--   lv.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
