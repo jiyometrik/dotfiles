@@ -43,37 +43,37 @@ local on_attach = function(client, bufno)
 	buf_set_keymap('n', 'g?', ':Lspsaga lsp_finder<cr>', op)
 
 	require('lsp_signature').on_attach() -- hints as you type
-	require('lspkind').init({ -- fancy icons
-		with_text = false,
-		preset = 'codicons',
-		symbol_map = {
-			Text = '',
-			Method = '',
-			Function = '',
-			Constructor = '',
-			Field = 'ﰠ',
-			Variable = '',
-			Class = 'ﴯ',
-			Interface = '',
-			Module = '',
-			Property = 'ﰠ',
-			Unit = '塞',
-			Value = '',
-			Enum = '',
-			Keyword = '',
-			Snippet = '',
-			Color = '',
-			File = '',
-			Reference = '',
-			Folder = '',
-			EnumMember = '',
-			Constant = '',
-			Struct = 'פּ',
-			Event = '',
-			Operator = '',
-			TypeParameter = '',
-		},
-	})
+	-- require('lspkind').init({ -- fancy icons
+	-- 	mode = 'symbol_text',
+	-- 	preset = 'codicons',
+	-- 	symbol_map = {
+	-- 		Text = '',
+	-- 		Method = '',
+	-- 		Function = '',
+	-- 		Constructor = '',
+	-- 		Field = 'ﰠ',
+	-- 		Variable = '',
+	-- 		Class = 'ﴯ',
+	-- 		Interface = '',
+	-- 		Module = '',
+	-- 		Property = 'ﰠ',
+	-- 		Unit = '塞',
+	-- 		Value = '',
+	-- 		Enum = '',
+	-- 		Keyword = '',
+	-- 		Snippet = '',
+	-- 		Color = '',
+	-- 		File = '',
+	-- 		Reference = '',
+	-- 		Folder = '',
+	-- 		EnumMember = '',
+	-- 		Constant = '',
+	-- 		Struct = 'פּ',
+	-- 		Event = '',
+	-- 		Operator = '',
+	-- 		TypeParameter = '',
+	-- 	},
+	-- })
 end
 
 lsp_installer.on_server_ready(function(server)
@@ -88,7 +88,6 @@ lsp_installer.on_server_ready(function(server)
 		-- on_config_changed = on_config_changed,
 		-- on_init = on_init,
 		-- on_exit = on_exit,
-		-- register nvim-cmp
 	}
 
 	-- (optional) Customize the options passed to the server
@@ -108,24 +107,6 @@ lsp_installer.on_server_ready(function(server)
 			client.resolved_capabilities.document_range_formatting = false
 		end
 	end
-
-	-- texmagic.nvim
-	-- if server.name == 'texlab' then
-	-- 	opts = {
-	-- 		cmd = { 'texlab' },
-	-- 		filetypes = { 'tex', 'bib' },
-	-- 		settings = {
-	-- 			texlab = {
-	-- 				rootDirectory = nil,
-	-- 				build = _G.TeXMagicBuildConfig,
-	-- 				forwardSearch = {
-	-- 					executable = 'evince',
-	-- 					args = { '%p' },
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	}
-	-- end
 
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -153,4 +134,4 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
--- vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]) -- format on save
+vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]) -- format on save

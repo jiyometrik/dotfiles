@@ -18,7 +18,7 @@ cmd([[ let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/aft
 -- use xelatex by default for better font rendering
 cmd([[
 	let g:vimtex_compiler_latexmk_engines = {
-		\ '_'                : '-shell-escape -pdf',
+		\ '_'                : '-pdf -shell-escape',
 		\ 'pdflatex'         : '-pdf',
 		\ 'dvipdfex'         : '-pdfdvi',
 		\ 'lualatex'         : '-lualatex',

@@ -13,6 +13,7 @@ o.rnu = true
 
 -- indentation (tabs > spaces imo)
 o.tabstop = 2
+o.softtabstop = 2
 o.shiftwidth = 2
 o.autoindent = true
 o.smartindent = true
@@ -43,7 +44,7 @@ o.splitbelow = true
 o.splitright = true
 
 -- case-insensitive search
-o.ignorecase = true
+-- o.ignorecase = true
 
 -- mouse
 o.mouse = 'a'

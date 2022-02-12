@@ -1,5 +1,4 @@
 local nl = require('null-ls')
-
 -- linting and formatting sources
 local sources = {
 	-- text manipulation
@@ -34,6 +33,9 @@ local sources = {
 	-- lua
 	nl.builtins.formatting.stylua,
 	-- nl.builtins.diagnostics.luacheck,
+
+	-- rust
+	-- nl.builtins.formatting.rustfmt, -- already set up with rust-analyzer
 
 	-- latex
 	-- nl.builtins.diagnostics.chktex,

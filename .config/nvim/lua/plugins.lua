@@ -7,7 +7,8 @@ return require('packer').startup(function()
 	use('dstein64/vim-startuptime')
 
 	-- lsp
-	use({ 'neovim/nvim-lspconfig',
+	use({
+		'neovim/nvim-lspconfig',
 		config = function()
 			require('config.lsp')
 		end,
@@ -55,6 +56,15 @@ return require('packer').startup(function()
 	-- nice icons
 	use('onsails/lspkind-nvim')
 
+	-- location list and all that UI stuff that's not in Lspsaga
+	use({
+		'folke/trouble.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function()
+			require('trouble').setup()
+		end,
+	})
+
 	-- syntax highlighting
 	use({
 		'nvim-treesitter/nvim-treesitter',
@@ -67,7 +77,8 @@ return require('packer').startup(function()
 	-- bracket colorizer
 	-- use("p00f/nvim-ts-rainbow")
 	-- snippet engine
-	use({'L3MON4D3/LuaSnip',
+	use({
+		'L3MON4D3/LuaSnip',
 		config = function()
 			require('config.snippet')
 		end,
@@ -77,7 +88,7 @@ return require('packer').startup(function()
 	use('rafamadriz/friendly-snippets')
 
 	-- ai completion
-	-- use("github/copilot.vim")
+	-- use('github/copilot.vim')
 
 	-- latex
 	use({ 'lervag/vimtex', ft = { 'tex' } })
@@ -90,7 +101,7 @@ return require('packer').startup(function()
 		'lewis6991/gitsigns.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
-			require('gitsigns').setup()
+			require('config.gitsigns')
 		end,
 	})
 
@@ -100,11 +111,9 @@ return require('packer').startup(function()
 		requires = {
 			'nvim-lua/plenary.nvim',
 			'nvim-lua/popup.nvim',
-			-- "nvim-telescope/telescope-media-files.nvim",
 		},
 		config = function()
-			require('telescope').setup()
-			-- require("telescope").load_extension("media_files")
+			require('config.telescope')
 		end,
 	})
 
@@ -154,9 +163,7 @@ return require('packer').startup(function()
 	use({
 		'numToStr/Comment.nvim',
 		config = function()
-			require('Comment').setup({
-				mappings = { extended = true },
-			})
+			require('config.comments')
 		end,
 	})
 
@@ -183,23 +190,20 @@ return require('packer').startup(function()
 		end,
 	})
 
+	-- zen mode - only code is shown on the screen
 	use({
 		'folke/zen-mode.nvim',
+		cmd = 'ZenMode',
 		requires = {
 			'folke/twilight.nvim',
-			opt = true,
+			cmd = 'ZenMode',
 			config = function()
 				require('twilight').setup()
 			end,
 		},
 		config = function()
-			require('zen-mode').setup({
-				plugins = {
-					gitsigns = { enabled = true },
-				},
-			})
+			require('zen-mode').setup()
 		end,
-		cmd = 'ZenMode',
 	})
 
 	-- themes
@@ -234,4 +238,16 @@ return require('packer').startup(function()
 			require('colorizer').setup()
 		end,
 	})
+
+	-- highlight todo comments
+	use({
+		'folke/todo-comments.nvim',
+		requires = 'nvim-lua/plenary.nvim',
+		config = function()
+			require('config.todo')
+		end,
+	})
+
+	-- terminal
+	use('akinsho/toggleterm.nvim')
 end)

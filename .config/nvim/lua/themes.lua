@@ -4,30 +4,31 @@ local o = vim.o
 local cmd = vim.cmd
 
 o.termguicolors = true
--- o.background = 'light'
+o.background = 'light'
 
 -- ayu
--- cmd("colorscheme ayu-dark")
+-- cmd('colorscheme ayu-dark')
 
 -- catppuccin
--- require('catppuccin').setup({
--- 	integrations = {
--- 		cmp = true,
--- 		lsp_saga = true,
--- 		gitsigns = true,
--- 		telescope = true,
--- 		nvimtree = { enabled = true, show_root = true },
--- 		which_key = true,
--- 		indent_blankline = { enabled = true, colored_indent_levels = true },
--- 		dashboard = true,
--- 		barbar = true,
--- 		ts_rainbow = true,
--- 	},
--- })
--- cmd('colorscheme catppuccin')
+require('catppuccin').setup({
+	integrations = {
+		cmp = true,
+		lsp_saga = true,
+		lsp_trouble = true,
+		gitsigns = true,
+		telescope = true,
+		nvimtree = { enabled = true, show_root = true },
+		which_key = true,
+		indent_blankline = { enabled = true, colored_indent_levels = true },
+		dashboard = true,
+		barbar = true,
+		ts_rainbow = true,
+	},
+})
+cmd('colorscheme catppuccin')
 
 -- dracula
--- cmd("colorscheme dracula")
+-- cmd('colorscheme dracula')
 
 -- edge
 -- g.edge_style = 'neon'
@@ -36,17 +37,17 @@ o.termguicolors = true
 -- cmd('colorscheme edge')
 
 -- everforest
--- g.everforest_background = "soft" -- "hard" for dark mode
+-- g.everforest_background = 'hard' -- "hard" for dark mode
 -- g.everforest_enable_italic = 1
 -- g.everforest_better_performance = 1
--- cmd("colorscheme everforest")
+-- cmd('colorscheme everforest')
 
 -- gruvbox
 -- g.gruvbox_italic = 1
--- cmd("colorscheme gruvbox")
+-- cmd('colorscheme gruvbox')
 
 -- gruvbox material
--- -- g.gruvbox_material_background = 'hard'
+-- g.gruvbox_material_background = 'hard'
 -- g.gruvbox_material_enable_italic = 1
 -- g.gruvbox_material_better_performance = 1
 -- cmd('colorscheme gruvbox-material')
@@ -67,12 +68,12 @@ o.termguicolors = true
 -- cmd('colorscheme nord')
 
 -- rose pine
--- g.rose_pine_variant = 'moon'
-cmd('colorscheme rose-pine')
+-- -- g.rose_pine_variant = 'moon'
+-- cmd('colorscheme rose-pine')
 
 -- tokyonight
--- g.tokyonight_style = "night"
--- cmd("colorscheme tokyonight")
+-- g.tokyonight_style = 'night'
+-- cmd('colorscheme tokyonight')
 
 -- sonokai
 -- g.sonokai_style = 'maia'

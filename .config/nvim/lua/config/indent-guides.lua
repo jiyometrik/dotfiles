@@ -3,8 +3,16 @@ local g = vim.g
 
 o.list = true
 o.listchars:append('space:⋅')
--- o.listchars:append("eol:↴")
-g.indent_blankline_filetype_exclude = { 'help', 'dashboard', 'terminal', 'packer', 'startuptime' }
+-- o.listchars:append('eol:↴')
+g.indent_blankline_filetype_exclude = {
+	'help',
+	'dashboard',
+	'terminal',
+	'packer',
+	'startuptime',
+	'Trouble',
+	'toggleterm',
+}
 
 require('indent_blankline').setup({
 	set_conceal = 0,

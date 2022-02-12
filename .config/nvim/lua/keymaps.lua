@@ -13,6 +13,8 @@ o.timeoutlen = 500 -- set timeoutlen so that we have enough time to type out the
 -- map('v', 'j', 'gj', { silent = true })
 -- map('v', 'k', 'gk', { silent = true })
 
+map('t', '<esc>', [[<c-\><c-n>]], { noremap = true })
+
 wk.register({
 	['<leader>'] = {
 		-- buffers
@@ -84,7 +86,6 @@ wk.register({
 			c = { ':Telescope git_commits<cr>', 'commits' },
 			C = { ':Telescope git_bcommits<cr>', 'commits-in-buffer' },
 			d = { ':Telescope commands<cr>', 'commands' },
-			-- e = { ':Telescope file_browser<cr>', 'file-explorer' }, -- no longer included by default in telescope
 			f = { ':Telescope find_files<cr>', 'find-files' },
 			F = { ':Telescope filetypes<cr>', 'filetypes' },
 			g = { ':Telescope git_files<cr>', 'git-files' },
@@ -109,6 +110,7 @@ wk.register({
 			L = { ':Telescope loclist<cr>', 'loclist' },
 			m = { ':Telescope marks<cr>', 'marks' },
 			o = { ':Telescope vim_options<cr>', 'options' },
+			O = { ':TodoTelescope<cr>', 'todo-comments' },
 			q = { ':Telescope quickfix<cr>', 'quickfixes' },
 			r = { ':Telescope live_grep<cr>', 'ripgrep' },
 			R = { ':Telescope grep_string<cr>', 'grep-strings' },
@@ -157,6 +159,10 @@ wk.register({
 			['['] = { ':Gitsigns reset_hunk<cr>', 'reset-hunk' },
 			[']'] = { ':Gitsigns reset_buffer<cr>', 'reset-buffer' },
 			['='] = { ':Telescope git_stash', 'stash' },
+			['<space>'] = {
+				':lua require("toggleterm.terminal").Terminal:new({cmd = "lazygit", hidden=true}):toggle()<cr>',
+				'lazygit',
+			},
 		},
 
 		-- lsp
@@ -168,9 +174,7 @@ wk.register({
 			C = { ':Lspsaga show_cursor_diagnostics<cr>', 'current-diagnostics', silent = false },
 			d = { ':Lspsaga preview_definition<cr>', 'definition', silent = false },
 			D = { ':lua vim.lsp.buf.declaration()<cr>', 'declaration', silent = false },
-			e = { ':lua vim.diagnostic.open_float()<cr>', 'diagnostics', silent = false },
-			-- e = {':lua vim.diagnostic.set_loclist()<cr>', 'diagnostics', silent = false},
-			E = { ':Telescope diagnostics<cr>', 'diagnostics-float', silent = false },
+			e = { ':Telescope diagnostics<cr>', 'diagnostics-float', silent = false },
 			f = { ':lua vim.lsp.buf.formatting()<cr>', 'format', silent = false },
 			F = { ':lua vim.lsp.buf.range_formatting()<cr>', 'format-range', silent = false },
 			h = { ':Lspsaga hover_doc<cr>', 'hover-doc', silent = false },
@@ -179,8 +183,8 @@ wk.register({
 			j = { ':Lspsaga diagnostic_jump_next<cr>', 'next-diagnostic', silent = false },
 			k = { ':Lspsaga diagnostic_jump_prev<cr>', 'prev-diagnostic', silent = false },
 			l = { ':Lspsaga lsp_finder<cr>', 'finder', silent = false },
-			r = { ':Lspsaga rename<cr>', 'rename', silent = false },
-			R = { ':lua vim.lsp.buf.references()<cr>', 'references', silent = false },
+			r = { ':Lspsaga rename<cr>', 'rename' },
+			R = { ':Trouble lsp_references<cr>', 'references' },
 			s = { ':Telescope treesitter<cr>', 'symbols', silent = false },
 			S = { ':lua vim.lsp.buf.document_symbol()<cr>', 'document-symbols', silent = false },
 			t = { ':lua vim.lsp.buf.type_definition()<cr>', 'type-definition', silent = false },
@@ -201,25 +205,16 @@ wk.register({
 			},
 		},
 
-		-- run
-		-- r = {
-		-- 	name = '+run',
-		-- 	['<space>'] = { ':RunCode<cr>', 'code' },
-		-- 	[','] = { ':RunFile<cr>', 'file' },
-		-- 	['.'] = { ':RunProject<cr>', 'project' },
-		-- 	[';'] = { ':CRFiletype<cr>', 'command' },
-		-- 	["'"] = { ':CRProjects<cr>', 'proj-command' },
-		-- },
-
-		-- toggle
+		-- trouble
 		t = {
-			name = '+toggle',
-			c = { ':Comment<cr>', 'comment' },
-			e = { ':NvimTreeToggle<cr>', 'explorer' },
-			g = { ':Gitsigns toggle_signs<cr>', 'git-indicator' },
-			i = { ':IndentBlanklineToggle<cr>', 'indent-guide' },
-			l = { ':set nonu nornu<cr>', 'line-number' },
-			t = { ':TSToggleAll ', 'treesitter', silent = false },
+			name = '+trouble',
+			['<space>'] = { ':TroubleToggle<cr>', 'trouble' },
+			d = { ':TroubleToggle workspace_diagnostics<cr>', 'workspace-diagnostics' },
+			e = { ':TroubleToggle document_diagnostics<cr>', 'doc-diagnostics' },
+			o = { ':TodoTrouble<cr>', 'todo-comments' },
+			l = { ':TroubleToggle loclist<cr>', 'loclist' },
+			r = { ':TroubleToggle lsp_references<cr>', 'references' },
+			q = { ':TroubleToggle quickfix<cr>', 'quickfix' },
 		},
 
 		-- windows
@@ -244,7 +239,7 @@ wk.register({
 
 		-- vimtex
 		x = {
-			name = '+vimtex',
+			name = '+latex',
 			c = { ':VimtexCompile<cr>', 'compile' },
 			C = { ':VimtexClean<cr>', 'clean-files' },
 			d = { ':VimtexClearCache<cr>', 'clear-cache' },
@@ -270,16 +265,28 @@ wk.register({
 	['<leader>;'] = { ':Dashboard<cr>', 'dashboard' },
 
 	-- hover
-	['<leader>?'] = { ':Lspsaga hover_doc<cr>', 'lsp-hover', silent = false },
+	['<leader>?'] = { ':Lspsaga hover_doc<cr>', 'lsp-hover' },
 
 	-- autosave
 	-- ['<leader>a'] = { ':ASToggle<cr>', 'toggle-autosave' },
 
+	-- terminal toggle all
+	['<leader>c'] = { ':ToggleTermToggleAll<cr>', 'toggle-all-term' },
+
+	-- trouble
+	['<leader>i'] = { ':TroubleToggle<cr>', 'info' },
+
 	-- term
-	['<leader>m'] = { ':Lspsaga open_floaterm<cr>', 'terminal', silent = false },
+	['<leader>m'] = { ':ToggleTerm<cr>', 'terminal' },
+
+	-- float
+	['<leader>M'] = { ':ToggleTerm size=80 direction=float<cr>', 'terminal-float' },
 
 	-- strip whitespace
 	['<leader>s'] = { ':StripWhitespace<cr>', 'strip-whitespace' },
+
+	-- terminal (vertical)
+	['<leader>v'] = { ':ToggleTerm size=60 direction=vertical<cr>', 'terminal-vert' },
 
 	-- zen
 	['<leader>z'] = { ':ZenMode<cr>', 'zenmode' },
