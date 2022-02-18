@@ -70,7 +70,7 @@ alias lt="exa -T"
 # other aliases
 alias cr="colorscript -r"
 alias fm="fm6000"
-alias pika="neofetch --ascii $HOME/.config/neofetch/ascii --ascii_colors 0 1 2 3 4 5 6 7"
+alias pika="neofetch --ascii $HOME/.config/neofetch/pikachu --ascii_colors 0 1 2 3 4 5 6 7"
 alias pf="pfetch"
 alias pk="pokemon-colorscripts -r"
 alias lg="lazygit"
