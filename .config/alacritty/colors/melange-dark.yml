@@ -1,4 +1,11 @@
 colors:
+  search:
+    matches:
+      foreground: CellBackground
+      background: "#ebc06d"
+    bar:
+      background: "#352f2a"
+      foreground: "#c1a78e"
   primary:
     foreground: "#ECE1D7"
     background: "#2A2520"

@@ -1,5 +1,13 @@
 # Catppuccin!
 colors:
+  search:
+    matches:
+      foreground: CellBackground
+      background: "#f5c2e7"
+    bar:
+      background: "#1e1d2f"
+      foreground: "#d9e0ee"
+
   # Default colors
   primary:
     background: "#1E1D2F"

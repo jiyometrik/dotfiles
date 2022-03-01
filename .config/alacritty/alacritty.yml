@@ -2,7 +2,7 @@ env:
   TERM: xterm-256color
 
 import:
-  - ~/.config/alacritty/colors/tokyonight-night.yml
+  - ~/.config/alacritty/colors/catppuccin.yml
 
 # window padding
 window:
@@ -10,65 +10,30 @@ window:
     x: 8
     y: 8
   dynamic_padding: true
+  decorations: full
 
-  # font
+# font
 font:
-  # size: 8
-  size: 8.5
-  # size: 9
-  # size: 10
+  size: 15
   normal:
-    # family: Iosevka SS14
-    family: JetBrains Mono Nerd Font
-    # family: BlexMono Nerd Font
-    # family: Hack Nerd Font
-    # family: Cozette Vector
-    # family: Scientifica
-    # family: SauceCodePro Nerd Font
-    # family: Meslo LG S Nerd Font
-    # family: Liga SF Mono Nerd Font
-    # family: Roboto Mono Nerd Font
-    # family: Fira Code iCursive Op
-  # bold:
-  #   style: Bold
-  #   family: JetBrains Mono Nerd Font
-  #   family: Fira Mono Nerd Font
-  #   family: Hack Nerd Font
-  #   family: Hasklug Nerd Font
-  #   family: Meslo LG S Nerd Font
-  #   family: Liga SF Mono Nerd Font
-  #   family: Roboto Mono Nerd Font
-  #   family: Fira Code Nerd Font Complete Mono Windows Compatible
-  # italic:
-  #   style: Italic
-  #   family: Iosevka SS14
-  #   family: JetBrains Mono Nerd Font
-  #   family: Victor Mono Nerd Font
-  #   family: Hack Nerd Font
-  #   family: Hasklug Nerd Font
-  #   family: Meslo LG S Nerd Font
-  #   family: Liga SF Mono Nerd Font
-  #   family: Roboto Mono Nerd Font
-  #   family: Operator Mono Lig Book Italic Nerd Font Complete Mono Windows Compatible
-  #   style: Medium Italic # Victor Mono
-  #   style: Book Italic
-  #   style: Regular Italic # SF Mono
-  # bold_italic:
-  #   style: Bold Italic
-  #   family: Hack Nerd Font
-  #   family: Iosevka SS14
-  #   family: JetBrains Mono Nerd Font
-  #   family: Victor Mono Nerd Font
-  #   family: Hasklug Nerd Font
-  #   family: Meslo LG S Nerd Font
-  #   family: Liga SF Mono Nerd Font
-  #   family: Roboto Mono Nerd Font
+    family: SauceCodePro Nerd Font
+  bold:
+    style: Bold
+    family: SauceCodePro Nerd Font
+  italic:
+    style: Italic
+    family: SauceCodePro Nerd Font
+  bold_italic:
+    style: Bold Italic
+    family: SauceCodePro Nerd Font
+  
+  offset:
+    x: 0
+    y: 1
 
 # spaces per tab
 tabspaces: 2
-# cursor style
-# cursor:
-#   style: Beam
 
-# opacity
-# background_opacity: 0.85
+# startup shell
+# shell:
+#   program: /bin/zsh
