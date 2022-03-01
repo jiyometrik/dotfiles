@@ -1,5 +1,7 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local mapp = require('cmp').mapping
+
 cmp.setup({
 	snippet = {
 		-- snippet engine to use
@@ -9,26 +11,31 @@ cmp.setup({
 	},
 
 	mapping = {
-		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-		['<C-e>'] = cmp.mapping({
-			i = cmp.mapping.abort(),
-			c = cmp.mapping.close(),
+		['<C-b>'] = mapp(mapp.scroll_docs(-4), { 'i', 'c' }),
+		['<C-f>'] = mapp(mapp.scroll_docs(4), { 'i', 'c' }),
+		['<C-Space>'] = mapp(mapp.complete(), { 'i', 'c' }),
+		['<C-e>'] = mapp({
+			i = mapp.abort(),
+			c = mapp.close(),
 		}),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- accept currently selected item
+		['<CR>'] = mapp.confirm({ select = true }), -- accept currently selected item
 	},
 
 	sources = cmp.config.sources({
+		-- original lsp
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }, -- luasnip
+
+		-- snippets
+		{ name = 'luasnip' },
 	}, {
-		{ name = 'buffer' },
+		-- words in the buffer
+		-- { name = 'buffer' },
 	}),
 
 	formatting = {
-		format = lspkind.cmp_format({ -- lspkind fancy icons
-			mode = 'symbol_text',
+		-- fancy icons (onsails/lspkind-nvim)
+		format = lspkind.cmp_format({
+			mode = 'symbol',
 			maxwidth = 50,
 			before = function(entry, vim_item)
 				return vim_item

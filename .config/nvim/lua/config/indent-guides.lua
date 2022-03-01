@@ -4,6 +4,7 @@ local g = vim.g
 o.list = true
 o.listchars:append('space:⋅')
 -- o.listchars:append('eol:↴')
+
 g.indent_blankline_filetype_exclude = {
 	'help',
 	'dashboard',
@@ -12,6 +13,7 @@ g.indent_blankline_filetype_exclude = {
 	'startuptime',
 	'Trouble',
 	'toggleterm',
+	'NvimTree',
 }
 
 require('indent_blankline').setup({

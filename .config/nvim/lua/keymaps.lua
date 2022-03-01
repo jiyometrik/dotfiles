@@ -1,21 +1,25 @@
 local g = vim.g
 local o = vim.o
 local map = vim.api.nvim_set_keymap
-local wk = require('which-key')
+local w = require('which-key')
 
 -- leader key
 g.mapleader = ' '
-o.timeoutlen = 500 -- set timeoutlen so that we have enough time to type out the whole keymap
 
--- map j to gj and k to gk so that long lines are easier to navigate
--- map('n', 'j', 'gj', { silent = true })
--- map('n', 'k', 'gk', { silent = true })
--- map('v', 'j', 'gj', { silent = true })
--- map('v', 'k', 'gk', { silent = true })
-
+-- terminal mode escape
 map('t', '<esc>', [[<c-\><c-n>]], { noremap = true })
 
-wk.register({
+-- windows
+local opts = { silent = true, noremap = true }
+map('n', '<C-h>', '<C-w>h', opts)
+map('n', '<C-j>', '<C-w>j', opts)
+map('n', '<C-k>', '<C-w>k', opts)
+map('n', '<C-l>', '<C-w>l', opts)
+map('n', '<C-s>', '<C-w>x', opts)
+map('n', '<C-q>', '<C-w>q', opts)
+map('n', '<C-w>', '<C-w>w', opts) -- put this last to avoid conflicts
+
+w.register({
 	['<leader>'] = {
 		-- buffers
 		b = {
@@ -57,19 +61,6 @@ wk.register({
 			[';'] = { ':new<cr>', 'new-buffer' },
 		},
 
-		-- nvimtree
-		e = {
-			name = '+explorer',
-			['<space>'] = { ':NvimTreeOpen<cr>', 'open' },
-			c = { ':NvimTreeClose<cr>', 'close' },
-			f = { ':NvimTreeFocus<cr>', 'focus' },
-			i = { ':NvimTreeFindFile<cr>', 'find' },
-			p = { ':NvimTreeClipboard<cr>', 'clipboard' },
-			r = { ':NvimTreeRefresh<cr>', 'refresh' },
-			s = { ':NvimTreeResize<cr>', 'resize' },
-			t = { ':NvimTreeToggle<cr>', 'toggle' },
-		},
-
 		-- telescope
 		f = {
 			name = '+find',
@@ -100,7 +91,6 @@ wk.register({
 				d = { ':Telescope lsp_definitions<cr>', 'definitions' },
 				e = { ':Telescope diagnostics<cr>', 'diagnostics' },
 				i = { ':Telescope lsp_implementation<cr>', 'implementations' },
-				o = { ':Telescope treesitter<cr>', 'treesitter-outline' },
 				r = { ':Telescope lsp_references<cr>', 'references' },
 				s = { ':Telescope lsp_document_symbols<cr>', 'doc-symbols' },
 				S = { ':Telescope lsp_workspace_symbols<cr>', 'workspace-symbols' },
@@ -168,41 +158,19 @@ wk.register({
 		-- lsp
 		l = {
 			name = '+lsp',
-			a = { ':Lspsaga code_action<cr>', 'codeaction', silent = false },
-			A = { ':Lspsaga range_code_action<cr>', 'codeaction-range', silent = false },
-			c = { ':Lspsaga show_line_diagnostics<cr>', 'line-diagnostics', silent = false },
-			C = { ':Lspsaga show_cursor_diagnostics<cr>', 'current-diagnostics', silent = false },
-			d = { ':Lspsaga preview_definition<cr>', 'definition', silent = false },
-			D = { ':lua vim.lsp.buf.declaration()<cr>', 'declaration', silent = false },
-			e = { ':Telescope diagnostics<cr>', 'diagnostics-float', silent = false },
-			f = { ':lua vim.lsp.buf.formatting()<cr>', 'format', silent = false },
-			F = { ':lua vim.lsp.buf.range_formatting()<cr>', 'format-range', silent = false },
-			h = { ':Lspsaga hover_doc<cr>', 'hover-doc', silent = false },
-			H = { ':Lspsaga signature_help<cr>', 'signature-help', silent = false },
-			i = { ':Lspsaga implement<cr>', 'implementation', silent = false },
-			j = { ':Lspsaga diagnostic_jump_next<cr>', 'next-diagnostic', silent = false },
-			k = { ':Lspsaga diagnostic_jump_prev<cr>', 'prev-diagnostic', silent = false },
-			l = { ':Lspsaga lsp_finder<cr>', 'finder', silent = false },
-			r = { ':Lspsaga rename<cr>', 'rename' },
+			a = { ':lua vim.lsp.buf.code_action()<cr>', 'codeaction' },
+			d = { ':lua vim.lsp.buf.definition()<cr>', 'definition' },
+			D = { ':lua vim.lsp.buf.declaration()<cr>', 'declaration' },
+			e = { ':Trouble document_diagnostics<cr>', 'diagnostics' },
+			f = { ':lua vim.lsp.buf.formatting()<cr>', 'format' },
+			h = { ':lua vim.lsp.buf.hover()<cr>', 'hover-doc' },
+			i = { ':lua vim.lsp.buf.implementation()<cr>', 'implementation' },
+			j = { ':lua vim.lsp.diagnostic.goto_next({ wrap = false })<cr>', 'next-diagnostic' },
+			k = { ':lua vim.lsp.diagnostic.goto_prev({ wrap = false })<cr>', 'prev-diagnostic' },
+			r = { ':lua vim.lsp.buf.rename()<cr>', 'rename' },
 			R = { ':Trouble lsp_references<cr>', 'references' },
-			s = { ':Telescope treesitter<cr>', 'symbols', silent = false },
-			S = { ':lua vim.lsp.buf.document_symbol()<cr>', 'document-symbols', silent = false },
-			t = { ':lua vim.lsp.buf.type_definition()<cr>', 'type-definition', silent = false },
-			w = {
-				':lua vim.lsp.buf.add_workspace_folder()<cr>',
-				'add-workspace-folder',
-				silent = false,
-			},
-			W = {
-				':lua vim.lsp.buf.remove_workspace_folder()<cr>',
-				'rm-workspace-folder',
-				silent = false,
-			},
-			['?'] = {
-				':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>',
-				'workspace-folders',
-				silent = false,
-			},
+			S = { ':lua vim.lsp.buf.document_symbol()<cr>', 'document-symbols' },
+			t = { ':lua vim.lsp.buf.type_definition()<cr>', 'type-definition' },
 		},
 
 		-- trouble
@@ -222,7 +190,6 @@ wk.register({
 			name = '+windows',
 			h = { '<C-w>h', 'left-window' },
 			H = { '<C-w>H', 'move-left' },
-			i = { ':Windows<cr>', 'list-windows' },
 			j = { '<C-w>j', 'bottom-window' },
 			J = { '<C-w>J', 'move-down' },
 			k = { '<C-w>k', 'top-window' },
@@ -234,7 +201,6 @@ wk.register({
 			v = { '<C-w>v', 'vert-split' },
 			w = { '<C-w>w', 'switch-windows' },
 			x = { '<C-w>x', 'exchange-windows' },
-			['='] = { '<C-w>=', 'make-all-windows-equal-sized' },
 		},
 
 		-- vimtex
@@ -265,13 +231,16 @@ wk.register({
 	['<leader>;'] = { ':Dashboard<cr>', 'dashboard' },
 
 	-- hover
-	['<leader>?'] = { ':Lspsaga hover_doc<cr>', 'lsp-hover' },
+	['<leader>?'] = { ':lua vim.lsp.buf.hover()<cr>', 'lsp-hover' },
 
 	-- autosave
 	-- ['<leader>a'] = { ':ASToggle<cr>', 'toggle-autosave' },
 
 	-- terminal toggle all
 	['<leader>c'] = { ':ToggleTermToggleAll<cr>', 'toggle-all-term' },
+
+	-- explorer focus
+	['<leader>e'] = { ':NvimTreeFocus<cr>', 'explorer' },
 
 	-- trouble
 	['<leader>i'] = { ':TroubleToggle<cr>', 'info' },

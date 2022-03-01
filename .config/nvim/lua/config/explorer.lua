@@ -1,5 +1,8 @@
-vim.g.nvim_tree_respect_buf_cwd = 1
-vim.g.nvim_tree_git_hl = 1
+local g = vim.g
+
+g.nvim_tree_respect_buf_cwd = 1
+g.nvim_tree_git_hl = 1
+g.nvim_tree_indent_markers = 1
 
 -- some defaults not listed, because they don't need to be reiterated
 require('nvim-tree').setup({
@@ -9,9 +12,7 @@ require('nvim-tree').setup({
 		enable = true,
 		update_cwd = true,
 	},
-	diagnostics = {
-		enable = true,
-	},
+	diagnostics = { enable = true },
 	filters = {
 		dotfiles = false,
 		custom = {
@@ -24,11 +25,10 @@ require('nvim-tree').setup({
 	git = {
 		enable = true,
 		ignore = true,
-		timeout = 500,
+		timeout = vim.o.timeoutlen,
 	},
 	trash = {
 		cmd = 'trash',
 		require_confirm = true,
 	},
-	-- root_folder_modifier = ":t",
 })

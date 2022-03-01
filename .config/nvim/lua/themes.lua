@@ -4,7 +4,7 @@ local o = vim.o
 local cmd = vim.cmd
 
 o.termguicolors = true
-o.background = 'light'
+-- o.background = 'light'
 
 -- ayu
 -- cmd('colorscheme ayu-dark')
@@ -56,11 +56,10 @@ cmd('colorscheme catppuccin')
 -- cmd('colorscheme melange')
 
 -- nightfox
--- require("nightfox").setup({
--- 	-- styles = { comments = "italic", keywords = "italic", functions = "italic" },
--- 	styles = { comments = "italic", keywords = "italic" },
+-- require('nightfox').setup({
+-- 	styles = { comments = 'italic', keywords = 'italic' },
 -- })
--- require("nightfox").load("duskfox")
+-- require('nightfox').load()
 
 -- nord
 -- g.nord_contrast = true

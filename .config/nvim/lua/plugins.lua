@@ -1,10 +1,15 @@
 vim.cmd('packadd packer.nvim')
 return require('packer').startup(function()
-	-- package management
 	use('wbthomason/packer.nvim')
 
-	-- startup time
-	use('dstein64/vim-startuptime')
+	-- essential
+	use({ 'nvim-lua/plenary.nvim', module = 'plenary' })
+	use({ 'nvim-lua/popup.nvim', module = 'popup' })
+	use({ 'lewis6991/impatient.nvim', module = 'impatient' })
+	use({ 'nathom/filetype.nvim', module = 'filetype' })
+	use({ 'kyazdani42/nvim-web-devicons', module = 'nvim-web-devicons' })
+
+	use({ 'tweekmonster/startuptime.vim', cmd = 'StartupTime' })
 
 	-- lsp
 	use({
@@ -17,53 +22,36 @@ return require('packer').startup(function()
 	-- graphical installer
 	use('williamboman/nvim-lsp-installer')
 
-	-- better ui
-	use({
-		'tami5/lspsaga.nvim',
-		config = function()
-			require('lspsaga').setup()
-		end,
-	})
-
 	-- completion
 	use({
 		'hrsh7th/nvim-cmp',
-		-- completion sources
 		requires = {
 			'hrsh7th/cmp-nvim-lsp', -- lsp completion
-			'hrsh7th/cmp-buffer', -- buffer completion
-			'hrsh7th/cmp-path', -- path completion (in ex-mode)
-			'hrsh7th/cmp-cmdline', -- cmd completion (in ex-mode)
 			'saadparwaiz1/cmp_luasnip', -- luasnip
+			-- 'hrsh7th/cmp-buffer', -- buffer completion
+			-- 'hrsh7th/cmp-path', -- path completion (in ex-mode)
+			-- 'hrsh7th/cmp-cmdline', -- cmd completion (in ex-mode)
 		},
 		config = function()
 			require('config.completion')
 		end,
+		-- event = 'InsertEnter',
+	})
+
+	-- formatting & debugging
+	use({
+		'jose-elias-alvarez/null-ls.nvim',
+		config = function()
+			require('config.null-ls')
+		end,
+		event = 'BufWrite',
 	})
 
 	-- hints as you type
 	use('ray-x/lsp_signature.nvim')
 
-	-- formatting & debugging
-	use({
-		'jose-elias-alvarez/null-ls.nvim',
-		requires = { 'nvim-lua/plenary.nvim' },
-		config = function()
-			require('config.null-ls')
-		end,
-	})
-
-	-- nice icons
+	-- icons
 	use('onsails/lspkind-nvim')
-
-	-- location list and all that UI stuff that's not in Lspsaga
-	use({
-		'folke/trouble.nvim',
-		requires = 'kyazdani42/nvim-web-devicons',
-		config = function()
-			require('trouble').setup()
-		end,
-	})
 
 	-- syntax highlighting
 	use({
@@ -72,26 +60,26 @@ return require('packer').startup(function()
 		config = function()
 			require('config.treesitter')
 		end,
+		event = 'BufRead',
 	})
 
 	-- bracket colorizer
 	-- use("p00f/nvim-ts-rainbow")
+
 	-- snippet engine
 	use({
 		'L3MON4D3/LuaSnip',
 		config = function()
 			require('config.snippet')
 		end,
+		event = 'InsertEnter',
 	})
 
 	-- collection of snippets
-	use('rafamadriz/friendly-snippets')
-
-	-- ai completion
-	-- use('github/copilot.vim')
+	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
 
 	-- latex
-	use({ 'lervag/vimtex', ft = { 'tex' } })
+	use({ 'lervag/vimtex', ft = { 'tex', 'latex' } })
 
 	-- git
 	use('tpope/vim-fugitive')
@@ -99,7 +87,6 @@ return require('packer').startup(function()
 	-- git diffs
 	use({
 		'lewis6991/gitsigns.nvim',
-		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			require('config.gitsigns')
 		end,
@@ -108,41 +95,46 @@ return require('packer').startup(function()
 	-- fuzzy finder
 	use({
 		'nvim-telescope/telescope.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'nvim-lua/popup.nvim',
-		},
 		config = function()
 			require('config.telescope')
+		end,
+		-- after = 'popup.nvim',
+	})
+
+	-- location list and all that UI stuff that's not in Lspsaga
+	use({
+		'folke/trouble.nvim',
+		config = function()
+			require('trouble').setup()
 		end,
 	})
 
 	-- dashboard
-	use('glepnir/dashboard-nvim')
+	use({ 'glepnir/dashboard-nvim', event = 'VimEnter' })
 	require('config.dashboard')
 
 	-- explorer
 	use({
 		'kyazdani42/nvim-tree.lua',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('config.explorer')
 		end,
+		cmd = { 'NvimTreeFocus', 'NvimTreeToggle' },
 	})
 
 	-- status line
 	use({
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('config.statusline')
 		end,
+		after = 'nvim-web-devicons',
+		event = 'VimEnter',
 	})
 
 	-- tab line
 	use({
 		'romgrk/barbar.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 		config = function()
 			require('config.tabline')
 		end,
@@ -154,10 +146,11 @@ return require('packer').startup(function()
 		config = function()
 			require('nvim-autopairs').setup()
 		end,
+		event = 'InsertEnter',
 	})
 
 	-- surrounding delimiters
-	use('tpope/vim-surround')
+	use({ 'tpope/vim-surround', event = 'VimEnter' })
 
 	-- comment
 	use({
@@ -165,6 +158,7 @@ return require('packer').startup(function()
 		config = function()
 			require('config.comments')
 		end,
+		event = 'VimEnter',
 	})
 
 	-- removes trailing whitespace
@@ -188,6 +182,7 @@ return require('packer').startup(function()
 		config = function()
 			require('config.indent-guides')
 		end,
+		event = 'BufRead',
 	})
 
 	-- zen mode - only code is shown on the screen
@@ -207,20 +202,18 @@ return require('packer').startup(function()
 	})
 
 	-- themes
-	use('Shatur/neovim-ayu')
 	use({ 'catppuccin/nvim', as = 'catppuccin' })
-	use('Mofiqul/dracula.nvim')
-	use('sainnhe/edge')
-	use('sainnhe/everforest')
-	use({ 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim', opt = true } })
-	use('sainnhe/gruvbox-material')
+	-- use('Mofiqul/dracula.nvim')
+	-- use('sainnhe/edge')
+	-- use('sainnhe/everforest')
+	-- use('sainnhe/gruvbox-material')
 	use('savq/melange')
-	use('EdenEast/nightfox.nvim')
-	use('shaunsingh/nord.nvim')
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
-	use('sainnhe/sonokai')
-	use('folke/tokyonight.nvim')
-	use('Mofiqul/vscode.nvim')
+	-- use('EdenEast/nightfox.nvim')
+	-- use('shaunsingh/nord.nvim')
+	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
+	-- use('sainnhe/sonokai')
+	-- use('folke/tokyonight.nvim')
+	-- use('Mofiqul/vscode.nvim')
 
 	-- misc.
 	-- autosave
@@ -228,6 +221,17 @@ return require('packer').startup(function()
 	-- 	'Pocco81/AutoSave.nvim',
 	-- 	config = function()
 	-- 		require('autosave').setup({ debounce_delay = 1000 })
+	-- 	end,
+	-- })
+
+	-- escape keybindings
+	-- use({
+	-- 	'max397574/better-escape.nvim',
+	-- 	config = function()
+	-- 		require('better_escape').setup({
+	-- 			mapping = { 'jk', 'jj', 'kj' },
+	-- 			timeout = vim.o.timeoutlen - 250,
+	-- 		})
 	-- 	end,
 	-- })
 
@@ -242,12 +246,12 @@ return require('packer').startup(function()
 	-- highlight todo comments
 	use({
 		'folke/todo-comments.nvim',
-		requires = 'nvim-lua/plenary.nvim',
 		config = function()
 			require('config.todo')
 		end,
+		after = 'nvim-web-devicons',
 	})
 
 	-- terminal
-	use('akinsho/toggleterm.nvim')
+	use({ 'akinsho/toggleterm.nvim', cmd = { 'ToggleTerm', 'ToggleTermToggleAll' } })
 end)
