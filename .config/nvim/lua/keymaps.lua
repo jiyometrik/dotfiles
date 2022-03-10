@@ -17,7 +17,6 @@ map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<C-s>', '<C-w>x', opts)
 map('n', '<C-q>', '<C-w>q', opts)
-map('n', '<C-w>', '<C-w>w', opts) -- put this last to avoid conflicts
 
 w.register({
 	['<leader>'] = {
@@ -64,25 +63,16 @@ w.register({
 		-- telescope
 		f = {
 			name = '+find',
-			['?'] = { ':Telescope man_pages<cr>', 'manpages' },
 			['.'] = { ':Telescope colorscheme<cr>', 'colorschemes' },
 			['/'] = { ':Telescope search_history<cr>', 'search-history' },
 			[':'] = { ':Telescope command_history<cr>', 'command-history' },
-			['"'] = { ':Telescope registers<cr>', 'registers' },
-			[';'] = { ':Telescope autocommands<cr>', 'autocmds' },
-			['-'] = { ':Telescope spell_suggest<cr>', 'spelling-suggestions' },
-			['='] = { ':Telescope current_buffer_tags<cr>', 'buf-tags' },
 			b = { ':Telescope buffers<cr>', 'buffers' },
 			B = { ':Telescope git_branches<cr>', 'branches' },
 			c = { ':Telescope git_commits<cr>', 'commits' },
 			C = { ':Telescope git_bcommits<cr>', 'commits-in-buffer' },
-			d = { ':Telescope commands<cr>', 'commands' },
 			f = { ':Telescope find_files<cr>', 'find-files' },
-			F = { ':Telescope filetypes<cr>', 'filetypes' },
 			g = { ':Telescope git_files<cr>', 'git-files' },
 			h = { ':Telescope oldfiles<cr>', 'file-history' },
-			i = { ':Telescope highlights<cr>', 'highlights' },
-			j = { ':Telescope jumplist<cr>', 'jump-list' },
 			k = { ':Telescope keymaps<cr>', 'keymappings' },
 			l = {
 				name = '+lsp',
@@ -97,62 +87,28 @@ w.register({
 				t = { ':Telescope lsp_type_definitions<cr>', 'typedefs' },
 				['?'] = { ':Telescope lsp_dynamic_workspace_symbols', 'dynamic-workspace-symbols' },
 			},
-			L = { ':Telescope loclist<cr>', 'loclist' },
-			m = { ':Telescope marks<cr>', 'marks' },
-			o = { ':Telescope vim_options<cr>', 'options' },
 			O = { ':TodoTelescope<cr>', 'todo-comments' },
 			q = { ':Telescope quickfix<cr>', 'quickfixes' },
 			r = { ':Telescope live_grep<cr>', 'ripgrep' },
-			R = { ':Telescope grep_string<cr>', 'grep-strings' },
 			s = { ':Telescope git_status<cr>', 'git-status' },
 			S = { ':Telescope git_stash<cr>', 'git-stash' },
-			t = { ':Telescope tags<cr>', 'tags' },
-			T = { ':Telescope help_tags<cr>', 'helptags' },
-			w = { ':Windows<cr>', 'windows' },
 			z = { ':Telescope current_buffer_fuzzy_find<cr>', 'fuzzy-find' },
 		},
 
-		-- Git
+		-- git
 		g = {
 			name = '+git',
-			a = { ':G add ', 'stage', silent = false },
-			A = { ':G add -A<cr>', 'stage-all' },
-			b = { ':G branch ', 'branch', silent = false },
-			B = { ':G branch master<cr>', 'branch-to-master' },
-			c = { ':G commit -m ""', 'commit', silent = false },
-			C = { ':Telescope commits<cr>', 'commits' },
-			d = { ':G rm ', 'delete', silent = false },
-			e = { ':Telescope git_files<cr>', 'explorer' },
-			f = { ':G fetch ', 'fetch', silent = false },
-			h = { ':G reset HEAD~1<cr>', 'reset-last-commit' },
-			H = { ':Gitsigns toggle_line_hl<cr>', 'line-highlight' },
-			i = { ':Gitsigns preview_hunk<cr>', 'preview-hunk' },
-			j = { ':Gitsigns next_hunk<cr>', 'next-hunk' },
-			k = { ':Gitsigns prev_hunk<cr>', 'prev-hunk' },
-			m = { ':G merge ', 'merge', silent = false },
-			M = { ':G merge origin/master<cr>', 'merge-with-origin/master' },
-			p = { ':G push<cr>', 'push' },
-			P = { ':G pull<cr>', 'pull' },
-			r = { ':G reset ', 'reset', silent = false },
-			R = { ':G restore .<cr>', 'restore-unstaged' },
-			s = { ':Telescope git_status<cr>', 'status' },
-			S = { ':G restore -S .<cr>', 'restore-staged' },
-			v = { ':G revert HEAD~1<cr>', 'revert-last-commit' },
-			w = { ':Gitsigns toggle_word_diff<cr>', 'word-diff' },
-			['>'] = { ':GMove ', 'move-current-file', silent = false },
-			["'"] = { ':GRename ', 'rename-current-file', silent = false },
-			['*'] = { ':Gitsigns toggle_signs<cr>', 'git-indicators' },
-			['#'] = { ':Gitsigns toggle_num_hl<cr>', 'num-highlight' },
-			['/'] = { ':Gitsigns blame_line<cr>', 'line-blame' },
-			['+'] = { ':Gitsigns stage_hunk<cr>', 'stage-hunk' },
-			['-'] = { ':Gitsigns unstage_hunk<cr>', 'unstage-hunk' },
-			['['] = { ':Gitsigns reset_hunk<cr>', 'reset-hunk' },
-			[']'] = { ':Gitsigns reset_buffer<cr>', 'reset-buffer' },
-			['='] = { ':Telescope git_stash', 'stash' },
-			['<space>'] = {
-				':lua require("toggleterm.terminal").Terminal:new({cmd = "lazygit", hidden=true}):toggle()<cr>',
-				'lazygit',
-			},
+			['<space>'] = { ':Neogit kind=split<cr>', 'neogit' },
+			b = { ':Telescope branches<cr>', 'branches' },
+			c = { ':Neogit commit kind=split<cr>', 'commit' },
+			d = { ':DiffviewOpen<cr>', 'diffview' },
+			D = { ':DiffviewOpen origin/master...HEAD<cr>', 'compare-master-with-head' },
+			f = { ':DiffviewToggleFiles<cr>', 'changed-files' },
+			h = { ':Telescope git_stash<cr>', 'stash' },
+			s = { ':Neogit kind=vsplit<cr>', 'vsplit' },
+			t = { ':Telescope git_status<cr>', 'status' },
+			r = { ':DiffviewRefresh<cr>', 'refresh-diffs' },
+			x = { ':DiffviewClose<cr>', 'close-diff' },
 		},
 
 		-- lsp
@@ -183,24 +139,6 @@ w.register({
 			l = { ':TroubleToggle loclist<cr>', 'loclist' },
 			r = { ':TroubleToggle lsp_references<cr>', 'references' },
 			q = { ':TroubleToggle quickfix<cr>', 'quickfix' },
-		},
-
-		-- windows
-		w = {
-			name = '+windows',
-			h = { '<C-w>h', 'left-window' },
-			H = { '<C-w>H', 'move-left' },
-			j = { '<C-w>j', 'bottom-window' },
-			J = { '<C-w>J', 'move-down' },
-			k = { '<C-w>k', 'top-window' },
-			K = { '<C-w>K', 'move-up' },
-			l = { '<C-w>l', 'right-window' },
-			L = { '<C-w>L', 'move-right' },
-			q = { '<C-w>q', 'quit-window' },
-			s = { '<C-w>s', 'horizontal-split' },
-			v = { '<C-w>v', 'vert-split' },
-			w = { '<C-w>w', 'switch-windows' },
-			x = { '<C-w>x', 'exchange-windows' },
 		},
 
 		-- vimtex
@@ -250,9 +188,6 @@ w.register({
 
 	-- float
 	['<leader>M'] = { ':ToggleTerm size=80 direction=float<cr>', 'terminal-float' },
-
-	-- strip whitespace
-	['<leader>s'] = { ':StripWhitespace<cr>', 'strip-whitespace' },
 
 	-- terminal (vertical)
 	['<leader>v'] = { ':ToggleTerm size=60 direction=vertical<cr>', 'terminal-vert' },

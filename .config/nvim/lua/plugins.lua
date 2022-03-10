@@ -8,7 +8,6 @@ return require('packer').startup(function()
 	use({ 'lewis6991/impatient.nvim', module = 'impatient' })
 	use({ 'nathom/filetype.nvim', module = 'filetype' })
 	use({ 'kyazdani42/nvim-web-devicons', module = 'nvim-web-devicons' })
-
 	use({ 'tweekmonster/startuptime.vim', cmd = 'StartupTime' })
 
 	-- lsp
@@ -35,7 +34,6 @@ return require('packer').startup(function()
 		config = function()
 			require('config.completion')
 		end,
-		-- event = 'InsertEnter',
 	})
 
 	-- formatting & debugging
@@ -60,11 +58,10 @@ return require('packer').startup(function()
 		config = function()
 			require('config.treesitter')
 		end,
-		event = 'BufRead',
 	})
 
 	-- bracket colorizer
-	-- use("p00f/nvim-ts-rainbow")
+	use({ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter', event = 'BufEnter' })
 
 	-- snippet engine
 	use({
@@ -82,9 +79,18 @@ return require('packer').startup(function()
 	use({ 'lervag/vimtex', ft = { 'tex', 'latex' } })
 
 	-- git
-	use('tpope/vim-fugitive')
+	-- use('tpope/vim-fugitive')
+	use({
+		'TimUntersberger/neogit',
+		config = function()
+			require('config.neogit')
+		end,
+		cmd = 'Neogit',
+		requires = {
+			'sindrets/diffview.nvim',
+		},
+	})
 
-	-- git diffs
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = function()
@@ -98,10 +104,9 @@ return require('packer').startup(function()
 		config = function()
 			require('config.telescope')
 		end,
-		-- after = 'popup.nvim',
 	})
 
-	-- location list and all that UI stuff that's not in Lspsaga
+	-- some location list things
 	use({
 		'folke/trouble.nvim',
 		config = function()
@@ -156,16 +161,9 @@ return require('packer').startup(function()
 	use({
 		'numToStr/Comment.nvim',
 		config = function()
-			require('config.comments')
+			require('Comment').setup()
 		end,
 		event = 'VimEnter',
-	})
-
-	-- removes trailing whitespace
-	use({
-		'ntpeters/vim-better-whitespace',
-		cmd = 'StripWhitespace',
-		opt = true,
 	})
 
 	-- keymap cheatsheet
@@ -207,7 +205,7 @@ return require('packer').startup(function()
 	-- use('sainnhe/edge')
 	-- use('sainnhe/everforest')
 	-- use('sainnhe/gruvbox-material')
-	use('savq/melange')
+	-- use('savq/melange')
 	-- use('EdenEast/nightfox.nvim')
 	-- use('shaunsingh/nord.nvim')
 	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -230,7 +228,7 @@ return require('packer').startup(function()
 	-- 	config = function()
 	-- 		require('better_escape').setup({
 	-- 			mapping = { 'jk', 'jj', 'kj' },
-	-- 			timeout = vim.o.timeoutlen - 250,
+	-- 			timeout = vim.o.timeoutlen,
 	-- 		})
 	-- 	end,
 	-- })

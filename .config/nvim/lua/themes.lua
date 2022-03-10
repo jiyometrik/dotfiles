@@ -31,20 +31,16 @@ cmd('colorscheme catppuccin')
 -- cmd('colorscheme dracula')
 
 -- edge
+-- g.edge_better_performance = 1
 -- g.edge_style = 'neon'
 -- g.edge_enable_italic = 1
--- g.edge_better_performance = 1
 -- cmd('colorscheme edge')
 
 -- everforest
--- g.everforest_background = 'hard' -- "hard" for dark mode
+-- g.everforest_background = 'hard'
 -- g.everforest_enable_italic = 1
 -- g.everforest_better_performance = 1
 -- cmd('colorscheme everforest')
-
--- gruvbox
--- g.gruvbox_italic = 1
--- cmd('colorscheme gruvbox')
 
 -- gruvbox material
 -- g.gruvbox_material_background = 'hard'

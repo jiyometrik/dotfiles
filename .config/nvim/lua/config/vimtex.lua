@@ -9,7 +9,7 @@ cmd([[ let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &
 cmd([[ let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after' ]])
 
 -- folding (preamble, sections, subsections, etc.)
--- g.vimtex_fold_enabled = 1
+g.vimtex_fold_enabled = 1
 
 -- viewing
 -- g.vimtex_view_method = 'zathura'

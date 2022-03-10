@@ -1,5 +1,9 @@
-local telescope = require('telescope')
+local present, telescope = pcall(require, 'telescope')
 local trouble = require('trouble.providers.telescope')
+
+if not present then
+	return
+end
 
 -- nvchad config
 local default = {
@@ -47,9 +51,6 @@ local default = {
 		grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
 		qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
-		-- Developer configurations: Not meant for general override
-		buffer_previewer_maker = require('telescope.previewers').buffer_previewer_maker,
-
 		-- open with trouble
 		mappings = {
 			i = { ['<C-t>'] = trouble.open_with_trouble },
@@ -58,4 +59,12 @@ local default = {
 	},
 }
 
-telescope.setup(default)
+local M = {}
+M.setup = function(override_flag)
+	if override_flag then
+		default = require('core.utils').tbl_override_req('telescope', default)
+	end
+	telescope.setup(default)
+end
+
+return M

@@ -39,6 +39,8 @@ lsp_installer.on_server_ready(function(server)
 		or server.name == 'html'
 		or server.name == 'cssls'
 		or server.name == 'jsonls'
+		or server.name == 'pyright'
+		or server.name == 'pylsp'
 	then
 		opts.on_attach = function(client)
 			client.resolved_capabilities.document_formatting = false
@@ -59,4 +61,4 @@ for type, icon in pairs(signs) do
 end
 
 -- format on save
-vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()')
+vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting()')

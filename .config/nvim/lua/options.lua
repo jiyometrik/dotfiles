@@ -35,7 +35,7 @@ o.smartindent = true
 
 -- ui elements
 o.showmatch = true
-o.showcmd = false
+o.showcmd = true
 o.showmode = false
 o.ruler = false
 
