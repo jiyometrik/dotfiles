@@ -71,7 +71,7 @@ w.register({
 			c = { ':Telescope git_commits<cr>', 'commits' },
 			C = { ':Telescope git_bcommits<cr>', 'commits-in-buffer' },
 			f = { ':Telescope find_files<cr>', 'find-files' },
-			g = { ':Telescope git_files<cr>', 'git-files' },
+			g = { ':Telescope gik_files<cr>', 'git-files' },
 			h = { ':Telescope oldfiles<cr>', 'file-history' },
 			k = { ':Telescope keymaps<cr>', 'keymappings' },
 			l = {
@@ -123,7 +123,7 @@ w.register({
 			i = { ':lua vim.lsp.buf.implementation()<cr>', 'implementation' },
 			j = { ':lua vim.lsp.diagnostic.goto_next({ wrap = false })<cr>', 'next-diagnostic' },
 			k = { ':lua vim.lsp.diagnostic.goto_prev({ wrap = false })<cr>', 'prev-diagnostic' },
-			r = { ':lua vim.lsp.buf.rename()<cr>', 'rename' },
+			r = { ':lua vim.lsp.buf.rename()<cr>', 'rename', silent = false },
 			R = { ':Trouble lsp_references<cr>', 'references' },
 			S = { ':lua vim.lsp.buf.document_symbol()<cr>', 'document-symbols' },
 			t = { ':lua vim.lsp.buf.type_definition()<cr>', 'type-definition' },
@@ -170,9 +170,6 @@ w.register({
 
 	-- hover
 	['<leader>?'] = { ':lua vim.lsp.buf.hover()<cr>', 'lsp-hover' },
-
-	-- autosave
-	-- ['<leader>a'] = { ':ASToggle<cr>', 'toggle-autosave' },
 
 	-- terminal toggle all
 	['<leader>c'] = { ':ToggleTermToggleAll<cr>', 'toggle-all-term' },

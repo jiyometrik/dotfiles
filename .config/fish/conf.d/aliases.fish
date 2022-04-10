@@ -26,8 +26,7 @@ abbr -a gcr git checkout --recurse-submodules
 abbr -a gd git diff
 abbr -a gds git diff --staged
 abbr -a ge git rm
-abbr -a go git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
-abbr -a gol git log --oneline --decorate --graph --all
+abbr -a gg git log --oneline --decorate --graph --all
 abbr -a gp git push
 abbr -a gpu git push upstream
 abbr -a gl git pull

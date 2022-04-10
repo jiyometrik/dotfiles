@@ -69,7 +69,6 @@ return require('packer').startup(function()
 		config = function()
 			require('config.snippet')
 		end,
-		event = 'InsertEnter',
 	})
 
 	-- collection of snippets
@@ -127,7 +126,7 @@ return require('packer').startup(function()
 		cmd = { 'NvimTreeFocus', 'NvimTreeToggle' },
 	})
 
-	-- status line
+	-- statusline
 	use({
 		'nvim-lualine/lualine.nvim',
 		config = function()
@@ -232,6 +231,14 @@ return require('packer').startup(function()
 	-- 		})
 	-- 	end,
 	-- })
+
+	-- fast motion
+	use({
+		'ggandor/lightspeed.nvim',
+		-- config = function()
+		-- 	require('lightspeed').setup()
+		-- end,
+	})
 
 	-- show colors from hex codes
 	use({

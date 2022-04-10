@@ -23,6 +23,7 @@ require('catppuccin').setup({
 		dashboard = true,
 		barbar = true,
 		ts_rainbow = true,
+		lightspeed = true,
 	},
 })
 cmd('colorscheme catppuccin')

@@ -1,0 +1,29 @@
+* dotfiles
+A place to store my dotfiles.
+
+** What You'll Find
+1. My =~/.zshrc=. (ZSH)
+2. My =~/.doom.d=. (Doom Emacs)
+
+*** The .config Directory
+This directory contains most of the configuration files for the
+applications I use.
+
++ [[https://github.com/alacritty/alacritty][alacritty]]
++ [[https://fishshell.com][fish]]
++ [[https://github.com/Airblader/i3][i3-gaps]]
++ [[https://sw.kovidgoyal.net/kitty/][kitty]]
++ [[https://www.musicpd.org/][mpd]]
++ [[https://neovim.io/][neovim]] (requires >= v0.5.0 to work)
++ [[https://github.com/jonaburg/picom][picom]] (patched by
++ [[https://github.com/ibhagwan][@ibhagwan]])
++ [[https://github.com/polybar/polybar][polybar]]
++ [[https://github.com/ranger/ranger][ranger]]
++ [[https://github.com/davatorium/rofi][rofi]]
++ [[https://starship.rs/][starship]]
++ [[https://pwmt.org/projects/zathura/][zathura]]
+
+** Usage
+Each major rice I do is a release in the
+[[https://github.com/g-e-o-m-e-t-r-i-c/dotfiles/releases][Releases
+tab]]. Pick your favourite and import them into your own config!

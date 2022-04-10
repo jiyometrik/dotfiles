@@ -1,4 +1,3 @@
--- https://raw.githubusercontent.com/nvim-lualine/lualine.nvim/master/examples/evil_lualine.lua
 local lualine = require('lualine')
 
 local colors = {
@@ -103,17 +102,10 @@ ins_left({
 })
 
 ins_left({
-	'filesize',
-	cond = conditions.buffer_not_empty,
-})
-
-ins_left({
 	'filename',
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = 'bold' },
 })
-
-ins_left({ 'location' })
 
 ins_left({ 'progress', color = { fg = colors.blue, gui = 'bold' } })
 
@@ -136,7 +128,7 @@ ins_left({
 
 ins_left({
 	function()
-		local msg = 'No Active Lsp'
+		local msg = '[none]'
 		local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
@@ -157,7 +149,7 @@ ins_left({
 -- Add components to right sections
 ins_right({
 	'diff',
-	symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+	symbols = { added = ' ', modified = '柳', removed = ' ' },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.yellow },
