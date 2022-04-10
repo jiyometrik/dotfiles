@@ -15,8 +15,7 @@ applications I use.
 + [[https://sw.kovidgoyal.net/kitty/][kitty]]
 + [[https://www.musicpd.org/][mpd]]
 + [[https://neovim.io/][neovim]] (requires >= v0.5.0 to work)
-+ [[https://github.com/jonaburg/picom][picom]] (patched by
-+ [[https://github.com/ibhagwan][@ibhagwan]])
++ [[https://github.com/jonaburg/picom][picom]] (patched by [[https://github.com/ibhagwan][@ibhagwan]])
 + [[https://github.com/polybar/polybar][polybar]]
 + [[https://github.com/ranger/ranger][ranger]]
 + [[https://github.com/davatorium/rofi][rofi]]
