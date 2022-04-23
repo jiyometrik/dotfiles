@@ -40,7 +40,7 @@ o.showmode = false
 o.ruler = false
 
 -- line highlight
--- o.cursorline = true
+o.cursorline = true
 
 -- disable autocommenting when pressing enter or 'o' in normal mode
 cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')

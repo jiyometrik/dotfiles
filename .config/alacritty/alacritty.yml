@@ -14,26 +14,22 @@ window:
 
 # font
 font:
-  size: 15
+  size: 9
   normal:
-    family: SauceCodePro Nerd Font
+    family: JetBrainsMono Nerd Font
   bold:
     style: Bold
-    family: SauceCodePro Nerd Font
+    family: JetBrainsMono Nerd Font
   italic:
     style: Italic
-    family: SauceCodePro Nerd Font
+    family: JetBrainsMono Nerd Font
   bold_italic:
     style: Bold Italic
-    family: SauceCodePro Nerd Font
+    family: JetBrainsMono Nerd Font
   
   offset:
     x: 0
-    y: 1
+    y: 2
 
 # spaces per tab
 tabspaces: 2
-
-# startup shell
-# shell:
-#   program: /bin/zsh

@@ -9,5 +9,5 @@ cmd([[ let &runtimepath = '~/.local/share/nvim/site/pack/packer/opt/vimtex,' . &
 cmd([[ let &runtimepath .= ',~/.local/share/nvim/site/pack/packer/opt/vimtex/after' ]])
 
 -- viewing
-g.vimtex_view_method = 'okular'
-g.vimtex_view_general_viewer = 'okular'
+g.vimtex_view_method = 'atril'
+g.vimtex_view_general_viewer = 'atril'

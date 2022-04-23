@@ -71,7 +71,7 @@ ins_left({
 
 ins_left({
 	function()
-		return ''
+		return ''
 	end,
 	color = function()
 		local mode_color = {

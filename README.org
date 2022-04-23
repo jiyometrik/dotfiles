@@ -12,7 +12,6 @@ applications I use.
 + [[https://github.com/alacritty/alacritty][alacritty]]
 + [[https://fishshell.com][fish]]
 + [[https://github.com/Airblader/i3][i3-gaps]]
-+ [[https://sw.kovidgoyal.net/kitty/][kitty]]
 + [[https://www.musicpd.org/][mpd]]
 + [[https://neovim.io/][neovim]] (requires >= v0.5.0 to work)
 + [[https://github.com/jonaburg/picom][picom]] (patched by [[https://github.com/ibhagwan][@ibhagwan]])

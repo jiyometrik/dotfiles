@@ -4,6 +4,7 @@ source "$HOME/.zgenom/zgen.zsh"
 zgenom autoupdate # autoupdate plugins
 
 if ! zgenom saved; then
+	zgenom ohmyzsh
 	zgenom load zdharma-continuum/fast-syntax-highlighting # syntax highlighting
 	zgenom load zsh-users/zsh-completions # extra completions
 	zgenom load zsh-users/zsh-autosuggestions # fish-like autosuggestions
@@ -126,7 +127,8 @@ alias cgr="cargo run"
 
 # node aliases
 alias nd="npm remove"
-alias ni="npm install -g"
+alias ni="npm install"
+alias nig="npm install -g"
 alias nr="npm run"
 alias nu="npm update"
 alias yb="yarn build"
@@ -134,17 +136,14 @@ alias yd="yarn dev"
 
 # some globals to export for other apps
 export BAT_THEME="base16"
-export EDITOR="nvim"
+export EDITOR="emacs"
 export CHROME_EXECUTABLE="google-chrome-stable"
 
 # zoxide (directory jumping)
 eval "$(zoxide init zsh)"
 
 # fetch to run on startup
-colorscript -r
-
-# dir jumping
-eval "$(zoxide init zsh)"
+pfetch
 
 # starship prompt
 eval "$(starship init zsh)"
