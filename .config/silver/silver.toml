@@ -1,0 +1,53 @@
+# round separators
+[separator.left]
+thick = "\ue0b4"
+thin = "\ue0b5"
+
+[separator.right]
+thick = "\ue0b6"
+thin = "\ue0b7"
+
+# os
+# [[left]]
+# name = "os"
+# color.background = "black"
+# color.foreground = "white"
+
+# exit status
+[[left]]
+name = "status"
+color.background = "red"
+color.foreground = "black"
+
+# user@host
+[[left]]
+name = "user"
+color.background = "black"
+color.foreground = "white"
+
+# shell
+# [[left]]
+# name = "shell"
+# color.background = "green"
+# color.foreground = "black"
+
+# directory
+[[left]]
+name = "dir"
+color.background = "blue"
+color.foreground = "black"
+[dir]
+length = 1
+
+# git
+[[left]]
+name = "git"
+color.background = "green"
+color.foreground = "black"
+args = ["yellow"] # for "dirty" repos
+
+# time taken
+[[left]]
+name = "cmdtime"
+color.background = "magenta"
+color.foreground = "black"

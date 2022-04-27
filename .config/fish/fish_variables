@@ -62,7 +62,8 @@ SETUVAR _fish_abbr_yb:yarn\x20build
 SETUVAR _fish_abbr_yd:yarn\x20dev
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/geo/\x2econfig/fish/functions/fisher\x2efish\x1e/home/geo/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:/home/geo/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e/home/geo/\x2econfig/fish/functions/_nvm_list\x2efish\x1e/home/geo/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e/home/geo/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e/home/geo/\x2econfig/fish/functions/nvm\x2efish\x1e/home/geo/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e/home/geo/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1esilver\x2dprompt/fish
+SETUVAR _fisher_silver_2D_prompt_2F_fish_files:/home/geo/\x2econfig/fish/functions/silver\x2efish\x1e/home/geo/\x2econfig/fish/conf\x2ed/silver\x2efish
 SETUVAR fish_color_autosuggestion:bright_black\x1e\x2d\x2ddim
 SETUVAR fish_color_cancel:red\x1e\x2d\x2dbold
 SETUVAR fish_color_command:white\x1e\x2d\x2dbold

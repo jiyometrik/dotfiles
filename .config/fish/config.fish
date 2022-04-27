@@ -22,7 +22,7 @@ nvm use 17
 # aliases
 source ~/.config/fish/conf.d/aliases.fish
 
-# custom syntax highlighting 
+# custom syntax highlighting
 source ~/.config/fish/conf.d/syntax.fish
 
 # prompt

@@ -5,6 +5,7 @@ zgenom autoupdate # autoupdate plugins
 
 if ! zgenom saved; then
 	zgenom ohmyzsh
+	zgenom load silver-prompt/zsh # prompt (powerline)
 	zgenom load zdharma-continuum/fast-syntax-highlighting # syntax highlighting
 	zgenom load zsh-users/zsh-completions # extra completions
 	zgenom load zsh-users/zsh-autosuggestions # fish-like autosuggestions
@@ -13,7 +14,7 @@ if ! zgenom saved; then
 fi
 
 # update path for other binaries
-PATH="$HOME/.emacs.d/bin:$HOME/flutter/bin:$HOME/Android/Sdk:$HOME/.local/share/nvim/lsp_servers:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin${PATH:+:${PATH}}"
+PATH="$HOME/.bin:$HOME/.emacs.d/bin:$HOME/flutter/bin:$HOME/Android/Sdk:$HOME/.local/share/nvim/lsp_servers:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin${PATH:+:${PATH}}"
 
 # perl binaries (latexindent aaa)
 PATH="/home/geo/perl5/bin${PATH:+:${PATH}}"
@@ -146,4 +147,4 @@ eval "$(zoxide init zsh)"
 pfetch
 
 # starship prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
