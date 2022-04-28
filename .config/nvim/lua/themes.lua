@@ -6,9 +6,6 @@ local cmd = vim.cmd
 o.termguicolors = true
 -- o.background = 'light'
 
--- ayu
--- cmd('colorscheme ayu-dark')
-
 -- catppuccin
 require('catppuccin').setup({
 	integrations = {
@@ -23,7 +20,9 @@ require('catppuccin').setup({
 		dashboard = true,
 		barbar = true,
 		ts_rainbow = true,
+		hop = true,
 		lightspeed = true,
+		neogit = true,
 	},
 })
 cmd('colorscheme catppuccin')
@@ -56,7 +55,7 @@ cmd('colorscheme catppuccin')
 -- require('nightfox').setup({
 -- 	styles = { comments = 'italic', keywords = 'italic' },
 -- })
--- require('nightfox').load()
+-- cmd('colorscheme nightfox')
 
 -- nord
 -- g.nord_contrast = true
@@ -64,7 +63,7 @@ cmd('colorscheme catppuccin')
 -- cmd('colorscheme nord')
 
 -- rose pine
--- -- g.rose_pine_variant = 'moon'
+-- g.rose_pine_variant = 'moon'
 -- cmd('colorscheme rose-pine')
 
 -- tokyonight

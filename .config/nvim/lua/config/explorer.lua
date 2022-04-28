@@ -3,7 +3,6 @@ local cmd = vim.cmd
 
 g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_git_hl = 1
-g.nvim_tree_indent_markers = 1
 g.nvim_tree_icons = {
 	default = '',
 	git = {
@@ -43,5 +42,8 @@ require('nvim-tree').setup({
 	trash = {
 		cmd = 'trash',
 		require_confirm = true,
+	},
+	renderer = {
+		indent_markers = { enable = true },
 	},
 })

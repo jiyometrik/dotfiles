@@ -1,7 +1,7 @@
 local g = vim.g
 local o = vim.o
-local map = vim.api.nvim_set_keymap
-local w = require('which-key')
+local map = vim.keymap.set
+local wk = require('which-key')
 
 -- leader key
 g.mapleader = ' '
@@ -18,7 +18,7 @@ map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<C-s>', '<C-w>x', opts)
 map('n', '<C-q>', '<C-w>q', opts)
 
-w.register({
+wk.register({
 	['<leader>'] = {
 		-- buffers
 		b = {
@@ -87,7 +87,6 @@ w.register({
 				t = { ':Telescope lsp_type_definitions<cr>', 'typedefs' },
 				['?'] = { ':Telescope lsp_dynamic_workspace_symbols', 'dynamic-workspace-symbols' },
 			},
-			O = { ':TodoTelescope<cr>', 'todo-comments' },
 			q = { ':Telescope quickfix<cr>', 'quickfixes' },
 			r = { ':Telescope live_grep<cr>', 'ripgrep' },
 			s = { ':Telescope git_status<cr>', 'git-status' },
@@ -114,31 +113,18 @@ w.register({
 		-- lsp
 		l = {
 			name = '+lsp',
-			a = { ':lua vim.lsp.buf.code_action()<cr>', 'codeaction' },
-			d = { ':lua vim.lsp.buf.definition()<cr>', 'definition' },
-			D = { ':lua vim.lsp.buf.declaration()<cr>', 'declaration' },
-			e = { ':Trouble document_diagnostics<cr>', 'diagnostics' },
+			['.'] = { ':Lspsaga lsp_finder<cr>', 'finder' },
+			a = { ':Lspsaga code_action<cr>', 'codeaction' },
+			A = { ':Lspsaga range_code_action<cr>', 'range-codeaction' },
+			d = { ':Lspsaga preview_definition<cr>', 'definition' },
+			e = { ':Lspsaga show_line_diagnostics<cr>', 'line-diagnostics' },
+			E = { ':Lspsaga show_cursor_diagnostics<cr>', 'cursor-diagnostics' },
 			f = { ':lua vim.lsp.buf.formatting()<cr>', 'format' },
-			h = { ':lua vim.lsp.buf.hover()<cr>', 'hover-doc' },
-			i = { ':lua vim.lsp.buf.implementation()<cr>', 'implementation' },
-			j = { ':lua vim.lsp.diagnostic.goto_next({ wrap = false })<cr>', 'next-diagnostic' },
-			k = { ':lua vim.lsp.diagnostic.goto_prev({ wrap = false })<cr>', 'prev-diagnostic' },
-			r = { ':lua vim.lsp.buf.rename()<cr>', 'rename', silent = false },
-			R = { ':Trouble lsp_references<cr>', 'references' },
-			S = { ':lua vim.lsp.buf.document_symbol()<cr>', 'document-symbols' },
-			t = { ':lua vim.lsp.buf.type_definition()<cr>', 'type-definition' },
-		},
-
-		-- trouble
-		t = {
-			name = '+trouble',
-			['<space>'] = { ':TroubleToggle<cr>', 'trouble' },
-			d = { ':TroubleToggle workspace_diagnostics<cr>', 'workspace-diagnostics' },
-			e = { ':TroubleToggle document_diagnostics<cr>', 'doc-diagnostics' },
-			o = { ':TodoTrouble<cr>', 'todo-comments' },
-			l = { ':TroubleToggle loclist<cr>', 'loclist' },
-			r = { ':TroubleToggle lsp_references<cr>', 'references' },
-			q = { ':TroubleToggle quickfix<cr>', 'quickfix' },
+			h = { ':Lspsaga hover_doc<cr>', 'hover-doc' },
+			j = { ':Lspsaga diagnostic_jump_next<cr>', 'next-diagnostic' },
+			k = { ':Lspsaga diagnostic_jump_prev<cr>', 'prev-diagnostic' },
+			r = { ':Lspsaga rename<cr>', 'rename' },
+			s = { ':Lspsaga signature_help', 'signature-help' },
 		},
 
 		-- vimtex
@@ -176,9 +162,6 @@ w.register({
 
 	-- explorer focus
 	['<leader>e'] = { ':NvimTreeFocus<cr>', 'explorer' },
-
-	-- trouble
-	['<leader>i'] = { ':TroubleToggle<cr>', 'info' },
 
 	-- term
 	['<leader>m'] = { ':ToggleTerm<cr>', 'terminal' },

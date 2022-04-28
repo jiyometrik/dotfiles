@@ -1,5 +1,4 @@
 local present, telescope = pcall(require, 'telescope')
-local trouble = require('trouble.providers.telescope')
 
 if not present then
 	return
@@ -17,7 +16,7 @@ local default = {
 			'--column',
 			'--smart-case',
 		},
-		prompt_prefix = '   ',
+		prompt_prefix = '   ',
 		selection_caret = '  ',
 		entry_prefix = '  ',
 		initial_mode = 'insert',
@@ -46,16 +45,10 @@ local default = {
 		borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
 		color_devicons = true,
 		use_less = true,
-		set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+		set_env = { ['COLORTERM'] = 'truecolor' },
 		file_previewer = require('telescope.previewers').vim_buffer_cat.new,
 		grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
 		qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
-
-		-- open with trouble
-		mappings = {
-			i = { ['<C-t>'] = trouble.open_with_trouble },
-			n = { ['<C-t>'] = trouble.open_with_trouble },
-		},
 	},
 }
 

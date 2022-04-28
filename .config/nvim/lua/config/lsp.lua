@@ -41,6 +41,7 @@ lsp_installer.on_server_ready(function(server)
 		or server.name == 'jsonls'
 		or server.name == 'pyright'
 		or server.name == 'pylsp'
+		or server.name == 'sumneko_lua'
 	then
 		opts.on_attach = function(client)
 			client.resolved_capabilities.document_formatting = false

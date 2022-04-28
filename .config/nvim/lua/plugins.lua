@@ -1,4 +1,5 @@
 vim.cmd('packadd packer.nvim')
+
 return require('packer').startup(function()
 	use('wbthomason/packer.nvim')
 
@@ -33,6 +34,14 @@ return require('packer').startup(function()
 		},
 		config = function()
 			require('config.completion')
+		end,
+	})
+
+	-- better lsp ui
+	use({
+		'tami5/lspsaga.nvim',
+		config = function()
+			require('lspsaga').init_lsp_saga()
 		end,
 	})
 
@@ -75,7 +84,7 @@ return require('packer').startup(function()
 	use({ 'rafamadriz/friendly-snippets', event = 'InsertEnter' })
 
 	-- latex
-	use({ 'lervag/vimtex', ft = { 'tex', 'latex' } })
+	-- use({ 'lervag/vimtex', ft = { 'tex', 'latex' } })
 
 	-- git
 	-- use('tpope/vim-fugitive')
@@ -102,14 +111,6 @@ return require('packer').startup(function()
 		'nvim-telescope/telescope.nvim',
 		config = function()
 			require('config.telescope')
-		end,
-	})
-
-	-- some location list things
-	use({
-		'folke/trouble.nvim',
-		config = function()
-			require('trouble').setup()
 		end,
 	})
 
@@ -200,17 +201,17 @@ return require('packer').startup(function()
 
 	-- themes
 	use({ 'catppuccin/nvim', as = 'catppuccin' })
-	-- use('Mofiqul/dracula.nvim')
-	-- use('sainnhe/edge')
-	-- use('sainnhe/everforest')
-	-- use('sainnhe/gruvbox-material')
-	-- use('savq/melange')
-	-- use('EdenEast/nightfox.nvim')
-	-- use('shaunsingh/nord.nvim')
-	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
-	-- use('sainnhe/sonokai')
-	-- use('folke/tokyonight.nvim')
-	-- use('Mofiqul/vscode.nvim')
+	use('Mofiqul/dracula.nvim')
+	use('sainnhe/edge')
+	use('sainnhe/everforest')
+	use('sainnhe/gruvbox-material')
+	use('savq/melange')
+	use('EdenEast/nightfox.nvim')
+	use('shaunsingh/nord.nvim')
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
+	use('sainnhe/sonokai')
+	use('folke/tokyonight.nvim')
+	use('Mofiqul/vscode.nvim')
 
 	-- misc.
 	-- autosave
@@ -222,23 +223,18 @@ return require('packer').startup(function()
 	-- })
 
 	-- escape keybindings
-	-- use({
-	-- 	'max397574/better-escape.nvim',
-	-- 	config = function()
-	-- 		require('better_escape').setup({
-	-- 			mapping = { 'jk', 'jj', 'kj' },
-	-- 			timeout = vim.o.timeoutlen,
-	-- 		})
-	-- 	end,
-	-- })
+	use({
+		'max397574/better-escape.nvim',
+		config = function()
+			require('better_escape').setup({
+				mapping = { 'jk', 'jj', 'kj' },
+				timeout = vim.o.timeoutlen,
+			})
+		end,
+	})
 
 	-- fast motion
-	use({
-		'ggandor/lightspeed.nvim',
-		-- config = function()
-		-- 	require('lightspeed').setup()
-		-- end,
-	})
+	use('ggandor/lightspeed.nvim')
 
 	-- show colors from hex codes
 	use({
@@ -246,15 +242,6 @@ return require('packer').startup(function()
 		config = function()
 			require('colorizer').setup()
 		end,
-	})
-
-	-- highlight todo comments
-	use({
-		'folke/todo-comments.nvim',
-		config = function()
-			require('config.todo')
-		end,
-		after = 'nvim-web-devicons',
 	})
 
 	-- terminal

@@ -17,7 +17,7 @@ set -g GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 
 # node
-nvm use 17
+nvm use 18
 
 # aliases
 source ~/.config/fish/conf.d/aliases.fish
@@ -26,7 +26,7 @@ source ~/.config/fish/conf.d/aliases.fish
 source ~/.config/fish/conf.d/syntax.fish
 
 # prompt
-starship init fish | source
+# starship init fish | source
 
 # dir jumping (zoxide)
 zoxide init fish | source

@@ -16,14 +16,14 @@ thin = "\ue0b7"
 # exit status
 [[left]]
 name = "status"
-color.background = "red"
+color.background = "white"
 color.foreground = "black"
 
 # user@host
-[[left]]
-name = "user"
-color.background = "black"
-color.foreground = "white"
+# [[left]]
+# name = "user"
+# color.background = "black"
+# color.foreground = "white"
 
 # shell
 # [[left]]

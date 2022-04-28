@@ -5,7 +5,7 @@ zgenom autoupdate # autoupdate plugins
 
 if ! zgenom saved; then
 	zgenom ohmyzsh
-	zgenom load silver-prompt/zsh # prompt (powerline)
+	zgenom load silver-prompt/zsh # prompt
 	zgenom load zdharma-continuum/fast-syntax-highlighting # syntax highlighting
 	zgenom load zsh-users/zsh-completions # extra completions
 	zgenom load zsh-users/zsh-autosuggestions # fish-like autosuggestions
@@ -32,6 +32,7 @@ export PERL_MM_OPT
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # loads nvm bash_completion
+nvm use 18
 
 # extract files
 ext() {

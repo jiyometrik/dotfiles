@@ -190,4 +190,11 @@ ins_right({
 	padding = { left = 1 },
 })
 
-lualine.setup(config)
+-- lualine.setup(config)
+lualine.setup({
+	options = {
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
+		disabled_filetypes = { 'NvimTree', 'dashboard', 'terminal' },
+	},
+})
