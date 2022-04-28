@@ -234,7 +234,12 @@ return require('packer').startup(function()
 	})
 
 	-- fast motion
-	use('ggandor/lightspeed.nvim')
+	use({
+		'phaazon/hop.nvim',
+		config = function()
+			require('hop').setup()
+		end,
+	})
 
 	-- show colors from hex codes
 	use({

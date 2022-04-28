@@ -18,6 +18,13 @@ map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<C-s>', '<C-w>x', opts)
 map('n', '<C-q>', '<C-w>q', opts)
 
+-- hop
+map('n', 'f', ':HopChar1AC<CR>', opts)
+map('n', 'F', ':HopChar1BC<CR>', opts)
+map('n', 's', ':HopChar2AC<CR>', opts)
+map('n', 'S', ':HopChar2BC<CR>', opts)
+
+
 wk.register({
 	['<leader>'] = {
 		-- buffers
@@ -174,4 +181,9 @@ wk.register({
 
 	-- zen
 	['<leader>z'] = { ':ZenMode<cr>', 'zenmode' },
+
+	-- hop
+	['gl'] = {':HopLine<cr>', 'hop-line' },
+	['gp'] = {':HopPattern<cr>', 'hop-pattern' },
+	['gs'] = {':HopAnywhere<cr>', 'hop-anywhere' },
 })

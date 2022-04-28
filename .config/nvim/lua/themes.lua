@@ -21,7 +21,7 @@ require('catppuccin').setup({
 		barbar = true,
 		ts_rainbow = true,
 		hop = true,
-		lightspeed = true,
+		-- lightspeed = true,
 		neogit = true,
 	},
 })
