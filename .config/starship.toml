@@ -1,84 +1,54 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+command_timeout = 1500
 add_newline = false
-command_timeout = 1000
 
-[line_break]
-	disabled = true
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$c\
+$lua\
+$python\
+$rust\
+$character"""
 
 [character]
-	success_symbol = "[](bold green) "
-	error_symbol =   "[](bold red) "
+success_symbol = '[󱐋](bold green)'
+error_symbol = '[󱐋](bold red)'
+vimcmd_symbol = '[󱐋](bold purple)'
 
-# [status]
-#	 disabled = false
-# 	symbol = "✖ "
+[directory]
+style = 'bold blue'
+truncation_length = 1
+read_only = ''
 
-[git_commit]
-	commit_hash_length = 6
-
-# [git_metrics]
-# 	disabled = false
+[git_branch]
+symbol = ' '
+style = 'bold bright-black'
 
 [git_status]
-# 	conflicted = "=${count}"
-# 	ahead = "⇡${count}"
-# 	behind = "⇣${count}"
-# 	diverged = "⇕ ⇡${ahead_count}⇣${behind_count}"
-# 	untracked = "?"
-# 	stashed = "$${count}"
-# 	modified = "!${count}"
-# 	staged = "+${count}"
-# 	renamed = "»${count}"
-# 	deleted = "✘${count}"
-	style = "bold blue"
+format = '([$all_status$ahead_behind]($style) )'
+stashed = "≡"
+style = "purple"
 
-[aws]
-	symbol = "	"
-[conda]
-	symbol = " "
-[dart]
-	symbol = " "
-[directory]
-	read_only = " "
-[docker_context]
-	symbol = " "
-[elixir]
-	symbol = " "
-[elm]
-	symbol = " "
-[git_branch]
-  symbol = " "
-[golang]
-	symbol = " "
-[hg_branch]
-  symbol = " "
-[java]
-	symbol = " "
-	style = "red"
-[julia]
-	symbol = " "
-[lua]
-	symbol = " "
-[memory_usage]
-	symbol = " "
-[nim]
-	symbol = " "
-[nix_shell]
-	symbol = " "
-[package]
-	symbol = " "
-[perl]
-	symbol = " "
-[php]
-	symbol = " "
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[c]
+symbol = ' '
+
+[nodejs]
+symbol = ' '
+
 [python]
-	symbol = " "
-[ruby]
-	symbol = " "
+symbol = ' '
+
+[lua]
+symbol = ' '
+
 [rust]
-	symbol = " "
-[scala]
-	symbol = " "
-[shlvl]
-	symbol = " "
-[swift]
-	symbol = "ﯣ "
+symbol = ' '
